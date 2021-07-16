@@ -1,0 +1,116 @@
+.header {
+  .header-top {
+    padding: 25px 30px;
+    @include flex-display(flex, row, center, space-between);
+    background-color: $primary-color;
+    border-bottom: $primary-border;
+
+    .brand {
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .search {
+      input[type="text"] {
+        background-color: $main-bgColor;
+        width: 100%;
+        color: #000;
+        height: 42px;
+        border: none;
+      }
+
+      input[type="submit"] {
+        max-width: 130px;
+        padding: 10.5px 40px 10.8px;
+        font-size: 14px;
+        color: #fff;
+        border: none;
+        font-weight: 700;
+        border-radius: 0 4px 4px 0;
+        background-color: #000;
+      }
+    }
+
+    .header-top-actions {
+      .left-actions {
+        width: 270px;
+        padding: 6px 40px 0 75px;
+
+        ul {
+          @include flex-display(flex, row, center, space-between);
+          margin: 0;
+          padding: 0;
+
+          a {
+            color: #000;
+            transition: all 0.2s ease;
+            position: relative;
+
+            &:hover {
+              color: #fff;
+            }
+
+            sup {
+              @include flex-display(flex, row, center, center);
+              background-color: #000;
+              color: #fff;
+              position: absolute;
+              top: 9px;
+              right: -10px;
+              font-size: 12px;
+              width: 20px;
+              height: 20px;
+              border-radius: 50%;
+            }
+
+            svg {
+              font-size: 26px;
+            }
+          }
+
+          .first-link {
+            svg {
+              border: 2px solid #000;
+              border-radius: 2px;
+            }
+
+            &:hover svg {
+              border: 2px solid #fff;
+            }
+          }
+
+          .third-link svg {
+            font-size: 30px;
+            margin-bottom: 1px;
+          }
+        }
+      }
+
+      .right-actions {
+        .user-icon {
+          padding: 5px 10px 0 0;
+
+          span svg {
+            font-size: 32px;
+          }
+        }
+
+        .links {
+          @include flex-display(flex, column, space-between, center);
+
+          a {
+            font-size: 14px;
+            text-decoration: none;
+            color: #584000;
+            font-weight: 700;
+            transition: all 0.4s ease;
+
+            &:hover {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}

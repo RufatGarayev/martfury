@@ -1,0 +1,38 @@
+// All
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Work Sans", sans-serif;
+}
+
+// Html and Body
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+// Button
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+input[type="submit"],
+button {
+  cursor: pointer;
+}
+
+// input
+input[type="text"] {
+  font-size: 14px;
+  padding: 0 20px;
+  outline: none;
+}
