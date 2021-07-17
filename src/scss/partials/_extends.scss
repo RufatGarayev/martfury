@@ -1,0 +1,15 @@
+// header ul
+%header-ul {
+  @include flex-display(flex, row, center, space-between);
+  margin: 0;
+  padding: 0;
+
+  a {
+    color: #000;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
