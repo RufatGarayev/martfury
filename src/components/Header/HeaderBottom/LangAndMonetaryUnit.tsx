@@ -25,7 +25,7 @@ const LangAndMonetaryUnit: React.FC = () => {
                         <img className="img-fluid" src={EngImg} alt="en" />
                     </div>
                     <p>English <span>⌵</span></p>
-                    <ul className="language-content d-none">
+                    <ul className="language-content">
                         {
                             LanguageData.map(item => (
                                 <li key={item.id} className="d-flex">
