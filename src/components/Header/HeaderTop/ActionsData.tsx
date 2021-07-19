@@ -10,7 +10,7 @@ interface IActionDataTypes {
 }
 
 export const ActionsData: IActionDataTypes[] = [
-    { id: 1, href: "/compare", icon: <FiBarChart2 />, class: "first-link" },
-    { id: 2, href: "/wishlist", icon: <BsHeart />, class: "second-link" },
-    { id: 3, href: "#/", icon: <AiOutlineShoppingCart />, class: "third-link" }
+    { id: 1, href: "/compare", icon: <FiBarChart2 />, class: "first-link"},
+    { id: 2, href: "/wishlist", icon: <BsHeart />, class: "second-link"},
+    { id: 3, href: "#/", icon: <AiOutlineShoppingCart />, class: "third-link"}
 ];

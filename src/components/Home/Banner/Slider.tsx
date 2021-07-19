@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SliderData } from './SliderData';
+import { SliderData } from './BannerData';
 import { VscChevronRight, VscChevronLeft } from 'react-icons/vsc';
 import { Link } from 'react-router-dom';
 
@@ -24,8 +24,8 @@ const Slider: React.FC = () => {
             {
                 SliderData.map(item => (
                     <div key={item.id} className={item.id === tabIndex ? "slide-item" : "d-none"}>
-                        <Link to="#/">
-                            <img className="img-fluid" src={item.img} alt="slide-img" />
+                        <Link to="/shop">
+                            <img src={item.img} alt="slide-img" />
                         </Link>
                     </div>
                 ))

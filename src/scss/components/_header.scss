@@ -1,5 +1,7 @@
 // ======= Header ======= //
 .header {
+  z-index: 999;
+
   // Header-Top
   .header-top {
     padding: 25px 30px;
@@ -10,6 +12,10 @@
     .brand {
       width: 100%;
       max-width: 300px;
+
+      img{
+        width: auto;
+      }
     }
 
     .search {
@@ -116,6 +122,7 @@
     background-color: $primary-color;
 
     .department-wrapper {
+      z-index: 999;
       height: 100%;
       width: 100%;
       max-width: 260px;

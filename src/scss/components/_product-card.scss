@@ -1,0 +1,58 @@
+.product-card {
+  position: relative;
+  padding: 15px;
+  border: 1px solid $main-bgColor;
+  transition: all .5s ease;
+  
+  &:hover{
+    border: $primary-border;
+  }
+
+  .product-label {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background-color: $label-color;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 4px;
+  }
+
+  .product-price {
+    span {
+      color: #690;
+      font-size: 18px;
+      font-weight: 600;
+      margin-right: 7px;
+    }
+
+    del {
+      color: #666;
+      font-size: 14px;
+      text-decoration: line-through;
+    }
+  }
+
+  .product-title {
+    h6 a {
+      color: #06c;
+      font-size: 14px;
+      font-weight: 400;
+      text-decoration: none;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+
+  .product-rating {
+    span {
+      color: $primary-color;
+      font-size: 18px;
+    }
+  }
+}

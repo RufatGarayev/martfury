@@ -1,19 +1,158 @@
-// ======= Banner ======= //
-#home-banner {
-  .banner-slider {
-    .slide-item {
-      img {
-        animation: sliderAnimation 1s;
+// ======= HOME ======= //
+.home-content {
+  padding: 0 20px;
+
+  // ======= Banner ======= //
+  #home-banner {
+    background-color: $main-bgColor;
+    padding: 30px 0;
+
+    .banner-left {
+      padding-right: 8px;
+
+      .banner-slider {
+        position: relative;
+
+        .slide-item {
+          height: 401px;
+
+          img {
+            animation: sliderAnimation 1s;
+          }
+
+          @keyframes sliderAnimation {
+            0% {
+              opacity: 0;
+            }
+            100% {
+              opacity: 1;
+            }
+          }
+        }
+
+        .slider-btns {
+          .left-btn,
+          .right-btn {
+            @include flex-display(flex, row, center, center);
+            background-color: transparent;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all 0.3s ease;
+            width: 40px;
+            height: 40px;
+
+            &:hover {
+              background-color: $primary-color;
+            }
+
+            svg {
+              font-size: 20px;
+            }
+          }
+
+          .left-btn {
+            left: 0;
+          }
+
+          .right-btn {
+            right: 0;
+          }
+        }
       }
     }
 
-    @keyframes sliderAnimation {
-        0%{
-            opacity: 0;
+    .banner-right-imgs {
+      .banner-img-wrapper {
+        padding-bottom: 30px;
+      }
+    }
+  }
+
+  // ======= Advantages ======= //
+  #advantages {
+    background-color: $main-bgColor;
+    padding: 0 0 30px;
+
+    .advantages-items-wrapper {
+      padding: 30px;
+      border: $primary-border;
+
+      ul {
+        @include flex-display(flex, row, center, space-between);
+        margin: 0;
+        padding: 0;
+
+        .advantages-item {
+          text-align: center;
+
+          span svg {
+            font-size: 40px;
+            color: $primary-color;
+            margin-bottom: 20px;
+          }
+
+          p {
+            margin: 0;
+            font-size: 14px;
+            color: $text-color;
+          }
         }
-        100%{
-            opacity: 1;
+      }
+    }
+  }
+
+  // ======= Deal of the day ======= //
+  #deal-of-the-day {
+    background-color: $main-bgColor;
+    padding: 40px 0;
+
+    .section-header {
+      @include flex-display(flex, row, center, space-between);
+      border-bottom: $primary-border;
+      padding: 10px 20px;
+      margin-bottom: 40px;
+
+      .title {
+        h4 {
+          font-size: 23px;
+          font-weight: 400;
+          margin: 2px 70px 0 0;
         }
+      }
+
+      .countdown {
+        background-color: $label-color;
+        color: #fff;
+        width: 275px;
+        padding: 4px 0 4px 28px;
+        font-size: 18px;
+        font-weight: 600;
+        border-radius: 3px;
+
+        .text p {
+          margin: 0 20px 0 0;
+        }
+
+        .items {
+          .colon-symbol{
+            margin: 0 5px;
+          }
+        }
+      }
+
+      .view-all{
+        a{
+          color: $text-color;
+          font-size: 14px;
+          text-decoration: none;
+          transition: all .3s ease;
+
+          &:hover{
+            color: $primary-color;
+          }
+        }
+      }
     }
   }
 }
