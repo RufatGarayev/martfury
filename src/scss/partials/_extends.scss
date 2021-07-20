@@ -45,3 +45,12 @@
   opacity: 1 !important;
   visibility: visible !important;
 }
+
+// home > section title
+%home-section-title {
+  h4 {
+    font-size: 23px;
+    font-weight: 400;
+    margin: 2px 70px 0 0;
+  }
+}

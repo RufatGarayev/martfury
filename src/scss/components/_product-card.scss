@@ -1,58 +1,132 @@
-.product-card {
-  position: relative;
-  padding: 15px;
-  border: 1px solid $main-bgColor;
-  transition: all .5s ease;
-  
-  &:hover{
-    border: $primary-border;
-  }
+.owl-theme {
+  .item {
+    padding: 15px;
 
-  .product-label {
-    position: absolute;
-    top: 10px;
-    right: 12px;
-    background-color: $label-color;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 600;
-    padding: 5px 10px;
-    border-radius: 4px;
-  }
-
-  .product-price {
-    span {
-      color: #690;
-      font-size: 18px;
-      font-weight: 600;
-      margin-right: 7px;
-    }
-
-    del {
-      color: #666;
-      font-size: 14px;
-      text-decoration: line-through;
-    }
-  }
-
-  .product-title {
-    h6 a {
-      color: #06c;
-      font-size: 14px;
-      font-weight: 400;
-      text-decoration: none;
+    .product-card {
+      padding: 15px;
+      border: 1px solid $main-bgColor;
       transition: all 0.3s ease;
+      cursor: pointer;
 
       &:hover {
-        color: $primary-color;
+        box-shadow: 0 2px 10px 0px #2f9797;
+
+        .product-actions {
+          transform: translate(-50%, -50px);
+        }
+      }
+
+      .card-top {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .product {
+        &-label {
+          position: absolute;
+          top: 10px;
+          right: 12px;
+          background-color: $label-color;
+          color: #fff;
+          font-size: 14px;
+          font-weight: 600;
+          padding: 3px 8px;
+          border-radius: 4px;
+        }
+
+        &-actions {
+          background-color: $main-bgColor;
+          position: absolute;
+          left: 50%;
+          width: 160px;
+          padding: 5px;
+          transform: translate(-50%, 2px);
+          transition: all 0.3s ease;
+
+          ul {
+            @include flex-display(flex, row, center, space-between);
+            margin: 0;
+            padding: 0;
+
+            li button {
+              width: 33px;
+              height: 33px;
+              line-height: 0px;
+              background-color: transparent;
+              border-radius: 50%;
+              transition: all 0.5s ease;
+
+              svg {
+                transition: all 0.5s ease;
+                color: #909292;
+                font-size: 14px;
+              }
+
+              .cart-icon svg {
+                font-size: 17px;
+              }
+
+              .compare-icon svg {
+                border: 1px solid;
+              }
+
+              &:hover {
+                background-color: $primary-color;
+
+                svg {
+                  color: #fff;
+                }
+              }
+            }
+          }
+        }
+
+        &-price {
+          padding-top: 17px;
+          border-top: 1px solid #e1e1e1;
+          background-color: $main-bgColor;
+
+          span {
+            color: #690;
+            font-size: 18px;
+            font-weight: 600;
+            margin-right: 7px;
+          }
+
+          del {
+            color: #666;
+            font-size: 14px;
+            text-decoration: line-through;
+          }
+        }
+
+        &-title {
+          h6 a {
+            color: #06c;
+            font-size: 14px;
+            font-weight: 400;
+            text-decoration: none;
+            transition: all 0.3s ease;
+
+            &:hover {
+              color: $primary-color;
+            }
+          }
+        }
+
+        &-rating {
+          span {
+            color: $primary-color;
+            font-size: 18px;
+          }
+        }
       }
     }
   }
 
-  .product-rating {
-    span {
-      color: $primary-color;
-      font-size: 18px;
+  .owl-dots {
+    .active span {
+      background: $primary-color !important;
     }
   }
 }

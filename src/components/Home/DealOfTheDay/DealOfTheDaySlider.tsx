@@ -1,49 +1,81 @@
 import React from 'react';
+// importing product card
 import ProductCard from '../../ProductCard/ProductCard';
-import AliceCarousel from 'react-alice-carousel';
-import "react-alice-carousel/lib/scss/alice-carousel.scss";
+// importing owl-carousel
+import OwlCarousel from 'react-owl-carousel';
+// importing owl-carousel styles
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
 
-// interface IAliceCarousel {
-//     duration: number;
-//     autoPlay: boolean;
-//     startIndex: number;
-//     fadeOutAnimation: boolean;
-//     mouseDragEnabled: boolean;
-//     playButtonEnabled: boolean;
-//     responsive: any;
-// }
+// data types for owl-carousel options
+interface IOptions {
+    margin: number;
+    loop: boolean;
+    dots: boolean;
+    responsive: {
+        0: {
+            items: number;
+        },
+        500: {
+            items: number;
+        },
+        768: {
+            items: number;
+        },
+        1300: {
+            items: number;
+        }
+    }
+}
 
 const DealOfTheDaySlider: React.FC = () => {
-    const responsive = {
-        0: {
-            items: 1
+    const options: IOptions = {
+        margin: 20,
+        loop: true,
+        dots: true,
+        responsive: {
+            0: {
+                items: 1,
+            },
+            500: {
+                items: 2,
+            },
+            768: {
+                items: 4,
+            },
+            1300: {
+                items: 6,
+            }
         },
-        600: {
-            items: 2
-        },
-        1024: {
-            items: 3
-        }
     };
 
     return (
-        <div className="dealOfTheDay-slider d-flex">
-            {/* <AliceCarousel
-                duration={400}
-                autoPlay={true}
-                startIndex={1}
-                fadeOutAnimation={true}
-                mouseDragEnabled={true}
-                playButtonEnabled={true}
-                responsive={responsive}
-            > */}
-                <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
-            {/* </AliceCarousel> */}
-        </div>
+        <OwlCarousel
+            className='owl-theme'
+            {...options}
+        >
+            <div className='item'>
+                <ProductCard />
+            </div>
+            <div className='item'>
+                <ProductCard />
+            </div>
+            <div className='item'>
+                <ProductCard />
+            </div>
+            <div className='item'>
+                <ProductCard />
+            </div>
+            <div className='item'>
+                <ProductCard />
+            </div>
+            <div className='item'>
+                <ProductCard />
+            </div>
+            <div className='item'>
+                <ProductCard />
+            </div>
+        </OwlCarousel>
     )
 }
 

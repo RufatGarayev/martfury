@@ -2,74 +2,81 @@
 .home-content {
   padding: 0 20px;
 
-  // ======= Banner ======= //
+  // ===== Banner ===== //
   #home-banner {
     background-color: $main-bgColor;
     padding: 30px 0;
 
-    .banner-left {
-      padding-right: 8px;
+    .home-banner-content {
+      @include flex-display(flex, row, flex-start, space-between);
 
-      .banner-slider {
-        position: relative;
+      .banner-left {
+        max-width: calc(100% - 390px);
+        padding-right: 30px;
 
-        .slide-item {
-          height: 401px;
+        .banner-slider {
+          position: relative;
 
-          img {
-            animation: sliderAnimation 1s;
-          }
+          .slide-item {
+            height: 415px;
 
-          @keyframes sliderAnimation {
-            0% {
-              opacity: 0;
-            }
-            100% {
-              opacity: 1;
-            }
-          }
-        }
-
-        .slider-btns {
-          .left-btn,
-          .right-btn {
-            @include flex-display(flex, row, center, center);
-            background-color: transparent;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            transition: all 0.3s ease;
-            width: 40px;
-            height: 40px;
-
-            &:hover {
-              background-color: $primary-color;
+            img {
+              animation: sliderAnimation 1s;
             }
 
-            svg {
-              font-size: 20px;
+            @keyframes sliderAnimation {
+              0% {
+                opacity: 0;
+              }
+              100% {
+                opacity: 1;
+              }
             }
           }
 
-          .left-btn {
-            left: 0;
-          }
+          .slider-btns {
+            .left-btn,
+            .right-btn {
+              @include flex-display(flex, row, center, center);
+              background-color: transparent;
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              transition: all 0.3s ease;
+              width: 40px;
+              height: 40px;
 
-          .right-btn {
-            right: 0;
+              &:hover {
+                background-color: $primary-color;
+              }
+
+              svg {
+                font-size: 20px;
+              }
+            }
+
+            .left-btn {
+              left: 0;
+            }
+
+            .right-btn {
+              right: 0;
+            }
           }
         }
       }
-    }
 
-    .banner-right-imgs {
-      .banner-img-wrapper {
-        padding-bottom: 30px;
+      .banner-right-imgs {
+        max-width: 390px;
+
+        .banner-img-wrapper {
+          padding-bottom: 30px;
+        }
       }
     }
   }
 
-  // ======= Advantages ======= //
+  // ===== Advantages ===== //
   #advantages {
     background-color: $main-bgColor;
     padding: 0 0 30px;
@@ -79,7 +86,7 @@
       border: $primary-border;
 
       ul {
-        @include flex-display(flex, row, center, space-between);
+        @include flex-display(flex, row, center, space-around);
         margin: 0;
         padding: 0;
 
@@ -102,7 +109,7 @@
     }
   }
 
-  // ======= Deal of the day ======= //
+  // ===== Deal of the day ===== //
   #deal-of-the-day {
     background-color: $main-bgColor;
     padding: 40px 0;
@@ -114,11 +121,7 @@
       margin-bottom: 40px;
 
       .title {
-        h4 {
-          font-size: 23px;
-          font-weight: 400;
-          margin: 2px 70px 0 0;
-        }
+        @extend %home-section-title;
       }
 
       .countdown {
@@ -135,21 +138,66 @@
         }
 
         .items {
-          .colon-symbol{
+          .colon-symbol {
             margin: 0 5px;
           }
         }
       }
 
-      .view-all{
-        a{
+      .view-all {
+        a {
           color: $text-color;
           font-size: 14px;
           text-decoration: none;
-          transition: all .3s ease;
+          transition: all 0.3s ease;
 
-          &:hover{
+          &:hover {
             color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+
+  // ===== Categories ===== //
+  #categories {
+    padding: 80px 0;
+
+    .section-title {
+      @extend %home-section-title;
+    }
+
+    .categories-wrapper {
+      padding-top: 20px;
+
+      a {
+        text-decoration: none;
+      }
+
+      .category-item {
+        border: $primary-border;
+        text-align: center;
+        padding-bottom: 20px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          border: 1px solid $primary-color;
+
+          .category-title h6 {
+            color: $primary-color;
+          }
+        }
+
+        .category {
+          &-img {
+            padding: 20px;
+          }
+
+          &-title {
+            h6 {
+              color: $text-color;
+              transition: all 0.3s ease;
+            }
           }
         }
       }
