@@ -115,13 +115,14 @@
     padding: 40px 0;
 
     .section-header {
-      @include flex-display(flex, row, center, space-between);
-      border-bottom: $primary-border;
-      padding: 10px 20px;
-      margin-bottom: 40px;
+      @extend %home-section-header;
+      background-color: transparent;
 
       .title {
-        @extend %home-section-title;
+        @extend %home-section-header-title;
+        h4 {
+          margin: 2px 70px 0 0;
+        }
       }
 
       .countdown {
@@ -146,14 +147,7 @@
 
       .view-all {
         a {
-          color: $text-color;
-          font-size: 14px;
-          text-decoration: none;
-          transition: all 0.3s ease;
-
-          &:hover {
-            color: $primary-color;
-          }
+          @extend %home-section-header-link-and-btns;
         }
       }
     }
@@ -161,46 +155,77 @@
 
   // ===== Categories ===== //
   #categories {
-    padding: 80px 0;
+    .top-categories-list {
+      padding: 80px 0;
 
-    .section-title {
-      @extend %home-section-title;
-    }
-
-    .categories-wrapper {
-      padding-top: 20px;
-
-      a {
-        text-decoration: none;
+      .section-title {
+        @extend %home-section-header-title;
       }
 
-      .category-item {
-        border: $primary-border;
-        text-align: center;
-        padding-bottom: 20px;
-        transition: all 0.3s ease;
+      .categories-wrapper {
+        padding-top: 20px;
 
-        &:hover {
-          border: 1px solid $primary-color;
-
-          .category-title h6 {
-            color: $primary-color;
-          }
+        a {
+          text-decoration: none;
         }
 
-        .category {
-          &-img {
-            padding: 20px;
+        .category-item {
+          border: $primary-border;
+          text-align: center;
+          padding-bottom: 20px;
+          transition: all 0.3s ease;
+
+          &:hover {
+            border: 1px solid $primary-color;
+
+            .category-title h6 {
+              color: $primary-color;
+            }
           }
 
-          &-title {
-            h6 {
-              color: $text-color;
-              transition: all 0.3s ease;
+          .category {
+            &-img {
+              padding: 20px;
+            }
+
+            &-title {
+              h6 {
+                color: $text-color;
+                transition: all 0.3s ease;
+              }
             }
           }
         }
       }
+    }
+
+    .section-header {
+      @extend %home-section-header;
+
+      .left-side {
+        .section-title {
+          @extend %home-section-header-title;
+        }
+      }
+
+      .right-side {
+        .section-buttons-and-link {
+          @include flex-display(flex, row, center, space-between);
+          width: 390px;
+          margin: 0;
+          padding: 0;
+
+          a {
+            @extend %home-section-header-link-and-btns;
+          }
+        }
+      }
+    }
+
+    .consumer-electronics,
+    .clothings,
+    .garden-and-kitchen {
+      padding-bottom: 80px;
     }
   }
 }

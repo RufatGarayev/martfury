@@ -46,11 +46,32 @@
   visibility: visible !important;
 }
 
+// home > section header
+%home-section-header {
+  @include flex-display(flex, row, center, space-between);
+  background-color: $secondary-bgColor;
+  border-bottom: $primary-border;
+  padding: 12px 20px;
+  margin-bottom: 40px;
+}
+
 // home > section title
-%home-section-title {
+%home-section-header-title {
   h4 {
     font-size: 23px;
     font-weight: 400;
-    margin: 2px 70px 0 0;
+    margin: 0;
+  }
+}
+
+// home > section link and btns
+%home-section-header-link-and-btns {
+  color: $text-color;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: $primary-color;
   }
 }
