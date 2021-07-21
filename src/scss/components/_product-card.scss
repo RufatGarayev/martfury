@@ -12,7 +12,7 @@
         box-shadow: 0 2px 10px 0px #2f9797;
 
         .product-actions {
-          transform: translate(-50%, -50px);
+          transform: translate(-50%, -43px);
         }
       }
 
@@ -82,43 +82,15 @@
         }
 
         &-price {
-          padding-top: 17px;
-          border-top: 1px solid #e1e1e1;
-          background-color: $main-bgColor;
-
-          span {
-            color: #690;
-            font-size: 18px;
-            font-weight: 600;
-            margin-right: 7px;
-          }
-
-          del {
-            color: #666;
-            font-size: 14px;
-            text-decoration: line-through;
-          }
+          @extend %product-price;
         }
 
         &-title {
-          h6 a {
-            color: #06c;
-            font-size: 14px;
-            font-weight: 400;
-            text-decoration: none;
-            transition: all 0.3s ease;
-
-            &:hover {
-              color: $primary-color;
-            }
-          }
+          @extend %product-title;
         }
 
         &-rating {
-          span {
-            color: $primary-color;
-            font-size: 18px;
-          }
+          @extend %product-rating;
         }
       }
     }

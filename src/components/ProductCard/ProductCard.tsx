@@ -6,8 +6,8 @@ import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { ImEye } from 'react-icons/im';
 // importing Link
 import { Link } from 'react-router-dom';
-// importing laptop img
-import LaptopImg from '../../assets/img/products/laptop.jpg';
+// importing book img
+import BookImg from '../../assets/img/products/book.jpg';
 
 
 const ProductCard: React.FC = () => {
@@ -20,7 +20,7 @@ const ProductCard: React.FC = () => {
                 </div>
                 {/* ======= Image ======= */}
                 <div className="product-img">
-                    <img src={LaptopImg} alt="laptop" />
+                    <img src={BookImg} alt="laptop" />
                 </div>
                 {/* ======= Actions ======= */}
                 <div className="product-actions">

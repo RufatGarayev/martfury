@@ -4,6 +4,9 @@ import Advantages from '../components/Home/Advantages/Advantages';
 import DealOfTheDay from '../components/Home/DealOfTheDay/DealOfTheDay';
 import HomeAds1 from '../components/Home/Ads/HomeAds1';
 import Categories from '../components/Home/Categories/Categories';
+import HomeAds2 from '../components/Home/Ads/HomeAds2';
+import DownloadApp from '../components/Home/DownloadApp/DownloadApp';
+import NewArrivals from '../components/Home/NewArrivals/NewArrivals';
 
 const Home: React.FC = () => {
     return (
@@ -14,6 +17,9 @@ const Home: React.FC = () => {
                 <DealOfTheDay />
                 <HomeAds1 />
                 <Categories />
+                <HomeAds2 />
+                <DownloadApp />
+                <NewArrivals />
             </div>
         </div>
     )

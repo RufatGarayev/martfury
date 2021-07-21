@@ -75,3 +75,78 @@
     color: $primary-color;
   }
 }
+
+// subscribe form
+%subscribe-form {
+  input[type="text"] {
+    border-radius: 4px 0 0 4px;
+    border-right: none;
+    height: 50px;
+    border: $primary-border;
+    width: 100%;
+    transition: all 0.4s ease;
+
+    &:focus {
+      border: 1px solid $primary-color;
+    }
+  }
+
+  input[type="submit"] {
+    background-color: $primary-color;
+    color: #000;
+    border-radius: 0 4px 4px 0;
+    border: none;
+    padding: 13px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.4s ease;
+
+    &:hover {
+      background-color: #000;
+      color: #fff;
+    }
+  }
+}
+
+// product title
+%product-title {
+  h6 a {
+    color: #06c;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+// product price
+%product-price {
+  padding-top: 17px;
+  border-top: 1px solid #e1e1e1;
+  background-color: $main-bgColor;
+
+  span {
+    color: #690;
+    font-size: 18px;
+    font-weight: 600;
+    margin-right: 7px;
+  }
+
+  del {
+    color: #666;
+    font-size: 14px;
+    text-decoration: line-through;
+  }
+}
+
+// product rating
+%product-rating {
+  span {
+    color: $primary-color;
+    font-size: 18px;
+  }
+}

@@ -228,4 +228,110 @@
       padding-bottom: 80px;
     }
   }
+
+  // ===== Ads-2 ===== //
+  #ads-2 {
+    padding-bottom: 80px;
+  }
+
+  // ===== Download app ===== //
+  #download-app {
+    .download-app-wrapper {
+      background-color: $secondary-bgColor;
+      padding: 80px 0 0;
+
+      .app-img {
+        padding-left: 120px;
+
+        img {
+          width: auto;
+        }
+      }
+
+      .download-app-content {
+        padding-right: 230px;
+
+        .text {
+          h3 {
+            margin-bottom: 12px;
+            font-size: 30px;
+            font-weight: 300;
+          }
+
+          p {
+            color: $text-color;
+            margin-bottom: 30px;
+          }
+        }
+
+        .subscribe-wrapper {
+          padding-bottom: 30px;
+
+          @extend %subscribe-form;
+        }
+
+        .small-imgs {
+          .small-img-wrapper {
+            padding-right: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  // ===== New arrivals ===== //
+  #new-arrivals {
+    padding: 100px 0 80px;
+
+    .section-header {
+      @extend %home-section-header;
+
+      .left-side {
+        .section-title {
+          @extend %home-section-header-title;
+        }
+      }
+
+      .right-side {
+        .section-buttons-and-link {
+          @include flex-display(flex, row, center, space-between);
+          width: 666px;
+          margin: 0;
+          padding: 0;
+
+          a {
+            @extend %home-section-header-link-and-btns;
+          }
+        }
+      }
+    }
+
+    .product-item {
+      @include flex-display(flex, row, center, space-between);
+
+      &-price {
+        @extend %product-price;
+        border-top: 0;
+        padding-top: 0;
+
+        span {
+          font-size: 17px;
+          font-weight: 400;
+          color: #840000;
+        }
+      }
+
+      &-title {
+        @extend %product-title;
+
+        h6 {
+          margin: 0;
+        }
+      }
+
+      &-rating {
+        @extend %product-rating;
+      }
+    }
+  }
 }
