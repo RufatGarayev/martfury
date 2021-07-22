@@ -4,7 +4,7 @@
 
   // Header-Top
   .header-top {
-    padding: 25px 30px;
+    padding: 24px 30px;
     @include flex-display(flex, row, center, space-between);
     background-color: $primary-color;
     border-bottom: 1px solid #d69d00;
@@ -13,7 +13,7 @@
       width: 100%;
       max-width: 300px;
 
-      img{
+      img {
         width: auto;
       }
     }
@@ -42,7 +42,7 @@
     .header-top-actions {
       .left-actions {
         width: 270px;
-        padding: 6px 40px 0 75px;
+        padding: 8px 40px 0 75px;
 
         ul {
           @extend %header-ul;
@@ -91,7 +91,8 @@
           padding: 5px 10px 0 0;
 
           span svg {
-            font-size: 32px;
+            font-size: 38px;
+            margin-bottom: 4px;
           }
         }
 
@@ -220,7 +221,7 @@
 
             .submenu {
               border: $primary-border;
-              background-color: $main-bgColor;
+              background-color: $secondary-bgColor;
               border-left: 0;
               position: absolute;
               width: 520px;

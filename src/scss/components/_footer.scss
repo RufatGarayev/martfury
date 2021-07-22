@@ -1,6 +1,8 @@
-.footer {
+// ======= Footer ======= //
+footer {
   padding: 70px 20px 0;
 
+  // Footer-top
   .footer-top {
     padding-bottom: 50px;
 
@@ -74,7 +76,9 @@
 
     .links-item {
       .title {
-        font-weight: 600;
+        h6{
+          font-weight: 600;
+        }
       }
 
       .links {
@@ -87,5 +91,95 @@
     }
   }
 
-  
+  // Footer-middle
+  .footer-middle {
+    padding: 60px 0;
+    border-top: $primary-border;
+    border-bottom: $primary-border;
+
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    .footer-middle-links li {
+      align-items: center;
+      line-height: 35px;
+
+      .title {
+        h6 {
+          font-size: 14px;
+          font-weight: 600;
+          margin: 0 20px 0 0;
+        }
+      }
+
+      .links ul {
+        @include flex-display(flex, row, flex-start, space-between);
+
+        li {
+          @extend %footer-link;
+          margin-right: 10px;
+        }
+
+        li:not(:last-child):after {
+          content: "|";
+          font-size: 14px;
+          color: $text-color;
+          margin-left: 12px;
+        }
+      }
+    }
+  }
+
+  // Footer-bottom
+  .footer-bottom {
+    font-size: 14px;
+    padding: 35px 0;
+
+    p {
+      margin: 0;
+    }
+
+    .copyright {
+      color: #000;
+
+      a {
+        text-decoration: none;
+        margin-left: 5px;
+        transition: all 0.3s ease;
+        color: #000;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+
+    .payment {
+      @include flex-display(flex, row, center, flex-end);
+
+      .payment-text {
+        padding-right: 20px;
+      }
+
+      .payment-cards {
+        width: 300px;
+
+        ul {
+          @include flex-display(flex, row, center, space-between);
+          margin: 0;
+          padding: 0;
+
+          li {
+            width: 45px;
+
+            &:first-of-type {
+              width: 60px;
+            }
+          }
+        }
+      }
+    }
+  }
 }

@@ -27,7 +27,7 @@ const ProductCard: React.FC = () => {
                     <ul>
                         <li>
                             {/* ===== Add to cart button ===== */}
-                            <button type="button">
+                            <button type="button" title="Add To Cart">
                                 <span className="cart-icon">
                                     <AiOutlineShoppingCart />
                                 </span>
@@ -35,7 +35,7 @@ const ProductCard: React.FC = () => {
                         </li>
                         <li>
                             {/* ===== Show quick button ===== */}
-                            <button type="button">
+                            <button type="button" title="Quick View">
                                 <span className="eye-icon">
                                     <ImEye />
                                 </span>
@@ -43,7 +43,7 @@ const ProductCard: React.FC = () => {
                         </li>
                         <li>
                             {/* ===== Add to wishlist button ===== */}
-                            <button type="button">
+                            <button type="button" title="Add To Wishlist">
                                 <span className="heart-icon">
                                     <BsHeart />
                                 </span>
@@ -51,7 +51,7 @@ const ProductCard: React.FC = () => {
                         </li>
                         <li>
                             {/* ===== Add to compare button ===== */}
-                            <button type="button">
+                            <button type="button" title="Add To Compare">
                                 <span className="compare-icon">
                                     <FiBarChart2 />
                                 </span>

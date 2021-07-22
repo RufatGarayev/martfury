@@ -1,0 +1,33 @@
+#back-to-top-btn {
+  position: fixed;
+  bottom: 50px;
+  right: 40px;
+  z-index: 999;
+  display: none;
+
+  button {
+    background-color: $main-bgColor;
+    border: $primary-border;
+    color: #666666;
+    height: 45px;
+    width: 45px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: $primary-color;
+      border: 1px solid $primary-color;
+    }
+
+    svg{
+      margin-bottom: 4px;
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    bottom: 25px !important;
+  }
+}
+
+.show-back-to-top-btn {
+  display: block !important;
+}
