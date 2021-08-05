@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { VscChevronRight } from 'react-icons/vsc';
-import { DepartmentData } from './HeaderBottomData';
+import { CategoriesData } from '../../Other/CategoriesData';
 
 const Department: React.FC = () => {
     return (
@@ -18,7 +18,7 @@ const Department: React.FC = () => {
             {/* ======= Departments ======= */}
             <ul className="departments">
                 {
-                    DepartmentData.map(item => (
+                    CategoriesData.map(item => (
                         item.submenu ? (
                             <li key={item.id}>
                                 <Link to="/#" className="d-flex justify-content-between">

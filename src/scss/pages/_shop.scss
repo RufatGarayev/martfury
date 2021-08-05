@@ -1,0 +1,90 @@
+.shop-content-wrapper {
+  padding: 30px 0 80px;
+
+  .filter-side {
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    h5 {
+      font-size: 18px;
+      font-weight: 400;
+      margin-bottom: 22px;
+    }
+  }
+
+  .categories,
+  .brands,
+  .range-slider {
+    background-color: $secondary-bgColor;
+    padding: 25px;
+  }
+
+  .categories {
+    margin-bottom: 20px;
+
+    ul {
+      li {
+        padding: 6px 0;
+
+        a {
+          font-size: 14px;
+          color: $text-color;
+          text-decoration: none;
+          transition: all 0.3s ease;
+
+          &:hover {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+
+  .brands {
+    @extend %checkbox;
+    margin-bottom: 20px;
+
+    li {
+      padding: 6px 0;
+
+      label {
+        font-size: 14px;
+        color: $text-color;
+      }
+    }
+  }
+
+  .range-slider {
+    h5 {
+      margin-bottom: 32px;
+    }
+
+    .rs-slider {
+      margin: 0 6px;
+
+      .rs-slider-bar {
+        background-color: #fff;
+        height: 4px;
+      }
+
+      .rs-slider-progress-bar {
+        height: 4px;
+      }
+
+      .rs-slider-handle {
+        &::before {
+          top: -3px;
+          height: 14px;
+          width: 14px;
+        }
+      }
+    }
+
+    p {
+      font-size: 14px;
+      color: $text-color;
+    }
+  }
+}

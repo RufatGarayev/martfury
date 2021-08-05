@@ -7,6 +7,7 @@ import BackToTopBtn from './components/Other/BackToTopBtn';
 // pages
 import Home from './pages/Home';
 import About from './pages/About';
+import Shop from './pages/Shop';
 // react-router
 import { BrowserRouter, Route } from "react-router-dom";
 
@@ -22,6 +23,7 @@ const App: React.FC = () => {
         <main>
           <Route path="/" component={Home} exact />
           <Route path="/about" component={About} />
+          <Route path="/shop" component={Shop} />
           <Subscribe />
         </main>
 
