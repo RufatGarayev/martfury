@@ -31,7 +31,8 @@ button {
 }
 
 // input
-input[type="text"] {
+input[type="text"],
+input[type="password"] {
   font-size: 14px;
   padding: 0 20px;
   outline: none;

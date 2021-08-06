@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { SocialMediaData } from './FooterTopData';
+import { SocialMediaData } from '../../Other/SocialMediaData';
 
 const ContactUs: React.FC = () => {
     return (

@@ -1,0 +1,91 @@
+#login,
+#register {
+  background-color: $secondary-bgColor;
+  padding: 100px 0;
+
+  .links {
+    padding-bottom: 30px;
+
+    a {
+      display: inline-block;
+      padding: 0 15px;
+      font-size: 28px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+  }
+
+  .account-wrapper {
+    background-color: #fff;
+    padding: 30px;
+
+    h6 {
+      font-weight: 400;
+      margin-bottom: 25px;
+    }
+
+    .inputs-wrapper {
+      padding-bottom: 25px;
+
+      input[type="password"],
+      input[type="text"] {
+        @extend %input;
+      }
+    }
+
+    .checkbox-input-wrapper {
+      @extend %checkbox;
+      padding-bottom: 25px;
+
+      label {
+        &::before {
+          margin-right: 10px !important;
+        }
+      }
+    }
+
+    .submit-btn {
+      padding: 0 0 40px;
+
+      input[type="submit"] {
+        @extend %submit-btn;
+      }
+    }
+
+    .social-media {
+      ul {
+        margin: 0;
+        padding: 0;
+        justify-content: space-between;
+
+        a {
+          font-size: 24px;
+          display: inline-block;
+          width: 66px;
+          height: 45px;
+          color: #fff;
+          text-align: center;
+          line-height: 38px;
+        }
+
+        .facebook {
+          background-color: #3b5999;
+        }
+
+        .google {
+          background-color: #dd4b39;
+        }
+
+        .twitter {
+          background-color: #55acee;
+        }
+
+        .instagram {
+          background-color: #e4405f;
+          font-size: 20px;
+          line-height: 42px;
+        }
+      }
+    }
+  }
+}
