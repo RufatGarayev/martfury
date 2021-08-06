@@ -1,0 +1,65 @@
+#contact-items,
+#get-in-touch {
+  .title {
+    padding-bottom: 50px;
+
+    h2 {
+      font-weight: 600;
+    }
+  }
+}
+
+// ===== Contact items ===== //
+#contact-items {
+  padding: 90px 0 70px;
+
+  .contact-item {
+    padding-bottom: 30px;
+
+    h5 {
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    p {
+      color: $text-color;
+      font-size: 14px;
+    }
+  }
+}
+
+// ===== Get-in-touch ===== //
+#get-in-touch {
+  background-color: $secondary-bgColor;
+  padding: 90px 0;
+
+  .inputs-wrapper {
+    padding-bottom: 25px;
+  }
+
+  input[type="text"] {
+    @extend %input;
+  }
+
+  textarea {
+    outline: none;
+    padding: 15px 20px;
+  }
+
+  textarea {
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+
+    &:focus {
+      border: 1px solid $primary-color;
+    }
+  }
+
+  .send-msg-btn-wrapper {
+    padding-top: 20px;
+
+    button[type="submit"] {
+      @extend %submit-btn;
+    }
+  }
+}

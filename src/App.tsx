@@ -8,6 +8,7 @@ import BackToTopBtn from './components/Other/BackToTopBtn';
 import Home from './pages/Home';
 import About from './pages/About';
 import Shop from './pages/Shop';
+import Contact from './pages/Contact';
 // react-router
 import { BrowserRouter, Route } from "react-router-dom";
 
@@ -24,6 +25,7 @@ const App: React.FC = () => {
           <Route path="/" component={Home} exact />
           <Route path="/about" component={About} />
           <Route path="/shop" component={Shop} />
+          <Route path="/contact" component={Contact} />
           <Subscribe />
         </main>
 
