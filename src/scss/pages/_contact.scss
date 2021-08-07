@@ -59,7 +59,7 @@
     padding-top: 20px;
 
     button[type="submit"] {
-      @extend %submit-btn;
+      @extend %primary-btn;
     }
   }
 }

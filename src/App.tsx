@@ -11,6 +11,8 @@ import Shop from './pages/Shop';
 import Contact from './pages/Contact';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Compare from './pages/Compare';
+import Wishlist from './pages/Wishlist';
 // react-router
 import { BrowserRouter, Route } from "react-router-dom";
 
@@ -30,6 +32,8 @@ const App: React.FC = () => {
           <Route path="/contact" component={Contact} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
+          <Route path="/compare" component={Compare} />
+          <Route path="/wishlist" component={Wishlist} />
           <Subscribe />
         </main>
 
