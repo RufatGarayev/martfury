@@ -7,16 +7,7 @@
 
   .wishlist-product-item {
     thead {
-      tr {
-        height: 45px;
-        background-color: $secondary-bgColor;
-        border-top: $primary-border;
-        border-bottom: $primary-border;
-
-        th {
-          text-align: center;
-        }
-      }
+      @extend %table-header;
     }
 
     tbody {

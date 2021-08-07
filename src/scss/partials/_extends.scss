@@ -245,3 +245,18 @@
     color: #fff;
   }
 }
+
+// table header
+%table-header {
+  tr {
+    height: 45px;
+    background-color: $secondary-bgColor;
+    border-top: $primary-border;
+    border-bottom: $primary-border;
+
+    th {
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+}

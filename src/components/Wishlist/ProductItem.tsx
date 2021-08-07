@@ -6,15 +6,17 @@ const ProductItem: React.FC = () => {
     return (
         <div className="wishlist-product-item">
             <table className="w-100">
+                {/* ======= table-header ======= */}
                 <thead>
                     <tr>
                         <th>Remove</th>
                         <th>Image</th>
                         <th>Name</th>
                         <th>Price</th>
-                        <th>Add to cart</th>
+                        <th>Add to Cart</th>
                     </tr>
                 </thead>
+                {/* ======= table-body ======= */}
                 <tbody>
                     <tr>
                         <td>
@@ -48,7 +50,7 @@ const ProductItem: React.FC = () => {
                         <td className="btn-td">
                             {/* ===== add-to-cart-btn ===== */}
                             <div className="add-to-cart-btn d-flex">
-                                <button type="button">Add To Cart</button>
+                                <button type="button">Add to Cart</button>
                             </div>
                         </td>
                     </tr>
