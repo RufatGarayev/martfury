@@ -4,7 +4,7 @@ import CompareSection from '../components/Compare/CompareSection';
 
 const Compare: React.FC = () => {
     return (
-        <div className="about-content">
+        <div className="compare-content">
             <div className="main">
                 <Breadcrumb currentPage={"Compare"} />
                 <CompareSection />

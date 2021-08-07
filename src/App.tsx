@@ -14,6 +14,7 @@ import Register from './pages/Register';
 import Compare from './pages/Compare';
 import Wishlist from './pages/Wishlist';
 import ShoppingCart from './pages/ShoppingCart';
+import Checkout from './pages/Checkout';
 // react-router
 import { BrowserRouter, Route } from "react-router-dom";
 
@@ -36,6 +37,7 @@ const App: React.FC = () => {
           <Route path="/compare" component={Compare} />
           <Route path="/wishlist" component={Wishlist} />
           <Route path="/cart" component={ShoppingCart} />
+          <Route path="/checkout" component={Checkout} />
           <Subscribe />
         </main>
 

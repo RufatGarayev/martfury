@@ -1,0 +1,54 @@
+#checkout {
+  padding: 90px 0 110px;
+
+  .title {
+    padding-bottom: 50px;
+  }
+
+  .checkout-info-area {
+    h5 {
+      margin-bottom: 15px;
+      font-size: 22px;
+    }
+
+    .input-wrapper {
+      padding-bottom: 25px;
+
+      input[type="text"] {
+        width: 100%;
+        @extend %input;
+      }
+    }
+
+    .bottom-links {
+      justify-content: space-between;
+      padding-top: 10px;
+
+      a {
+        color: $text-color;
+        text-decoration: none;
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: $primary-color;
+        }
+
+        span {
+          margin-right: 7px;
+
+          svg{
+              margin-bottom: 3px;
+          }
+        }
+
+        p {
+          margin: 0;
+        }
+      }
+
+      input[type="submit"] {
+        @extend %primary-btn;
+      }
+    }
+  }
+}
