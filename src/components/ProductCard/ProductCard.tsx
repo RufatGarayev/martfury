@@ -70,7 +70,7 @@ const ProductCard: React.FC = () => {
             {/* ======= Title ======= */}
             <div className="product-title">
                 <h6>
-                    <Link to="#/">
+                    <Link to="/book-details">
                         Apple Macbook Display 12
                     </Link>
                 </h6>
