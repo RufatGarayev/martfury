@@ -16,6 +16,7 @@ const Actions: React.FC = () => {
                                     {item.icon}
                                     <sup>0</sup>
                                 </Link>
+                                {item.dropdownContent}
                             </li>
                         ))
                     }
