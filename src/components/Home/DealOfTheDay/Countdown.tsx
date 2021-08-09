@@ -11,7 +11,7 @@ const Countdown: React.FC = () => {
     const startTimer = (): void => {
         const countdownDate: number = new Date('June 09, 2023 00:00:00').getTime();
 
-        interval = setInterval(() => {
+        interval = setInterval((): void => {
             const now: number = new Date().getTime();
             const distance: number = countdownDate - now;
 

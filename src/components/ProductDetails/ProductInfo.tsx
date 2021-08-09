@@ -1,12 +1,15 @@
 import React from 'react';
+// importing Quantity component
 import Quantity from '../Other/Quantity';
+// importing SocialMedia component
+import { SocialMediaData } from '../Other/SocialMediaData';
 // importing icons
 import { FiBarChart2 } from 'react-icons/fi';
 import { BsHeart } from 'react-icons/bs';
 // importing Link
 import { Link } from 'react-router-dom';
 
-const BookInfo: React.FC = () => {
+const ProductInfo: React.FC = () => {
     return (
         <div className="book-info">
             {/* ===== title-and-rating ===== */}
@@ -88,7 +91,7 @@ const BookInfo: React.FC = () => {
                     <span>Tags:</span>
                     <ul>
                         <li>
-                            <Link to="#/">sofa</Link>, 
+                            <Link to="#/">sofa</Link>,
                         </li>
                         <li>
                             <Link to="#/">technologies</Link>,
@@ -101,9 +104,18 @@ const BookInfo: React.FC = () => {
             </div>
             {/* ===== social-media ===== */}
             <div className="social-media">
+                <ul className="d-flex">
+                    {
+                        SocialMediaData.map(item => (
+                            <li key={item.id}>
+                                <a href={item.href} className={item.class}>{item.icon}</a>
+                            </li>
+                        ))
+                    }
+                </ul>
             </div>
         </div>
     )
 }
 
-export default BookInfo;
+export default ProductInfo;

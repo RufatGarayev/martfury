@@ -1,6 +1,6 @@
 import React from 'react';
 import Breadcrumb from '../components/Other/Breadcrumb';
-import BookContent from '../components/BookDetails/BookContent';
+import BookContent from '../components/ProductDetails/ProductContent';
 
 const BookDetails: React.FC = () => {
     return (

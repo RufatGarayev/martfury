@@ -242,5 +242,63 @@
         }
       }
     }
+
+    .social-media {
+      @extend %social-media;
+      padding-top: 30px;
+      width: 215px;
+
+      li {
+        a {
+          height: 40px;
+          width: 44px;
+          line-height: 34px;
+        }
+
+        .instagram {
+          line-height: 35px;
+        }
+      }
+    }
+  }
+
+  .product-tabs-wrapper {
+    padding: 100px 0 80px;
+
+    ul {
+      padding: 0;
+      margin: 0;
+    }
+
+    .tab-list {
+      ul {
+        @include flex-display(flex, row, center, space-between);
+        width: 700px;
+        padding: 10px 0;
+      }
+    }
+
+    .tab-content-wrapper {
+      padding-top: 20px;
+
+      .tabContent-description {
+        p {
+          font-size: 14px;
+          color: $text-color;
+        }
+
+        .img-wrapper {
+          width: 800px;
+        }
+      }
+
+      .tabContent-specification {
+        table,
+        tr,
+        td {
+          border: $primary-border;
+        }
+      }
+    }
   }
 }
