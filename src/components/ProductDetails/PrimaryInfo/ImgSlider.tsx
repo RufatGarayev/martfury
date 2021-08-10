@@ -1,10 +1,12 @@
 import React from 'react';
-import ProductImg1 from '../../assets/img/products/laptop.jpg';
-import ProductImg2 from '../../assets/img/products/laptop2.jpg';
-import ProductImg3 from '../../assets/img/products/laptop3.jpg';
+import ProductImg1 from '../../../assets/img/products/laptop.jpg';
+import ProductImg2 from '../../../assets/img/products/laptop2.jpg';
+import ProductImg3 from '../../../assets/img/products/laptop3.jpg';
+// importing react-image-gallery
 import "react-image-gallery/styles/scss/image-gallery.scss";
 import ImageGallery from 'react-image-gallery';
 
+// data types
 interface IOptions {
     showPlayButton: boolean;
     showFullscreenButton: boolean;
@@ -17,12 +19,14 @@ interface Iimages {
 }
 
 const ImgSlider: React.FC = () => {
+    // react-image-gallery options
     const options: IOptions = {
         showPlayButton: false,
         showFullscreenButton: false,
         autoPlay: true
     };
 
+    // images
     const images: Iimages[] = [
         {
             original: ProductImg1,

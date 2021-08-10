@@ -1,8 +1,8 @@
 import React from 'react';
 // importing Quantity component
-import Quantity from '../Other/Quantity';
+import Quantity from '../../Other/Quantity';
 // importing SocialMedia component
-import { SocialMediaData } from '../Other/SocialMediaData';
+import { SocialMediaData } from '../../Other/SocialMediaData';
 // importing icons
 import { FiBarChart2 } from 'react-icons/fi';
 import { BsHeart } from 'react-icons/bs';
@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 
 const ProductInfo: React.FC = () => {
     return (
-        <div className="book-info">
+        <div className="product-info">
             {/* ===== title-and-rating ===== */}
             <div className="title-and-rating">
                 <h5>Korea Long Sofa Fabric In Blue Navy Color</h5>

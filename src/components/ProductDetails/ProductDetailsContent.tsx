@@ -1,11 +1,11 @@
 import React from 'react';
-import ImgSlider from './ImgSlider';
-import ProductInfo from './ProductInfo';
-import ProductsTab from './ProductTabs/ProductsTab';
+import ImgSlider from './PrimaryInfo/ImgSlider';
+import ProductInfo from './PrimaryInfo/ProductInfo';
+import ProductTabs from './ProductTabs/ProductTabs';
 
-const ProductContent: React.FC = () => {
+const ProductDetailsContent: React.FC = () => {
     return (
-        <section id="book-details">
+        <section id="product-details">
             <div className="container">
                 <div className="row">
                     <div className="col-lg-6">
@@ -15,11 +15,9 @@ const ProductContent: React.FC = () => {
                         <ProductInfo />
                     </div>
                 </div>
-                <div className="product-tabs-wrapper">
-                    <div className="row">
-                        <div className="col-12">
-                            <ProductsTab />
-                        </div>
+                <div className="row">
+                    <div className="col-12">
+                        <ProductTabs />
                     </div>
                 </div>
             </div>
@@ -27,4 +25,4 @@ const ProductContent: React.FC = () => {
     )
 }
 
-export default ProductContent;
+export default ProductDetailsContent;

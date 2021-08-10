@@ -102,3 +102,29 @@
     }
   }
 }
+
+.quick-view-modal {
+  @extend %modal;
+}
+
+.img-slider {
+  @extend %img-slider;
+
+  .image-gallery-right-nav {
+    right: 10px;
+  }
+
+  .image-gallery-left-nav {
+    left: 10px;
+  }
+}
+
+.product-info {
+  @extend %product-info;
+
+  .quantity-area {
+    input[type="text"] {
+      width: 120px !important;
+    }
+  }
+}

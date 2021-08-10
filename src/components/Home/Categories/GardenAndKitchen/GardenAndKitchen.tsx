@@ -11,7 +11,7 @@ import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 // importing owl-carousel options
-import { Options } from '../../Other/OwlCarouselOptions';
+import { Options } from '../../../Other/OwlCarouselOptions';
 
 const GardenAndKitchen: React.FC = () => {
     return (

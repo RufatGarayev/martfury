@@ -12,7 +12,7 @@ interface ITabList {
     reviewCount?: number;
 }
 
-const ProductsTab: React.FC = () => {
+const ProductTabs: React.FC = () => {
     const [clickedBtn, setClickedBtn] = useState<string>("Description");
 
     // Tablist data
@@ -30,12 +30,12 @@ const ProductsTab: React.FC = () => {
                 <ul>
                     {
                         TabList.map(tabListItem => (
-                            <li key={tabListItem.id}>
+                            <li key={tabListItem.id} className={tabListItem.title === clickedBtn ? "active-btn" : ""}>
                                 <button
                                     type="button"
                                     onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => setClickedBtn(tabListItem.title)}
                                 >
-                                    {tabListItem.reviewCount ? tabListItem.title + "(" + tabListItem.reviewCount + ")" : tabListItem.title}
+                                    {tabListItem.reviewCount ? tabListItem.title + " (" + tabListItem.reviewCount + ")" : tabListItem.title}
                                 </button>
                             </li>
                         ))
@@ -61,4 +61,4 @@ const ProductsTab: React.FC = () => {
     )
 }
 
-export default ProductsTab;
+export default ProductTabs;
