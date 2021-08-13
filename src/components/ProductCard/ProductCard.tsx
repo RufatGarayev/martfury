@@ -13,13 +13,19 @@ import ProductInfo from '../ProductDetails/PrimaryInfo/ProductInfo';
 import ImgSlider from '../ProductDetails/PrimaryInfo/ImgSlider';
 // importing book img
 import BookImg from '../../assets/img/products/book.jpg';
+import {IProducts} from '../../data/products';
 
+// interface IProps {
+//     product: IProducts;
+// }
 
-const ProductCard: React.FC = () => {
+const ProductCard: React.FC<IProducts> = ({ product }) => {
     const [showModal, setShowModal] = useState<boolean>(false);
 
     const handleShow = (): void => setShowModal(true);
     const handleClose = (): void => setShowModal(false);
+
+    console.log(product)
 
     return (
         <>

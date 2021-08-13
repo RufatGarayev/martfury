@@ -1,10 +1,10 @@
 import React from 'react';
-// components
+// import components
 import Header from './components/Header/Header';
 import Subscribe from './components/Subscribe/Subscribe';
 import Footer from './components/Footer/Footer';
 import BackToTopBtn from './components/Other/BackToTopBtn';
-// pages
+// import pages
 import Home from './pages/Home';
 import About from './pages/About';
 import Shop from './pages/Shop';
@@ -16,40 +16,48 @@ import Wishlist from './pages/Wishlist';
 import ShoppingCart from './pages/ShoppingCart';
 import Checkout from './pages/Checkout';
 import ProductDetails from './pages/ProductDetails';
-// react-router
+// import react-router
 import { BrowserRouter, Route } from "react-router-dom";
+// import configureStore
+import configureStore from './redux/store/configureStore';
+// import Provider
+import { Provider } from "react-redux";
 
 const App: React.FC = () => {
+  const store = configureStore();
+
   return (
-    <BrowserRouter>
-      <div className="App">
-        
-        <header>
-          <Header />
-        </header>
+    <Provider store={store}>
+      <BrowserRouter>
+        <div className="App">
 
-        <main>
-          <Route path="/" component={Home} exact />
-          <Route path="/about" component={About} />
-          <Route path="/shop" component={Shop} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
-          <Route path="/compare" component={Compare} />
-          <Route path="/wishlist" component={Wishlist} />
-          <Route path="/cart" component={ShoppingCart} />
-          <Route path="/checkout" component={Checkout} />
-          <Route path="/product-details" component={ProductDetails} />
-          <Subscribe />
-        </main>
+          <header>
+            <Header />
+          </header>
 
-        <footer>
-          <Footer />
-        </footer>
+          <main>
+            <Route path="/" component={Home} exact />
+            <Route path="/about" component={About} />
+            <Route path="/shop" component={Shop} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
+            <Route path="/compare" component={Compare} />
+            <Route path="/wishlist" component={Wishlist} />
+            <Route path="/cart" component={ShoppingCart} />
+            <Route path="/checkout" component={Checkout} />
+            <Route path="/product-details" component={ProductDetails} />
+            <Subscribe />
+          </main>
 
-        <BackToTopBtn />
-      </div>
-    </BrowserRouter>
+          <footer>
+            <Footer />
+          </footer>
+
+          <BackToTopBtn />
+        </div>
+      </BrowserRouter>
+    </Provider>
   );
 }
 
