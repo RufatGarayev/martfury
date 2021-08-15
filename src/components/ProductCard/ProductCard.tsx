@@ -18,15 +18,13 @@ import { IProducts } from '../../data/products';
 import { AddToCart } from '../../redux/actions/cartActions';
 
 interface IProps {
-    product?: IProducts;
+    product: IProducts;
 }
 
 const ProductCard: React.FC<IProps> = ({ product }) => {
     const [showModal, setShowModal] = useState<boolean>(false);
-
     const handleShow = (): void => setShowModal(true);
     const handleClose = (): void => setShowModal(false);
-
     const dispatch = useDispatch();
 
     return (
@@ -43,7 +41,9 @@ const ProductCard: React.FC<IProps> = ({ product }) => {
                     }
                     {/* ======= Image ======= */}
                     <div className="product-img">
-                        <img src={product?.img} alt="laptop" />
+                        <Link to={`/product-details/${product?.id}`}>
+                            <img src={product?.img} alt="laptop" />
+                        </Link>
                     </div>
                     {/* ======= Actions ======= */}
                     <div className="product-actions">
@@ -105,7 +105,7 @@ const ProductCard: React.FC<IProps> = ({ product }) => {
                 {/* ======= Title ======= */}
                 <div className="product-title">
                     <h6>
-                        <Link to="/product-details">
+                        <Link to={`/product-details/${product?.id}`}>
                             {product?.title}
                         </Link>
                     </h6>
@@ -125,10 +125,10 @@ const ProductCard: React.FC<IProps> = ({ product }) => {
                     <div className="modal-product-info">
                         <div className="row">
                             <div className="col-lg-6">
-                                <ImgSlider />
+                                <ImgSlider product={product} />
                             </div>
                             <div className="col-lg-6">
-                                <ProductInfo />
+                                <ProductInfo product={product} />
                             </div>
                         </div>
                     </div>

@@ -1,35 +1,42 @@
 import React from 'react';
-// importing Quantity component
-// import Quantity from '../../Other/Quantity';
-// importing SocialMedia component
+import Quantity from '../../Other/Quantity';
 import { SocialMediaData } from '../../Other/SocialMediaData';
-// importing icons
 import { FiBarChart2 } from 'react-icons/fi';
 import { BsHeart } from 'react-icons/bs';
-// importing Link
 import { Link } from 'react-router-dom';
+import { IProducts } from '../../../data/products';
+import { IncreaseProductCount, DecreaseProductCount } from '../../../redux/actions/cartActions';
 
-const ProductInfo: React.FC = () => {
+interface IProps {
+    product: IProducts;
+}
+
+const ProductInfo: React.FC<IProps> = ({ product }) => {
+
     return (
         <div className="product-info">
             {/* ===== title-and-rating ===== */}
             <div className="title-and-rating">
-                <h5>Korea Long Sofa Fabric In Blue Navy Color</h5>
+                <h5>{product?.title}</h5>
                 <p>
-                    <span className="rating">★★★★★</span>
+                    <span className="rating">{product?.rating}</span>
                     <small className="review-count text-muted">(1 review)</small>
                 </p>
             </div>
             {/* ===== price-and-description ===== */}
             <div className="price-and-description">
                 <div className="price">
-                    <p className="old-price d-flex">
-                        <span>$</span>
-                        <del>670.00</del>
-                    </p>
+                    {
+                        product?.previousPrice && (
+                            <p className="old-price d-flex">
+                                <span>$</span>
+                                <del>{product?.previousPrice?.toFixed(2)}</del>
+                            </p>
+                        )
+                    }
                     <p className="new-price">
                         <span>$</span>
-                        <span>567.00</span>
+                        <span>{product?.price.toFixed(2)}</span>
                     </p>
                 </div>
                 <div className="product-description">
@@ -46,6 +53,11 @@ const ProductInfo: React.FC = () => {
             <div className="quantity-and-buttons">
                 <div className="top-btns">
                     <div className="quantity-wrapper top-btn">
+                        <Quantity 
+                            product={product}
+                            increaseCount={IncreaseProductCount}
+                            decreaseCount={DecreaseProductCount}
+                        />
                     </div>
                     <div className="add-to-cart-btn top-btn">
                         <button type="button">

@@ -1,19 +1,17 @@
 import React from 'react';
-// importing product card
 import ProductCard from '../../../ProductCard/ProductCard';
-// importing section header
 import SectionHeader from '../../Other/SectionHeader';
-// importing buttons
 import { ButtonsAndLinkData } from '../ButtonsAndLinkData/ButtonsAndLinkData';
-// importing owl-carousel
 import OwlCarousel from 'react-owl-carousel';
-// importing owl-carousel styles
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
-// importing owl-carousel options
 import { Options } from '../../../Other/OwlCarouselOptions';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../../../redux/reducers/index';
 
 const GardenAndKitchen: React.FC = () => {
+    const products = useSelector((state: RootState) => state.products);
+
     return (
         <div className="garden-and-kitchen">
             {/* ======= Section header ======= */}
@@ -25,31 +23,14 @@ const GardenAndKitchen: React.FC = () => {
             </div>
             {/* ======= Owl-carousel ======= */}
             <div className="owl-carousel-wrapper">
-                <OwlCarousel
-                    className='owl-theme'
-                    {...Options}
-                >
-                    <div className='item'>
-                        <ProductCard />
-                    </div>
-                    <div className='item'>
-                        <ProductCard />
-                    </div>
-                    <div className='item'>
-                        <ProductCard />
-                    </div>
-                    <div className='item'>
-                        <ProductCard />
-                    </div>
-                    <div className='item'>
-                        <ProductCard />
-                    </div>
-                    <div className='item'>
-                        <ProductCard />
-                    </div>
-                    <div className='item'>
-                        <ProductCard />
-                    </div>
+                <OwlCarousel className='owl-theme' {...Options}>
+                    {
+                        products.products.map(product => (
+                            <div key={product.id} className='item'>
+                                <ProductCard product={product} />
+                            </div>
+                        ))
+                    }
                 </OwlCarousel>
             </div>
         </div>

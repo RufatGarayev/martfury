@@ -14,7 +14,6 @@ interface IProps {
 
 const CartTable: React.FC<IProps> = (props) => {
     const { cart } = props.cart;
-
     const dispatch = useDispatch();
 
     return (

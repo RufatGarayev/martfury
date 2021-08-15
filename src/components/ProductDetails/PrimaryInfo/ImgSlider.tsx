@@ -1,10 +1,7 @@
 import React from 'react';
-import ProductImg1 from '../../../assets/img/products/laptop.jpg';
-import ProductImg2 from '../../../assets/img/products/laptop2.jpg';
-import ProductImg3 from '../../../assets/img/products/laptop3.jpg';
-// importing react-image-gallery
 import "react-image-gallery/styles/scss/image-gallery.scss";
 import ImageGallery from 'react-image-gallery';
+import { IProducts } from '../../../data/products';
 
 // data types
 interface IOptions {
@@ -14,11 +11,15 @@ interface IOptions {
 };
 
 interface Iimages {
-    original: string;
-    thumbnail: string;
+    original: any;
+    thumbnail: any;
 }
 
-const ImgSlider: React.FC = () => {
+interface IProps {
+    product: IProducts;
+}
+
+const ImgSlider: React.FC<IProps> = ({ product }) => {
     // react-image-gallery options
     const options: IOptions = {
         showPlayButton: false,
@@ -29,16 +30,16 @@ const ImgSlider: React.FC = () => {
     // images
     const images: Iimages[] = [
         {
-            original: ProductImg1,
-            thumbnail: ProductImg1,
+            original: product?.img,
+            thumbnail: product?.img,
         },
         {
-            original: ProductImg2,
-            thumbnail: ProductImg2,
+            original: product?.img,
+            thumbnail: product?.img,
         },
         {
-            original: ProductImg3,
-            thumbnail: ProductImg3,
+            original: product?.img,
+            thumbnail: product?.img,
         },
     ];
 

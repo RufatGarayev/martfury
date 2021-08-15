@@ -1,55 +1,71 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import BookImg from '../../../assets/img/products/book.jpg';
+import { IProducts } from '../../../data/products';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '../../../redux/reducers/index';
+import { DeleteFromCart } from '../../../redux/actions/cartActions';
 
 const DropdownCart: React.FC = () => {
+    const cart = useSelector((state: RootState) => state.cart);
+    const dispatch = useDispatch();
+
+    const totalPrice = cart.cart.reduce((total: number, product: IProducts) => 
+    (total += product.price * product.count), 0);
+
     return (
         <div className="dropdownCart-wrapper">
             <div className="dropdownCart">
                 <table>
                     <tbody className="table-body">
-                        <tr>
-                            <td>
-                                {/* ======= Remove button ======= */}
-                                <div className="remove-btn">
-                                    <button type="button">
-                                        ✕
-                                    </button>
-                                </div>
-                            </td>
-                            <td>
-                                {/* ======= Image ======= */}
-                                <div className="book-img">
-                                    <Link to="/">
-                                        <div className="img-wrapper">
-                                            <img className="img-fluid" src={BookImg} alt="book" />
+                        {
+                            cart.cart.map((product: IProducts) => (
+                                <tr key={product.id}>
+                                    <td>
+                                        {/* ======= Remove button ======= */}
+                                        <div className="remove-btn">
+                                            <button
+                                                type="button"
+                                                onClick={(e: React.MouseEvent<HTMLButtonElement>) => dispatch(DeleteFromCart(product.id))}
+                                            >
+                                                ✕
+                                            </button>
                                         </div>
-                                    </Link>
-                                </div>
-                            </td>
-                            <td>
-                                <ul className="d-flex flex-column align-items-start">
-                                    <li>
-                                        {/* ======= Title ======= */}
-                                        <h6 className="book-title">
+                                    </td>
+                                    <td>
+                                        {/* ======= Image ======= */}
+                                        <div className="product-img">
                                             <Link to="/">
-                                                Herschel Leather Duffle Bag In Brown Color
+                                                <div className="img-wrapper">
+                                                    <img className="img-fluid" src={product.img} alt={product.title} />
+                                                </div>
                                             </Link>
-                                        </h6>
-                                    </li>
-                                    {/* ======= Count and Price ======= */}
-                                    <li className="count-and-price">
-                                        <small className="d-flex">
-                                            <p className="total-price price d-flex align-items-center">
-                                                <span>$</span> 1500.00
-                                            </p>
-                                            <span className="multiplication">×</span>
-                                            <span className="book-count">2</span>
-                                        </small>
-                                    </li>
-                                </ul>
-                            </td>
-                        </tr>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <ul className="d-flex flex-column align-items-start">
+                                            <li>
+                                                {/* ======= Title ======= */}
+                                                <h6 className="product-title">
+                                                    <Link to="/">
+                                                        {product.title}
+                                                    </Link>
+                                                </h6>
+                                            </li>
+                                            {/* ======= Count and Price ======= */}
+                                            <li className="count-and-price">
+                                                <small className="d-flex">
+                                                    <p className="total-price price d-flex align-items-center">
+                                                        <span>$</span> {product.price.toFixed(2)}
+                                                    </p>
+                                                    <span className="multiplication">×</span>
+                                                    <span className="book-count">{product.count}</span>
+                                                </small>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            ))
+                        }
                     </tbody>
                 </table>
 
@@ -57,7 +73,7 @@ const DropdownCart: React.FC = () => {
                 <div className="total-area">
                     <div className="top-content d-flex justify-content-between">
                         <h6>Subtotal</h6>
-                        <p><span>$</span>1500.00</p>
+                        <p><span>$</span>{totalPrice.toFixed(2)}</p>
                     </div>
                     <div className="links d-flex align-items-center justify-content-between">
                         <div className="view-cart-btn text-center">
