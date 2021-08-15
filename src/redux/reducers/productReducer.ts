@@ -1,18 +1,11 @@
-import { products, IProducts } from '../../data/products';
-import { 
-    Action,
-    //  ActionType 
-} from '../actions/actionTypes';
-
-export interface IState {
-    products: IProducts[];
-}
+import { products } from '../../data/products';
+// import { Action, ActionType } from '../actions/actionTypes';
 
 const initialState = {
     products: products
-};
+}
 
-const productReducer = (state: IState = initialState, action: Action) => {
+const productReducer = (state = initialState, action: any) => {
     switch (action.type) {
 
         default:

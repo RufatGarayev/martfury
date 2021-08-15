@@ -1,6 +1,6 @@
 import React from 'react';
 // importing Quantity component
-import Quantity from '../../Other/Quantity';
+// import Quantity from '../../Other/Quantity';
 // importing SocialMedia component
 import { SocialMediaData } from '../../Other/SocialMediaData';
 // importing icons
@@ -46,7 +46,6 @@ const ProductInfo: React.FC = () => {
             <div className="quantity-and-buttons">
                 <div className="top-btns">
                     <div className="quantity-wrapper top-btn">
-                        <Quantity />
                     </div>
                     <div className="add-to-cart-btn top-btn">
                         <button type="button">

@@ -1,10 +1,31 @@
+import { IProducts } from '../../data/products';
+
 export enum ActionType {
-    GET_PRODUCTS_SUCCESS = "GET_PRODUCTS_SUCCESS"
+    ADD_TO_CART = "ADD_TO_CART",
+    DELETE_FROM_CART = "DELETE_FROM_CART",
+    INCREASE_PRODUCT_COUNT = "INCREASE_PRODUCT_COUNT",
+    DECREASE_PRODUCT_COUNT = "DECREASE_PRODUCT_COUNT",
+    GET_TOTAL_PRICE = "GET_TOTAL_PRICE"
 }
 
-interface GetProductsSuccessAction {
-    type: ActionType.GET_PRODUCTS_SUCCESS,
-    payload: number
+interface AddToCartAction {
+    type: ActionType.ADD_TO_CART;
+    payload: IProducts;
 }
 
-export type Action = GetProductsSuccessAction;
+interface DeleteFromCartAction {
+    type: ActionType.DELETE_FROM_CART;
+    payload: number;
+}
+
+interface IncreaseAction {
+    type: ActionType.INCREASE_PRODUCT_COUNT;
+    payload: number;
+}
+
+interface DecreaseAction {
+    type: ActionType.DECREASE_PRODUCT_COUNT;
+    payload: number;
+}
+
+export type CartAction = AddToCartAction | DeleteFromCartAction | IncreaseAction | DecreaseAction;

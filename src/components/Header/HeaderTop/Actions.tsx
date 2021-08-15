@@ -1,9 +1,50 @@
 import React from 'react';
-import { ActionsData } from './ActionsData';
+import DropdownCart from './DropdownCart';
+import { FiBarChart2 } from 'react-icons/fi';
+import { BsHeart } from 'react-icons/bs';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { HiOutlineUser } from 'react-icons/hi';
 import { Link } from "react-router-dom";
+import { useSelector } from 'react-redux';
+import { RootState } from '../../../redux/reducers/index';
+
+interface IActionDataTypes {
+    id: number;
+    href: string;
+    sup: number;
+    icon: JSX.Element;
+    class: string;
+    dropdownContent?: JSX.Element;
+}
 
 const Actions: React.FC = () => {
+    const cart = useSelector((state: RootState) => state.cart);
+
+    const ActionsData: IActionDataTypes[] = [
+        {
+            id: 1,
+            href: "/compare",
+            sup: 0,
+            icon: <FiBarChart2 />,
+            class: "first-link"
+        },
+        {
+            id: 2,
+            href: "/wishlist",
+            sup: 0,
+            icon: <BsHeart />,
+            class: "second-link"
+        },
+        {
+            id: 3,
+            href: "#/",
+            sup: cart.cart.length,
+            icon: <AiOutlineShoppingCart />,
+            class: "third-link",
+            dropdownContent: <DropdownCart />
+        }
+    ];
+
     return (
         <div className="header-top-actions d-flex">
             {/* ======= Left actions ======= */}
@@ -14,7 +55,7 @@ const Actions: React.FC = () => {
                             <li key={item.id}>
                                 <Link to={item.href} className={item.class}>
                                     {item.icon}
-                                    <sup>0</sup>
+                                    <sup>{item.sup}</sup>
                                 </Link>
                                 {item.dropdownContent}
                             </li>

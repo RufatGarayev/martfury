@@ -18,14 +18,12 @@ import Checkout from './pages/Checkout';
 import ProductDetails from './pages/ProductDetails';
 // import react-router
 import { BrowserRouter, Route } from "react-router-dom";
-// import configureStore
-import configureStore from './redux/store/configureStore';
+// import store
+import store from './redux/store/store';
 // import Provider
 import { Provider } from "react-redux";
 
 const App: React.FC = () => {
-  const store = configureStore();
-
   return (
     <Provider store={store}>
       <BrowserRouter>

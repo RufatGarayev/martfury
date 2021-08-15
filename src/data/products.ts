@@ -3,7 +3,6 @@ export interface IProducts {
     img: string;
     title: string;
     price: number;
-    previousPrice?: number;
     label: string;
     rating: string;
     category: string;
@@ -13,12 +12,13 @@ export interface IProducts {
     isInCart: boolean;
     isInWishlist: boolean;
     isInCompare: boolean;
+    previousPrice?: number;
 }
 
 export const products: IProducts[] = [
     {
         id: 1,
-        img: "all-books/artificial-intelligence.jpg",
+        img: "imgs/artificial-intelligence.jpg",
         title: "Artificial Intelligence",
         price: 12.00,
         label: "New",
@@ -33,7 +33,7 @@ export const products: IProducts[] = [
     },
     {
         id: 2,
-        img: "all-books/country.jpg",
+        img: "imgs/country.jpg",
         title: "Country",
         price: 11.00,
         label: "",
@@ -48,7 +48,7 @@ export const products: IProducts[] = [
     },
     {
         id: 3,
-        img: "all-books/doctor-who.jpg",
+        img: "imgs/doctor-who.jpg",
         title: "Doctor Who",
         price: 14.00,
         label: "New",
@@ -64,7 +64,7 @@ export const products: IProducts[] = [
     },
     {
         id: 4,
-        img: "all-books/gulliver's-travels.jpg",
+        img: "imgs/gulliver's-travels.jpg",
         title: "Gulliver's Travels",
         price: 4.00,
         label: "",
@@ -79,7 +79,7 @@ export const products: IProducts[] = [
     },
     {
         id: 5,
-        img: "all-books/les-miserables.jpg",
+        img: "imgs/les-miserables.jpg",
         title: "Les Miserables",
         previousPrice: 20.00,
         price: 17.00,
@@ -95,7 +95,7 @@ export const products: IProducts[] = [
     },
     {
         id: 6,
-        img: "all-books/nineteen-eighty-four.jpg",
+        img: "imgs/nineteen-eighty-four.jpg",
         title: "1984",
         price: 9.00,
         label: "",

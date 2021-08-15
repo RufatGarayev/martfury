@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 // importing react-icons
 import { FiBarChart2 } from 'react-icons/fi';
 import { BsHeart } from 'react-icons/bs';
@@ -11,40 +12,49 @@ import { Modal } from 'react-bootstrap';
 // importing product info
 import ProductInfo from '../ProductDetails/PrimaryInfo/ProductInfo';
 import ImgSlider from '../ProductDetails/PrimaryInfo/ImgSlider';
-// importing book img
-import BookImg from '../../assets/img/products/book.jpg';
-import {IProducts} from '../../data/products';
+// importing IProducts
+import { IProducts } from '../../data/products';
+// importing actions
+import { AddToCart } from '../../redux/actions/cartActions';
 
-// interface IProps {
-//     product: IProducts;
-// }
+interface IProps {
+    product?: IProducts;
+}
 
-const ProductCard: React.FC<IProducts> = ({ product }) => {
+const ProductCard: React.FC<IProps> = ({ product }) => {
     const [showModal, setShowModal] = useState<boolean>(false);
 
     const handleShow = (): void => setShowModal(true);
     const handleClose = (): void => setShowModal(false);
 
-    console.log(product)
+    const dispatch = useDispatch();
 
     return (
         <>
             <div className="product-card">
                 <div className="card-top">
                     {/* ======= Label ======= */}
-                    <div className="product-label">
-                        <span>-14%</span>
-                    </div>
+                    {
+                        product?.label && (
+                            <div className="product-label">
+                                <span>{product?.label}</span>
+                            </div>
+                        )
+                    }
                     {/* ======= Image ======= */}
                     <div className="product-img">
-                        <img src={BookImg} alt="laptop" />
+                        <img src={product?.img} alt="laptop" />
                     </div>
                     {/* ======= Actions ======= */}
                     <div className="product-actions">
                         <ul>
                             <li>
                                 {/* ===== Add-to-cart button ===== */}
-                                <button type="button" title="Add To Cart">
+                                <button
+                                    type="button"
+                                    onClick={(e: React.MouseEvent<HTMLButtonElement>) => dispatch(AddToCart(product))}
+                                    title="Add To Cart"
+                                >
                                     <span className="cart-icon">
                                         <AiOutlineShoppingCart />
                                     </span>
@@ -84,21 +94,25 @@ const ProductCard: React.FC<IProducts> = ({ product }) => {
                 {/* ======= Price ======= */}
                 <div className="product-price">
                     <p>
-                        <span>$1,200</span>
-                        <del>1,362.99</del>
+                        <span>${product?.price.toFixed(2)}</span>
+                        {
+                            product?.previousPrice && (
+                                <del>${product?.previousPrice?.toFixed(2)}</del>
+                            )
+                        }
                     </p>
                 </div>
                 {/* ======= Title ======= */}
                 <div className="product-title">
                     <h6>
                         <Link to="/product-details">
-                            Apple Macbook Display 12
+                            {product?.title}
                         </Link>
                     </h6>
                 </div>
                 {/* ======= Rating ======= */}
                 <div className="product-rating">
-                    <span>★★★★★</span>
+                    <span>{product?.rating}</span>
                 </div>
             </div>
 

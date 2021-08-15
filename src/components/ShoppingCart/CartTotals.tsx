@@ -1,7 +1,17 @@
 import React from 'react';
+import { IProducts } from '../../data/products';
 import { Link } from "react-router-dom";
 
-const CartTotals: React.FC = () => {
+interface IProps {
+    cart: any;
+}
+
+const CartTotals: React.FC<IProps> = (props) => {
+    const { cart } = props.cart;
+
+    const totalPrice = cart.reduce((total: number, product: IProducts) => 
+    (total += product.price * product.count), 0);
+
     return (
         <div className="cart-totals">
             <div className="cart-totals-content">
@@ -13,14 +23,14 @@ const CartTotals: React.FC = () => {
                 <div className="subtotal price d-flex justify-content-between align-items-center">
                     <h6>Subtotal</h6>
                     <p>
-                        <span>$</span>90.00
+                        <span>$</span>{totalPrice.toFixed(2)}
                     </p>
                 </div>
                 {/* ======= Grand total ======= */}
                 <div className="grand-total price d-flex justify-content-between">
                     <h5>Total</h5>
                     <p>
-                        <span>$</span>90.00
+                        <span>$</span>{totalPrice.toFixed(2)}
                     </p>
                 </div>
             </div>

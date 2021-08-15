@@ -48,6 +48,16 @@
             padding: 20px 0;
             margin-right: 15px;
           }
+
+          .quantity-wrapper {
+            @extend %quantity-input;
+            display: flex;
+            justify-content: center;
+
+            .quantity-area {
+              width: 145px;
+            }
+          }
         }
       }
     }
