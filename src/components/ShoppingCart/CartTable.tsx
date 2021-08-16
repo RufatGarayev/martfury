@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { IProducts } from '../../data/products';
 import { useDispatch } from 'react-redux';
@@ -6,13 +6,15 @@ import {
     DeleteFromCart, IncreaseProductCount,
     DecreaseProductCount
 } from '../../redux/actions/cartActions';
-import Quantity from '../Other/Quantity';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 interface IProps {
     cart: any;
 }
 
 const CartTable: React.FC<IProps> = (props) => {
+    const [size] = useState<number>(1);
     const { cart } = props.cart;
     const dispatch = useDispatch();
 
@@ -59,11 +61,23 @@ const CartTable: React.FC<IProps> = (props) => {
                                 <td>
                                     {/* ======= Quantity ======= */}
                                     <div className="quantity-wrapper">
-                                        <Quantity
-                                            product={product}
-                                            increaseCount={IncreaseProductCount}
-                                            decreaseCount={DecreaseProductCount}
-                                        />
+                                        <div className="quantity-area d-flex align-items-center">
+                                            <button
+                                                className="minus-btn"
+                                                disabled={product.count === 1}
+                                                onClick={(e: React.MouseEvent<HTMLButtonElement>) => dispatch(DecreaseProductCount(product.id))}
+                                            >
+                                                −
+                                            </button>
+                                            <input type="text" size={size} readOnly value={product.count} />
+                                            <button
+                                                className="plus-btn"
+                                                disabled={product.count === 10}
+                                                onClick={(e: React.MouseEvent<HTMLButtonElement>) => dispatch(IncreaseProductCount(product.id))}
+                                            >
+                                                +
+                                            </button>
+                                        </div>
                                     </div>
                                 </td>
                                 <td>
@@ -77,7 +91,10 @@ const CartTable: React.FC<IProps> = (props) => {
                                     <div className="remove-btn">
                                         <button
                                             type="button"
-                                            onClick={(e: React.MouseEvent<HTMLButtonElement>) => dispatch(DeleteFromCart(product.id))}
+                                            onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+                                                dispatch(DeleteFromCart(product.id));
+                                                toast.error('"' + product.title + '" removed from the cart');
+                                            }}
                                         >
                                             ✕
                                         </button>

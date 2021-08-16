@@ -4,13 +4,15 @@ import { IProducts } from '../../../data/products';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../../redux/reducers/index';
 import { DeleteFromCart } from '../../../redux/actions/cartActions';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const DropdownCart: React.FC = () => {
     const cart = useSelector((state: RootState) => state.cart);
     const dispatch = useDispatch();
 
-    const totalPrice = cart.cart.reduce((total: number, product: IProducts) => 
-    (total += product.price * product.count), 0);
+    const totalPrice = cart.cart.reduce((total: number, product: IProducts) =>
+        (total += product.price * product.count), 0);
 
     return (
         <div className="dropdownCart-wrapper">
@@ -25,7 +27,10 @@ const DropdownCart: React.FC = () => {
                                         <div className="remove-btn">
                                             <button
                                                 type="button"
-                                                onClick={(e: React.MouseEvent<HTMLButtonElement>) => dispatch(DeleteFromCart(product.id))}
+                                                onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+                                                    dispatch(DeleteFromCart(product.id));
+                                                    toast.error('"' + product.title + '" removed from the cart');
+                                                }}
                                             >
                                                 ✕
                                             </button>
@@ -43,8 +48,8 @@ const DropdownCart: React.FC = () => {
                                     </td>
                                     <td>
                                         <ul className="d-flex flex-column align-items-start">
+                                            {/* ======= Title ======= */}
                                             <li>
-                                                {/* ======= Title ======= */}
                                                 <h6 className="product-title">
                                                     <Link to="/">
                                                         {product.title}

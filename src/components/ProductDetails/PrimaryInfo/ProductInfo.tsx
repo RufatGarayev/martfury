@@ -5,7 +5,6 @@ import { FiBarChart2 } from 'react-icons/fi';
 import { BsHeart } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import { IProducts } from '../../../data/products';
-import { IncreaseProductCount, DecreaseProductCount } from '../../../redux/actions/cartActions';
 
 interface IProps {
     product: IProducts;
@@ -53,10 +52,8 @@ const ProductInfo: React.FC<IProps> = ({ product }) => {
             <div className="quantity-and-buttons">
                 <div className="top-btns">
                     <div className="quantity-wrapper top-btn">
-                        <Quantity 
+                        <Quantity
                             product={product}
-                            increaseCount={IncreaseProductCount}
-                            decreaseCount={DecreaseProductCount}
                         />
                     </div>
                     <div className="add-to-cart-btn top-btn">

@@ -1,21 +1,17 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-// importing react-icons
 import { FiBarChart2 } from 'react-icons/fi';
 import { BsHeart } from 'react-icons/bs';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { ImEye } from 'react-icons/im';
-// importing Link
 import { Link } from 'react-router-dom';
-// importing modal
 import { Modal } from 'react-bootstrap';
-// importing product info
 import ProductInfo from '../ProductDetails/PrimaryInfo/ProductInfo';
 import ImgSlider from '../ProductDetails/PrimaryInfo/ImgSlider';
-// importing IProducts
 import { IProducts } from '../../data/products';
-// importing actions
 import { AddToCart } from '../../redux/actions/cartActions';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 interface IProps {
     product: IProducts;
@@ -25,6 +21,7 @@ const ProductCard: React.FC<IProps> = ({ product }) => {
     const [showModal, setShowModal] = useState<boolean>(false);
     const handleShow = (): void => setShowModal(true);
     const handleClose = (): void => setShowModal(false);
+
     const dispatch = useDispatch();
 
     return (
@@ -52,8 +49,11 @@ const ProductCard: React.FC<IProps> = ({ product }) => {
                                 {/* ===== Add-to-cart button ===== */}
                                 <button
                                     type="button"
-                                    onClick={(e: React.MouseEvent<HTMLButtonElement>) => dispatch(AddToCart(product))}
                                     title="Add To Cart"
+                                    onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+                                        dispatch(AddToCart(product));
+                                        toast.success('"' + product.title + '" added to the cart');
+                                    }}
                                 >
                                     <span className="cart-icon">
                                         <AiOutlineShoppingCart />
