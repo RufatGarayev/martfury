@@ -1,15 +1,54 @@
 import React from 'react';
-import HeaderTop from './HeaderTop/HeaderTop';
-import HeaderBottom from './HeaderBottom/HeaderBottom';
+import { Link } from "react-router-dom";
+import BrandLogo from '../../assets/img/brand/brand.png';
+import Search from './HeaderTop/Search';
+import Actions from './HeaderTop/Actions';
+import Department from './HeaderBottom/Department';
+import LangAndMonetaryUnit from './HeaderBottom/LangAndMonetaryUnit';
+import { NavLinksData } from './HeaderBottom/HeaderBottomData';
 
 const Header: React.FC = () => {
     return (
         <div className="header">
+            {/* ======= Header-top ======= */}
             <div className="header-top-wrapper">
-                <HeaderTop />
+                <div className="header-top">
+                    <div className="brand">
+                        <Link to="/">
+                            <img className="img-fluid" src={BrandLogo} alt="brand" />
+                        </Link>
+                    </div>
+                    <div className="search-wrapper w-100">
+                        <Search />
+                    </div>
+                    <div className="header-top-actions-wrapper">
+                        <Actions />
+                    </div>
+                </div>
             </div>
+            {/* ======= Header-bottom ======= */}
             <div className="header-bottom-wrapper">
-                <HeaderBottom />
+                <div className="header-bottom">
+                    <div className="department-wrapper">
+                        <Department />
+                    </div>
+                    <div className="nav-links-wrapper">
+                        <ul className="d-flex">
+                            {
+                                NavLinksData.map(link => (
+                                    <li key={link.id}>
+                                        <Link to={link.href} className={link.class}>
+                                            {link.title}
+                                        </Link>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </div>
+                    <div className="lang-and-monetary-unit-wrapper">
+                        <LangAndMonetaryUnit />
+                    </div>
+                </div>
             </div>
         </div>
     )

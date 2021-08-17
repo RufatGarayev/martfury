@@ -15,7 +15,7 @@ interface IProps {
 
 const CartTable: React.FC<IProps> = (props) => {
     const [size] = useState<number>(1);
-    const { cart } = props.cart;
+    const { cart } = props;
     const dispatch = useDispatch();
 
     return (
@@ -65,7 +65,10 @@ const CartTable: React.FC<IProps> = (props) => {
                                             <button
                                                 className="minus-btn"
                                                 disabled={product.count === 1}
-                                                onClick={(e: React.MouseEvent<HTMLButtonElement>) => dispatch(DecreaseProductCount(product.id))}
+                                                onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+                                                    dispatch(DecreaseProductCount(product.id));
+                                                    toast.error('"' + product.title + '" removed from the cart.');
+                                                }}
                                             >
                                                 −
                                             </button>
@@ -73,7 +76,10 @@ const CartTable: React.FC<IProps> = (props) => {
                                             <button
                                                 className="plus-btn"
                                                 disabled={product.count === 10}
-                                                onClick={(e: React.MouseEvent<HTMLButtonElement>) => dispatch(IncreaseProductCount(product.id))}
+                                                onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+                                                    dispatch(IncreaseProductCount(product.id));
+                                                    toast.success('"' + product.title + '" added to the cart.');
+                                                }}
                                             >
                                                 +
                                             </button>
@@ -93,7 +99,7 @@ const CartTable: React.FC<IProps> = (props) => {
                                             type="button"
                                             onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                                                 dispatch(DeleteFromCart(product.id));
-                                                toast.error('"' + product.title + '" removed from the cart');
+                                                toast.error('"' + product.title + '" removed from the cart.');
                                             }}
                                         >
                                             ✕

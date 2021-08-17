@@ -15,7 +15,7 @@
       border-bottom: 1px solid #d69d00;
       position: fixed;
       width: 100%;
-      z-index: 999;
+      z-index: 9999;
 
       .brand {
         width: 100%;
@@ -27,23 +27,50 @@
       }
 
       .search {
-        input[type="text"] {
-          background-color: $main-bgColor;
-          width: 100%;
-          color: #000;
-          height: 42px;
-          border: none;
+        position: relative;
+
+        form {
+          input[type="text"] {
+            background-color: $main-bgColor;
+            width: 100%;
+            color: #000;
+            height: 42px;
+            border: none;
+          }
+
+          input[type="submit"] {
+            max-width: 130px;
+            padding: 10.5px 40px 10.8px;
+            font-size: 14px;
+            color: #fff;
+            border: none;
+            font-weight: 700;
+            border-radius: 0 4px 4px 0;
+            background-color: #000;
+          }
+
+          button {
+            position: absolute;
+            top: 8px;
+            right: 138px;
+          }
         }
 
-        input[type="submit"] {
-          max-width: 130px;
-          padding: 10.5px 40px 10.8px;
-          font-size: 14px;
-          color: #fff;
-          border: none;
-          font-weight: 700;
-          border-radius: 0 4px 4px 0;
-          background-color: #000;
+        .search-result {
+          background-color: $main-bgColor;
+          border: $primary-border;
+          position: absolute;
+          width: 100%;
+
+          .product-item {
+            .img {
+              width: 70px;
+            }
+
+            .info {
+              padding-left: 20px;
+            }
+          }
         }
       }
 
@@ -93,7 +120,7 @@
                 transition: all 0.3s ease;
                 opacity: 0;
                 visibility: hidden;
-                padding-top: 30px;
+                padding-top: 40px;
                 z-index: 9999;
                 right: -30px;
 

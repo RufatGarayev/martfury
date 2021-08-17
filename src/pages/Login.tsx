@@ -6,7 +6,7 @@ const Login: React.FC = () => {
     return (
         <div className="login-content">
             <div className="main">
-                <Breadcrumb currentPage={"Shop"} />
+                <Breadcrumb currentPage={"Login"} />
                 <LoginSection />
             </div>
         </div>

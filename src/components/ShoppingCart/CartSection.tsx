@@ -7,7 +7,8 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/reducers/index';
 
 const CartSection: React.FC = () => {
-    const cart = useSelector((state: RootState) => state.cart);
+    const cartState = useSelector((state: RootState) => state.cart);
+    const cart = cartState.cart;
 
     return (
         <section id="cart-section">
@@ -20,29 +21,48 @@ const CartSection: React.FC = () => {
                         </div>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col-12">
-                        {/* ======= cart table ======= */}
-                        <CartTable cart={cart} />
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-lg-6">
-                        {/* ======= back-to-shop link ======= */}
-                        <div className="back-to-shop-link">
-                            <Link to="/shop" className="d-flex align-items-center">
-                                <span><HiArrowNarrowLeft /></span>
-                                <p className="m-0">Back to Shop</p>
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="col-lg-6">
-                        {/* ======= cart-totals ======= */}
-                        <div className="cart-totals-wrapper">
-                            <CartTotals cart={cart} />
-                        </div>
-                    </div>
-                </div>
+                {
+                    cart.length > 0 ? (
+                        <>
+                            <div className="row">
+                                <div className="col-12">
+                                    {/* ======= cart table ======= */}
+                                    <CartTable cart={cart} />
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="col-lg-6">
+                                    {/* ======= back-to-shop link ======= */}
+                                    <div className="back-to-shop-link">
+                                        <Link to="/shop" className="d-flex align-items-center">
+                                            <span><HiArrowNarrowLeft /></span>
+                                            <p className="m-0">Back to Shop</p>
+                                        </Link>
+                                    </div>
+                                </div>
+                                <div className="col-lg-6">
+                                    {/* ======= cart-totals ======= */}
+                                    <div className="cart-totals-wrapper">
+                                        <CartTotals cart={cart} />
+                                    </div>
+                                </div>
+                            </div>
+                        </>
+                    ) : (
+                        // ======= alert ======= //
+                        <>
+                            <div className="empty-alert-wrapper">
+                                <p>Your cart is currently empty.</p>
+                            </div>
+                            <div className="back-to-shop-link">
+                                <Link to="/shop" className="d-flex align-items-center">
+                                    <span><HiArrowNarrowLeft /></span>
+                                    <p className="m-0">Back to Shop</p>
+                                </Link>
+                            </div>
+                        </>
+                    )
+                }
             </div>
         </section>
     )

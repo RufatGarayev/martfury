@@ -7,7 +7,7 @@ interface IProps {
 }
 
 const CartTotals: React.FC<IProps> = (props) => {
-    const { cart } = props.cart;
+    const { cart } = props;
 
     const totalPrice = cart.reduce((total: number, product: IProducts) => 
     (total += product.price * product.count), 0);

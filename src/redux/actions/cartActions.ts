@@ -1,4 +1,4 @@
-import { ActionType } from "./actionTypes"
+import { ActionType } from "./actionTypes";
 
 // add to cart
 export const AddToCart = (product: any) => {
