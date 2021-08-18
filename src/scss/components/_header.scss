@@ -15,7 +15,7 @@
       border-bottom: 1px solid #d69d00;
       position: fixed;
       width: 100%;
-      z-index: 9999;
+      z-index: 999;
 
       .brand {
         width: 100%;
@@ -49,27 +49,98 @@
             background-color: #000;
           }
 
-          button {
+          button,
+          .lds-dual-ring {
             position: absolute;
             top: 8px;
             right: 138px;
           }
+
+          .lds-dual-ring {
+            display: inline-block;
+            top: 12px;
+            right: 138px;
+          }
+
+          .lds-dual-ring:after {
+            content: " ";
+            display: block;
+            width: 17px;
+            height: 17px;
+            border-radius: 50%;
+            border: 1px solid #000;
+            border-color: #000 transparent #000 transparent;
+            animation: lds-dual-ring 0.8s linear infinite;
+          }
+
+          @keyframes lds-dual-ring {
+            0% {
+              transform: rotate(0deg);
+            }
+            100% {
+              transform: rotate(360deg);
+            }
+          }
         }
 
-        .search-result {
+        .search-result-wrapper {
+          width: 100%;
+          padding: 5px 20px;
           background-color: $main-bgColor;
           border: $primary-border;
           position: absolute;
-          width: 100%;
 
-          .product-item {
-            .img {
-              width: 70px;
-            }
+          .search-result {
+            max-height: 400px;
+            min-height: 120px;
+            overflow-y: auto;
 
-            .info {
-              padding-left: 20px;
+            .product-item {
+              align-items: center;
+              padding: 15px 0;
+              border-bottom: $primary-border;
+
+              .img {
+                height: 55px;
+              }
+
+              .info {
+                padding-left: 25px;
+
+                h6,
+                p {
+                  margin: 0;
+                }
+
+                a {
+                  text-decoration: none;
+                  transition: all .3s ease;
+
+                  &:hover {
+                    color: $primary-color;
+                  }
+
+                  h6 {
+                    font-size: 14px;
+                    font-weight: 400;
+                  }
+                }
+
+                .rating {
+                  color: $primary-color;
+                  font-size: 18px;
+                }
+
+                p {
+                  font-size: 12px;
+                  font-weight: 600;
+                }
+              }
             }
+          }
+
+          p {
+            font-size: 14px;
           }
         }
       }
@@ -283,7 +354,7 @@
     background-color: $primary-color;
 
     .department-wrapper {
-      z-index: 999;
+      z-index: 99;
       height: 100%;
       width: 100%;
       max-width: 260px;

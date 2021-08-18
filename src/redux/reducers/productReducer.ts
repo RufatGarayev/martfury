@@ -1,12 +1,17 @@
-import { products } from '../../data/products';
+import { IProducts, products } from '../../data/products';
 import { ProductAction, ActionType } from '../actions/actionTypes';
+
+interface IState {
+    products: IProducts[];
+    searchedProducts: IProducts[];
+}
 
 const initialState = {
     products: products,
-    showNoProductsAlert: false
+    searchedProducts: []
 }
 
-const productReducer = (state = initialState, action: ProductAction) => {
+const productReducer = (state: IState = initialState, action: ProductAction) => {
     switch (action.type) {
         // sorting products by latest and price
         case ActionType.SORT_BY_LATEST_AND_PRICE:
@@ -29,10 +34,30 @@ const productReducer = (state = initialState, action: ProductAction) => {
 
         // search product 
         case ActionType.SEARCH_PRODUCT:
+            let filteredProducts = initialState.products.filter(product => (
+                product.title.toLowerCase().indexOf(action.payload.toLowerCase()) !== -1
+            ))
+
+            return {
+                ...initialState,
+                searchedProducts: filteredProducts
+            }
+
+        // filter by low price
+        case ActionType.FILTER_BY_LOW_PRICE:
             return {
                 ...initialState,
                 products: initialState.products.filter(product => (
-                    product.title.toLowerCase().indexOf(action.payload.toLowerCase()) !== -1
+                    product.price >= action.payload && product
+                ))
+            }
+
+        // filter by high price
+        case ActionType.FILTER_BY_HIGH_PRICE:
+            return {
+                ...initialState,
+                products: initialState.products.filter(product => (
+                    product.price <= action.payload && product 
                 ))
             }
 

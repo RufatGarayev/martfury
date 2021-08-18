@@ -44,7 +44,7 @@ const DropdownCart: React.FC = () => {
                                                 <td>
                                                     {/* ======= Image ======= */}
                                                     <div className="product-img">
-                                                        <Link to="/">
+                                                        <Link to={`/product-details/${product.id}`}>
                                                             <div className="img-wrapper">
                                                                 <img className="img-fluid" src={product.img} alt={product.title} />
                                                             </div>
@@ -56,7 +56,7 @@ const DropdownCart: React.FC = () => {
                                                         {/* ======= Title ======= */}
                                                         <li>
                                                             <h6 className="product-title">
-                                                                <Link to="/">
+                                                                <Link to={`/product-details/${product.id}`}>
                                                                     {product.title}
                                                                 </Link>
                                                             </h6>

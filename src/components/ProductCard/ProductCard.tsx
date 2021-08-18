@@ -21,7 +21,6 @@ const ProductCard: React.FC<IProps> = ({ product }) => {
     const [showModal, setShowModal] = useState<boolean>(false);
     const handleShow = (): void => setShowModal(true);
     const handleClose = (): void => setShowModal(false);
-
     const dispatch = useDispatch();
 
     return (

@@ -40,14 +40,14 @@ const CartTable: React.FC<IProps> = (props) => {
                                     <div className="product-img-title d-flex align-items-center">
                                         {/* ======= Image ======= */}
                                         <div className="product-img">
-                                            <Link to="/">
+                                            <Link to={`/product-details/${product.id}`}>
                                                 <img className="img-fluid" src={product.img} alt={product.title} />
                                             </Link>
                                         </div>
                                         {/* ======= Title ======= */}
                                         <div className="product-title">
                                             <h6>
-                                                <Link to="/">
+                                                <Link to={`/product-details/${product.id}`}>
                                                     {product.title}
                                                 </Link>
                                             </h6>

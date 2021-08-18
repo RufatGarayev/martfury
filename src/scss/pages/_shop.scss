@@ -34,6 +34,88 @@
       padding: 25px;
     }
 
+    .categories-title {
+      h5 {
+        margin-bottom: 18px;
+      }
+    }
+
+    .price-filter-title {
+      h5 {
+        margin-bottom: 33px;
+      }
+    }
+
+    .range-slider {
+      .slider {
+        position: relative;
+        width: 200px;
+
+        .slider__track,
+        .slider__range {
+          position: absolute;
+        }
+
+        .slider__track,
+        .slider__range {
+          border-radius: 3px;
+          height: 5px;
+        }
+
+        .slider__track {
+          background-color: #fff;
+          width: 100%;
+          z-index: 1;
+        }
+
+        .slider__range {
+          background-color: #3498ff;
+          z-index: 2;
+        }
+      }
+
+      p {
+        padding-top: 25px;
+        font-size: 14px;
+        color: $text-color;
+      }
+
+      /* removing the default appearance */
+      .thumb,
+      .thumb::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .thumb {
+        pointer-events: none;
+        position: absolute;
+        height: 0;
+        width: 200px;
+        outline: none;
+      }
+
+      .thumb--left {
+        z-index: 3;
+      }
+
+      .thumb--right {
+        z-index: 4;
+      }
+
+      .thumb::-webkit-slider-thumb {
+        background-color: #fff;
+        border: 3px solid #3498ff;
+        border-radius: 50%;
+        cursor: pointer;
+        height: 18px;
+        width: 18px;
+        margin-top: 4px;
+        pointer-events: all;
+        position: relative;
+      }
+    }
+
     .categories {
       margin-bottom: 20px;
 
@@ -66,38 +148,6 @@
           font-size: 14px;
           color: $text-color;
         }
-      }
-    }
-
-    .range-slider {
-      h5 {
-        margin-bottom: 32px;
-      }
-
-      .rs-slider {
-        margin: 0 6px;
-
-        .rs-slider-bar {
-          background-color: #fff;
-          height: 4px;
-        }
-
-        .rs-slider-progress-bar {
-          height: 4px;
-        }
-
-        .rs-slider-handle {
-          &::before {
-            top: -3px;
-            height: 14px;
-            width: 14px;
-          }
-        }
-      }
-
-      p {
-        font-size: 14px;
-        color: $text-color;
       }
     }
   }

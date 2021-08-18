@@ -2,20 +2,30 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { SearchProduct } from '../../../redux/actions/productActions';
 import { RootState } from '../../../redux/reducers/index';
+import { Link } from 'react-router-dom';
 
 const Search: React.FC = () => {
     const [searchValue, setSearchValue] = useState<string>("");
     const [showSearchResult, setShowSearchResult] = useState<boolean>(false);
     const [showCloseBtn, setShowCloseBtn] = useState<boolean>(false);
+    const [showSpinner, setShowSpinner] = useState<boolean>(false);
     const productsState = useSelector((state: RootState) => state.products);
-    const products = productsState.products;
+    const products = productsState.searchedProducts;
     const dispatch = useDispatch();
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setShowSpinner(true);
         dispatch(SearchProduct(e.target.value));
+        setShowSearchResult(false);
+        setShowCloseBtn(false);
         setSearchValue(e.target.value);
-        setShowSearchResult(true);
-        setShowCloseBtn(true);
+
+        setTimeout(() => {
+            setShowSpinner(false);
+            setShowSearchResult(true);
+            setShowCloseBtn(true);
+
+        }, 1000);
     };
 
     const handleCloseBtnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -27,7 +37,7 @@ const Search: React.FC = () => {
     return (
         <div className="search">
             {/* ======= search-form ======= */}
-            <form className="d-flex">
+            <form className="d-flex" onSubmit={(e: React.FormEvent<HTMLFormElement>) => e.preventDefault()}>
                 <input
                     type="text"
                     value={searchValue}
@@ -42,24 +52,35 @@ const Search: React.FC = () => {
                 >
                     ✕
                 </button>
+                <div className={showSpinner ? "lds-dual-ring" : "d-none"}></div>
             </form>
             {/* ======= search-result ======= */}
-            <div className={showSearchResult ? "search-result" : "d-none"}>
+            <div className={showSearchResult ? "search-result-wrapper" : "d-none"}>
                 {
-                    products.map(product => (
-                        <div key={product.id} className="product-item d-flex">
-                            <div className="img">
-                                <img src={product.img} alt={product.title} />
-                            </div>
-                            <div className="info">
-                                <h6>{product.title}</h6>
-                                <span>{product.rating}</span>
-                                <p className="d-flex">
-                                    <span>$</span>{product.price}
-                                </p>
-                            </div>
+                    products.length > 0 ? (
+                        <div className="search-result">
+                            {
+                                products.map((product) => (
+                                    <div key={product.id} className="product-item d-flex">
+                                        <div className="img">
+                                            <img src={product.img} alt={product.title} />
+                                        </div>
+                                        <div className="info">
+                                            <Link to={`/product-details/${product?.id}`}>
+                                                <h6>{product.title}</h6>
+                                            </Link>
+                                            <span className="rating">{product.rating}</span>
+                                            <p className="d-flex">
+                                                <span>$</span>{product.price.toFixed(2)}
+                                            </p>
+                                        </div>
+                                    </div>
+                                ))
+                            }
                         </div>
-                    ))
+                    ) : (
+                        <p className="my-2">No product found.</p>
+                    )
                 }
             </div>
         </div>

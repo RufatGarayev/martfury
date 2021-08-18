@@ -4,6 +4,7 @@ import cartReducer from "./cartReducer";
 
 const reducers = combineReducers({
     products: productReducer,
+    searchedProducts: productReducer,
     cart: cartReducer
 })
 

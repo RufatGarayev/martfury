@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
-import BrandLogo from '../../assets/img/brand/brand.png';
-import Search from './HeaderTop/Search';
-import Actions from './HeaderTop/Actions';
-import Department from './HeaderBottom/Department';
-import LangAndMonetaryUnit from './HeaderBottom/LangAndMonetaryUnit';
-import { NavLinksData } from './HeaderBottom/HeaderBottomData';
+import BrandLogo from "../../assets/img/brand/brand.png";
+import Search from "./HeaderTop/Search";
+import Actions from "./HeaderTop/Actions";
+import Department from "./HeaderBottom/Department";
+import LangAndMonetaryUnit from "./HeaderBottom/LangAndMonetaryUnit";
+import { NavLinksData } from "./HeaderBottom/HeaderBottomData";
 
 const Header: React.FC = () => {
     return (
@@ -34,15 +34,25 @@ const Header: React.FC = () => {
                     </div>
                     <div className="nav-links-wrapper">
                         <ul className="d-flex">
-                            {
-                                NavLinksData.map(link => (
+                            {NavLinksData.map((link) =>
+                                link.id === 1 ? (
+                                    <li key={link.id}>
+                                        <Link
+                                            to={link.href}
+                                            className={link.class}
+                                            onClick={() => window.location.href = "/"}
+                                        >
+                                            {link.title}
+                                        </Link>
+                                    </li>
+                                ) : (
                                     <li key={link.id}>
                                         <Link to={link.href} className={link.class}>
                                             {link.title}
                                         </Link>
                                     </li>
-                                ))
-                            }
+                                )
+                            )}
                         </ul>
                     </div>
                     <div className="lang-and-monetary-unit-wrapper">
@@ -51,7 +61,7 @@ const Header: React.FC = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Header;
