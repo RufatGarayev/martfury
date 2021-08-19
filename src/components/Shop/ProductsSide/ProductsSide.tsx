@@ -12,7 +12,7 @@ const ProductsSide: React.FC = () => {
     const dispatch = useDispatch();
 
     const [currentPage, setCurrentPage] = useState<number>(1);
-    const [productsPerPage] = useState<number>(4);
+    const [productsPerPage] = useState<number>(12);
     const indexOfLastBook: number = currentPage * productsPerPage;
     const indexOfFirstBook: number = indexOfLastBook - productsPerPage;
     const currentProducts: IProducts[] = products.slice(indexOfFirstBook, indexOfLastBook);

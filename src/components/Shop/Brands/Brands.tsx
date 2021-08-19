@@ -1,5 +1,4 @@
 import React from 'react';
-// importing imgs
 import HolaHire from '../../../assets/img/shop-brands/hoola-hire.jpg';
 import PatelPsych from '../../../assets/img/shop-brands/patel-psych.jpg';
 import PanaxPharma from '../../../assets/img/shop-brands/panax-pharma.jpg';
@@ -9,7 +8,6 @@ import Suncity from '../../../assets/img/shop-brands/suncity.jpg';
 import Analogue from '../../../assets/img/shop-brands/analogue.jpg';
 import Cafe40 from '../../../assets/img/shop-brands/cafe-40.jpg';
 
-// products data types
 interface IProducts {
     id: number;
     img: string;
