@@ -26,6 +26,14 @@ const cartReducer = (state: any = initialState, action: CartAction) => {
                 ...state
             }
 
+        // making isInCart True
+        case ActionType.MAKE_ISINCART_TRUE:
+            return {
+                ...state,
+                cart: state.cart.map((product: IProducts) => product.id === action.payload ?
+                    { ...product, isInCart: product.isInCart = true } : product)
+            }
+
         // delete from cart
         case ActionType.DELETE_FROM_CART:
             return {

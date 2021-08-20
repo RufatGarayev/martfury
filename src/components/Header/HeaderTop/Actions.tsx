@@ -19,19 +19,21 @@ interface IActionDataTypes {
 
 const Actions: React.FC = () => {
     const cart = useSelector((state: RootState) => state.cart);
+    const wishlist = useSelector((state: RootState) => state.wishlist);
+    const compare = useSelector((state: RootState) => state.compare);
 
     const ActionsData: IActionDataTypes[] = [
         {
             id: 1,
             href: "/compare",
-            sup: 0,
+            sup: compare.compare.length,
             icon: <FiBarChart2 />,
             class: "first-link"
         },
         {
             id: 2,
             href: "/wishlist",
-            sup: 0,
+            sup: wishlist.wishlist.length,
             icon: <BsHeart />,
             class: "second-link"
         },

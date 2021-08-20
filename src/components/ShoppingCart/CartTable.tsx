@@ -6,8 +6,10 @@ import {
     DeleteFromCart, IncreaseProductCount,
     DecreaseProductCount
 } from '../../redux/actions/cartActions';
+import { MakeIsInCartFalse } from '../../redux/actions/productActions';
+import { WishlistProductIsInCartFalse } from '../../redux/actions/wishlistActions';
+import { CompareProductIsInCartFalse } from '../../redux/actions/compareActions';
 import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 interface IProps {
     cart: any;
@@ -99,6 +101,9 @@ const CartTable: React.FC<IProps> = (props) => {
                                             type="button"
                                             onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                                                 dispatch(DeleteFromCart(product.id));
+                                                dispatch(MakeIsInCartFalse(product.id));
+                                                dispatch(WishlistProductIsInCartFalse(product.id));
+                                                dispatch(CompareProductIsInCartFalse(product.id));
                                                 toast.error('"' + product.title + '" removed from the cart.');
                                             }}
                                         >

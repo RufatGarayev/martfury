@@ -1,18 +1,13 @@
 import React, { useState } from 'react';
-// import { useDispatch } from 'react-redux';
 import { IProducts } from '../../data/products';
 
 interface IProps {
     product: IProducts;
-    // increaseCount: (id: number) => void;
-    // decreaseCount: (id: number) => void;
 }
 
 const Quantity: React.FC<IProps> = (props) => {
     const [size] = useState<number>(1);
     const { product } = props;
-
-    // const dispatch = useDispatch();
 
     return (
         <div className="quantity-area d-flex align-items-center">

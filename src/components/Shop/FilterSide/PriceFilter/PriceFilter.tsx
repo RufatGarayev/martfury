@@ -10,7 +10,7 @@ const PriceSlider: React.FC = () => {
             <div className="range-slider-area">
                 <RangeSlider
                     min={0}
-                    max={20}
+                    max={1400}
                     onChange={({ min, max }: { min: number; max: number }) => {
                         console.log(`min = ${min}, max = ${max}`);
                     }}

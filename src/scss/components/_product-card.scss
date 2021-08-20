@@ -77,6 +77,15 @@
               }
             }
           }
+
+          .disabledBtn {
+            background-color: $primary-color;
+            cursor: default;
+
+            svg {
+              color: #fff;
+            }
+          }
         }
       }
 

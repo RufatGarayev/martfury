@@ -164,6 +164,10 @@
           @extend %primary-btn;
           height: 44px;
         }
+
+        .disabledBtn {
+          @extend %disabled-btn;
+        }
       }
     }
   }

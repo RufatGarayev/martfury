@@ -1,13 +1,10 @@
-// importing icons
-import { BsStar, BsCameraVideo } from 'react-icons/bs';
+import { BsCameraVideo } from 'react-icons/bs';
 import { GiMailShirt, GiBedLamp, GiHealthPotion, GiCutDiamond, GiBabyBottle } from 'react-icons/gi';
 import { HiOutlineDesktopComputer } from 'react-icons/hi';
-import { BiTennisBall, BiBook, BiLabel } from 'react-icons/bi';
+import { BiTennisBall, BiBook } from 'react-icons/bi';
 import { MdPhoneAndroid } from 'react-icons/md';
 import { FaCarSide } from 'react-icons/fa';
-import { RiToolsFill } from 'react-icons/ri';
 
-// categories data types
 interface ICategoriesDataTypes {
     id: number;
     title: string;
@@ -21,9 +18,8 @@ interface ICategoriesDataTypes {
     }[];
 }
 
-// CategoriesData
 export const CategoriesData: ICategoriesDataTypes[] = [
-    { id: 1, title: "Hot Promotions", icon: <BsStar /> },
+    { id: 1, title: "Clothing & Apparel", icon: <GiMailShirt /> },
     {
         id: 2,
         title: "Consumer Electronic",
@@ -44,12 +40,11 @@ export const CategoriesData: ICategoriesDataTypes[] = [
             { id: 11, title: "Batteries", category: "accessoriesAndParts" }
         ]
     },
-    { id: 3, title: "Clothing & Apparel", icon: <GiMailShirt /> },
-    { id: 4, title: "Home, Garden & Kitchen", icon: <GiBedLamp /> },
-    { id: 5, title: "Health & Beauty", icon: <GiHealthPotion /> },
-    { id: 6, title: "Yewelry & Watches", icon: <GiCutDiamond /> },
+    { id: 3, title: "Home, Garden & Kitchen", icon: <GiBedLamp /> },
+    { id: 4, title: "Health & Beauty", icon: <GiHealthPotion /> },
+    { id: 5, title: "Yewelry & Watches", icon: <GiCutDiamond /> },
     {
-        id: 7,
+        id: 6,
         title: "Computer & Technology",
         icon: <HiOutlineDesktopComputer />,
         submenuTitle: "Computer & Technologies",
@@ -64,11 +59,9 @@ export const CategoriesData: ICategoriesDataTypes[] = [
             { id: 8, title: "Accessories", category: "computerAndTechnologies" }
         ]
     },
-    { id: 8, title: "Babies & Moms", icon: <GiBabyBottle /> },
-    { id: 9, title: "Sport & Outdoor", icon: <BiTennisBall /> },
-    { id: 10, title: "Phones & Accessories", icon: <MdPhoneAndroid /> },
-    { id: 11, title: "Books & Office", icon: <BiBook /> },
-    { id: 12, title: "Cars & Motocycles", icon: <FaCarSide /> },
-    { id: 13, title: "Home Improments", icon: <RiToolsFill /> },
-    { id: 14, title: "Vouchers & Services", icon: <BiLabel /> },
+    { id: 7, title: "Babies & Moms", icon: <GiBabyBottle /> },
+    { id: 8, title: "Sport & Outdoor", icon: <BiTennisBall /> },
+    { id: 9, title: "Phones & Accessories", icon: <MdPhoneAndroid /> },
+    { id: 10, title: "Books & Office", icon: <BiBook /> },
+    { id: 11, title: "Cars & Motocycles", icon: <FaCarSide /> },
 ];

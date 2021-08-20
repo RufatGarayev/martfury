@@ -20,11 +20,30 @@ export const FilterByLowPrice = (rangeInputVal: number) => {
     return {
         type: ActionType.FILTER_BY_LOW_PRICE, payload: rangeInputVal
     }
-}
+};
 
 // filter by high price
 export const FilterByHighPrice = (rangeInputVal: number) => {
     return {
         type: ActionType.FILTER_BY_HIGH_PRICE, payload: rangeInputVal
     }
-}
+};
+
+// making isInCart False
+export const MakeIsInCartFalse = (id: number) => {
+    return {
+        type: ActionType.MAKE_ISINCART_FALSE, payload: id
+    }
+};
+
+export const MakeIsInWishlistFalse = (id: number) => {
+    return {
+        type: ActionType.MAKE_IS_IN_WISHLIST_FALSE, payload: id
+    }
+};
+
+export const MakeIsInCompareFalse = (id: number) => {
+    return {
+        type: ActionType.MAKE_IS_IN_COMPARE_FALSE, payload: id
+    }
+};

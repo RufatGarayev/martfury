@@ -10,7 +10,8 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../../../redux/reducers/index';
 
 const Clothings: React.FC = () => {
-    const products = useSelector((state: RootState) => state.products);
+    const productsState = useSelector((state: RootState) => state.products);
+    const products = productsState.products;
 
     return (
         <div className="clothings">
@@ -25,10 +26,12 @@ const Clothings: React.FC = () => {
             <div className="owl-carousel-wrapper">
                 <OwlCarousel className='owl-theme' {...Options}>
                     {
-                        products.products.map(product => (
-                            <div key={product.id} className='item'>
-                                <ProductCard product={product} />
-                            </div>
+                        products.map(product => (
+                            product.category === "Clothing & Apparel" && (
+                                <div key={product.id} className='item'>
+                                    <ProductCard product={product} />
+                                </div>
+                            )
                         ))
                     }
                 </OwlCarousel>

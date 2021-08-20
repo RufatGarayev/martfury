@@ -4,8 +4,10 @@ import { IProducts } from '../../../data/products';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../../redux/reducers/index';
 import { DeleteFromCart } from '../../../redux/actions/cartActions';
+import { MakeIsInCartFalse } from '../../../redux/actions/productActions';
+import { WishlistProductIsInCartFalse } from '../../../redux/actions/wishlistActions';
+import { CompareProductIsInCartFalse } from '../../../redux/actions/compareActions';
 import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 const DropdownCart: React.FC = () => {
     const cartState = useSelector((state: RootState) => state.cart);
@@ -34,6 +36,9 @@ const DropdownCart: React.FC = () => {
                                                             type="button"
                                                             onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                                                                 dispatch(DeleteFromCart(product.id));
+                                                                dispatch(MakeIsInCartFalse(product.id));
+                                                                dispatch(WishlistProductIsInCartFalse(product.id));
+                                                                dispatch(CompareProductIsInCartFalse(product.id));
                                                                 toast.error('"' + product.title + '" removed from the cart.');
                                                             }}
                                                         >

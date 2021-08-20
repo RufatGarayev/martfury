@@ -281,10 +281,11 @@
 
   // ===== New arrivals ===== //
   #new-arrivals {
-    padding: 100px 0 80px;
+    padding: 100px 0 50px;
 
     .section-header {
       @extend %home-section-header;
+      margin-bottom: 60px;
 
       .left-side {
         .section-title {
@@ -308,6 +309,11 @@
 
     .product-item {
       @include flex-display(flex, row, center, space-between);
+      margin-bottom: 30px;
+
+      &-img {
+        width: 160px;
+      }
 
       &-price {
         @extend %product-price;
@@ -331,6 +337,10 @@
 
       &-rating {
         @extend %product-rating;
+      }
+
+      .product-item-right-content {
+        padding-left: 10px
       }
     }
   }

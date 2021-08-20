@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { FiBarChart2 } from 'react-icons/fi';
 import { BsHeart } from 'react-icons/bs';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
@@ -9,19 +9,47 @@ import { Modal } from 'react-bootstrap';
 import ProductInfo from '../ProductDetails/PrimaryInfo/ProductInfo';
 import ImgSlider from '../ProductDetails/PrimaryInfo/ImgSlider';
 import { IProducts } from '../../data/products';
-import { AddToCart } from '../../redux/actions/cartActions';
+import { AddToCart, MakeIsInCartTrue } from '../../redux/actions/cartActions';
+import { AddToWishlist, MakeIsInWishlistTrueInWishlist } from '../../redux/actions/wishlistActions';
+import { AddToCompare, MakeIsInCompareTrueInCompare } from '../../redux/actions/compareActions';
 import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { RootState } from '../../redux/reducers/index';
 
 interface IProps {
     product: IProducts;
 }
 
 const ProductCard: React.FC<IProps> = ({ product }) => {
+    const cartState = useSelector((state: RootState) => state.cart);
+    const wishlistState = useSelector((state: RootState) => state.wishlist);
+    const compareState = useSelector((state: RootState) => state.compare);
+    const cart = cartState.cart;
+    const wishlist = wishlistState.wishlist;
+    const compare = compareState.compare;
+
     const [showModal, setShowModal] = useState<boolean>(false);
-    const handleShow = (): void => setShowModal(true);
-    const handleClose = (): void => setShowModal(false);
+    const handleShow = (e: React.MouseEvent<HTMLButtonElement>): void => setShowModal(true);
+    const handleClose = (e?: React.MouseEvent<HTMLButtonElement>): void => setShowModal(false);
     const dispatch = useDispatch();
+
+    cart.forEach((cartProduct: IProducts) => {
+        if (cartProduct.id === product.id) {
+            product.isInCart = true;
+        }
+    });
+
+    wishlist.forEach((wishlistProduct: IProducts) => {
+        if (wishlistProduct.id === product.id) {
+            product.isInWishlist = true;
+        }
+    });
+
+    compare.forEach((compareProduct: IProducts) => {
+        if (compareProduct.id === product.id) {
+            product.isInCompare = true;
+        }
+    });
+
 
     return (
         <>
@@ -45,19 +73,36 @@ const ProductCard: React.FC<IProps> = ({ product }) => {
                     <div className="product-actions">
                         <ul>
                             <li>
-                                {/* ===== Add-to-cart button ===== */}
-                                <button
-                                    type="button"
-                                    title="Add To Cart"
-                                    onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
-                                        dispatch(AddToCart(product));
-                                        toast.success('"' + product.title + '" added to the cart');
-                                    }}
-                                >
-                                    <span className="cart-icon">
-                                        <AiOutlineShoppingCart />
-                                    </span>
-                                </button>
+                                {
+                                    product.isInCart ? (
+                                        // ===== Added-to-cart button ===== //
+                                        <button
+                                            type="button"
+                                            title="Added To Cart"
+                                            className="disabledBtn"
+                                            disabled
+                                        >
+                                            <span className="cart-icon">
+                                                <AiOutlineShoppingCart />
+                                            </span>
+                                        </button>
+                                    ) : (
+                                        // ===== Add-to-cart button ===== //
+                                        <button
+                                            type="button"
+                                            title="Add To Cart"
+                                            onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+                                                dispatch(AddToCart(product));
+                                                dispatch(MakeIsInCartTrue(product.id));
+                                                toast.success('"' + product.title + '" added to the Cart');
+                                            }}
+                                        >
+                                            <span className="cart-icon">
+                                                <AiOutlineShoppingCart />
+                                            </span>
+                                        </button>
+                                    )
+                                }
                             </li>
                             <li>
                                 {/* ===== Show-quick button ===== */}
@@ -72,20 +117,68 @@ const ProductCard: React.FC<IProps> = ({ product }) => {
                                 </button>
                             </li>
                             <li>
-                                {/* ===== Add-to-wishlist button ===== */}
-                                <button type="button" title="Add To Wishlist">
-                                    <span className="heart-icon">
-                                        <BsHeart />
-                                    </span>
-                                </button>
+                                {
+                                    product.isInWishlist ? (
+                                        // ======= Added to Wishlist Button ======= //
+                                        <button
+                                            type="button"
+                                            title="Added To Wishlist"
+                                            className="disabledBtn"
+                                            disabled
+                                        >
+                                            <span className="heart-icon">
+                                                <BsHeart />
+                                            </span>
+                                        </button>
+                                    ) : (
+                                        // ======= Add to Wishlist Button ======= //
+                                        <button
+                                            type="button"
+                                            title="Add To Wishlist"
+                                            onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+                                                dispatch(AddToWishlist(product));
+                                                dispatch(MakeIsInWishlistTrueInWishlist(product.id));
+                                                toast.success('"' + product.title + '" added to the Wishlist.');
+                                            }}
+                                        >
+                                            <span className="heart-icon">
+                                                <BsHeart />
+                                            </span>
+                                        </button>
+                                    )
+                                }
                             </li>
                             <li>
-                                {/* ===== Add-to-compare button ===== */}
-                                <button type="button" title="Add To Compare">
-                                    <span className="compare-icon">
-                                        <FiBarChart2 />
-                                    </span>
-                                </button>
+                                {
+                                    product.isInCompare ? (
+                                        // ===== Added to Compare button ===== //
+                                        <button
+                                            type="button"
+                                            title="Added To Compare"
+                                            className="disabledBtn"
+                                            disabled
+                                        >
+                                            <span className="compare-icon">
+                                                <FiBarChart2 />
+                                            </span>
+                                        </button>
+                                    ) : (
+                                        // ===== Add to Compare button ===== //
+                                        <button
+                                            type="button"
+                                            title="Add To Compare"
+                                            onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+                                                dispatch(AddToCompare(product));
+                                                dispatch(MakeIsInCompareTrueInCompare(product.id));
+                                                toast.success('"' + product.title + '" added to the Compare.');
+                                            }}
+                                        >
+                                            <span className="compare-icon">
+                                                <FiBarChart2 />
+                                            </span>
+                                        </button>
+                                    )
+                                }
                             </li>
                         </ul>
                     </div>

@@ -15,7 +15,7 @@ const ProductDetails: React.FC<any> = (props) => {
             <div className="main">
                 <Breadcrumb currentPage={"Product Details"} />
                 <ProductDetailsContent product={theProduct} />
-                <RelatedProducts />
+                <RelatedProducts product={theProduct} />
             </div>
         </div>
     )

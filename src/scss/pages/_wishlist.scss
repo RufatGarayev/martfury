@@ -40,6 +40,10 @@
               height: 46px;
               padding: 0 40px;
             }
+
+            .disabledBtn {
+              @extend %disabled-btn;
+            }
           }
         }
 

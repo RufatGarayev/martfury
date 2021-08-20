@@ -26,9 +26,11 @@ const GardenAndKitchen: React.FC = () => {
                 <OwlCarousel className='owl-theme' {...Options}>
                     {
                         products.products.map(product => (
-                            <div key={product.id} className='item'>
-                                <ProductCard product={product} />
-                            </div>
+                            product.category === "Home, Garden & Kitchen" && (
+                                <div key={product.id} className='item'>
+                                    <ProductCard product={product} />
+                                </div>
+                            )
                         ))
                     }
                 </OwlCarousel>

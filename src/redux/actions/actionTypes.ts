@@ -7,12 +7,28 @@ export enum ActionType {
     INCREASE_PRODUCT_COUNT = "INCREASE_PRODUCT_COUNT",
     DECREASE_PRODUCT_COUNT = "DECREASE_PRODUCT_COUNT",
     GET_TOTAL_PRICE = "GET_TOTAL_PRICE",
+    MAKE_ISINCART_TRUE = "MAKE_ISINCART_TRUE",
 
     // product action types
     SORT_BY_LATEST_AND_PRICE = "SORT_PRODUCTS_BY_LATEST_AND_PRICE",
     SEARCH_PRODUCT = "SEARCH_PRODUCT",
     FILTER_BY_LOW_PRICE = "FILTER_BY_LOW_PRICE",
-    FILTER_BY_HIGH_PRICE = "FILTER_BY_HIGH_PRICE"
+    FILTER_BY_HIGH_PRICE = "FILTER_BY_HIGH_PRICE",
+    MAKE_ISINCART_FALSE = "MAKE_ISINCART_FALSE",
+    MAKE_IS_IN_WISHLIST_FALSE = "MAKE_IS_IN_WISHLIST_FALSE",
+    MAKE_IS_IN_COMPARE_FALSE = "MAKE_IS_IN_COMPARE_FALSE",
+
+    // wishlist action types
+    ADD_TO_WISHLIST = "ADD_TO_WISHLIST",
+    MAKE_IS_IN_WISHLIST_TRUE_IN_WISHLIST = "MAKE_IS_IN_WISHLIST_TRUE_IN_WISHLIST",
+    MAKE_WISHLIST_PRODUCT_ISINCART_FALSE = "MAKE_WISHLIST_PRODUCT_ISINCART_FALSE",
+    REMOVE_FROM_WISHLIST = "REMOVE_FROM_WISHLIST",
+
+    // compare action types
+    ADD_TO_COMPARE = "ADD_TO_COMPARE",
+    REMOVE_FROM_COMPARE = "REMOVE_FROM_COMPARE",
+    MAKE_IS_IN_COMPARE_TRUE_IN_COMPARE = "MAKE_IS_IN_COMPARE_TRUE_IN_COMPARE",
+    MAKE_COMPARE_PRODUCT_ISINCART_FALSE = "MAKE_COMPARE_PRODUCT_ISINCART_FALSE"
 }
 
 
@@ -37,6 +53,12 @@ interface DecreaseAction {
     payload: number;
 }
 
+interface MakeIsInCartTrueAction {
+    type: ActionType.MAKE_ISINCART_TRUE;
+    payload: number;
+}
+
+
 // interfaces for product actions
 interface SortByLatestAndPrice {
     type: ActionType.SORT_BY_LATEST_AND_PRICE;
@@ -58,6 +80,72 @@ interface FilterByHighPriceAction {
     payload: number;
 }
 
+interface MakeIsInCartFalseAction {
+    type: ActionType.MAKE_ISINCART_FALSE;
+    payload: number;
+}
 
-export type CartAction = AddToCartAction | DeleteFromCartAction | IncreaseAction | DecreaseAction;
-export type ProductAction = SortByLatestAndPrice | SearchAction | FilterByLowPriceAction | FilterByHighPriceAction;
+interface MakeIsInWishlistFalseAction {
+    type: ActionType.MAKE_IS_IN_WISHLIST_FALSE;
+    payload: number;
+}
+
+interface MakeIsInCompareFalseAction {
+    type: ActionType.MAKE_IS_IN_COMPARE_FALSE;
+    payload: number;
+}
+
+// interfaces for wishlist actions
+interface AddToWishlistAction {
+    type: ActionType.ADD_TO_WISHLIST;
+    payload: IProducts;
+}
+
+interface RemoveFromWishlistAction {
+    type: ActionType.REMOVE_FROM_WISHLIST;
+    payload: number;
+}
+
+interface MakeWishlistProductTrueInWishlistAction {
+    type: ActionType.MAKE_IS_IN_WISHLIST_TRUE_IN_WISHLIST;
+    payload: number;
+}
+
+interface MakeWishlistProductIsInCartFalseAction {
+    type: ActionType.MAKE_WISHLIST_PRODUCT_ISINCART_FALSE;
+    payload: number;
+}
+
+// interfaces for compare actions
+interface AddToCompareAction {
+    type: ActionType.ADD_TO_COMPARE;
+    payload: IProducts;
+}
+
+interface RemoveFromCompareAction {
+    type: ActionType.REMOVE_FROM_COMPARE;
+    payload: number;
+}
+
+interface MakeCompareProductTrueInCompareAction {
+    type: ActionType.MAKE_IS_IN_COMPARE_TRUE_IN_COMPARE;
+    payload: number;
+}
+
+interface MakeCompareProductIsInCartFalseAction {
+    type: ActionType.MAKE_COMPARE_PRODUCT_ISINCART_FALSE;
+    payload: number;
+}
+
+
+export type CartAction = AddToCartAction | DeleteFromCartAction | IncreaseAction |
+    DecreaseAction | MakeIsInCartTrueAction;
+
+export type ProductAction = SortByLatestAndPrice | SearchAction | FilterByLowPriceAction |
+    FilterByHighPriceAction | MakeIsInCartFalseAction | MakeIsInWishlistFalseAction | MakeIsInCompareFalseAction;
+
+export type WishlistAction = AddToWishlistAction | RemoveFromWishlistAction |
+    MakeWishlistProductTrueInWishlistAction | MakeWishlistProductIsInCartFalseAction;
+    
+export type CompareAction = AddToCompareAction | RemoveFromCompareAction |
+    MakeCompareProductTrueInCompareAction | MakeCompareProductIsInCartFalseAction;

@@ -32,6 +32,30 @@ const productReducer = (state: IState = initialState, action: ProductAction) => 
                 products: sortedProducts
             }
 
+        // making isInCart False
+        case ActionType.MAKE_ISINCART_FALSE:
+            return {
+                ...state,
+                products: state.products.map(product => product.id === action.payload ?
+                    { ...product, isInCart: product.isInCart = false } : product)
+            }
+
+        // making isInWishlist False
+        case ActionType.MAKE_IS_IN_WISHLIST_FALSE:
+            return {
+                ...state,
+                products: state.products.map(product => product.id === action.payload ?
+                    { ...product, isInWishlist: product.isInWishlist = false } : product)
+            };
+
+        // making isInCompare False
+        case ActionType.MAKE_IS_IN_COMPARE_FALSE:
+            return {
+                ...state,
+                products: state.products.map(product => product.id === action.payload ?
+                    { ...product, isInCompare: product.isInCompare = false } : product)
+            };
+
         // search product 
         case ActionType.SEARCH_PRODUCT:
             let filteredProducts = initialState.products.filter(product => (
@@ -57,7 +81,7 @@ const productReducer = (state: IState = initialState, action: ProductAction) => 
             return {
                 ...initialState,
                 products: initialState.products.filter(product => (
-                    product.price <= action.payload && product 
+                    product.price <= action.payload && product
                 ))
             }
 

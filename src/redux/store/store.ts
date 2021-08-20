@@ -31,7 +31,9 @@ const store = createStore(reducers, loadFromLocalStorage());
 // listen for store changes and use saveToLocalStorage to
 // save them to localStorage
 store.subscribe(() => saveToLocalStorage({
-    cart: store.getState().cart
+    cart: store.getState().cart,
+    wishlist: store.getState().wishlist,
+    compare: store.getState().compare
 }));
 
 export default store;

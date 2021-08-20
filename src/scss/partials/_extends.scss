@@ -604,3 +604,15 @@
     }
   }
 }
+
+// disabled added to cart btn
+%disabled-btn {
+  background-color: #dea;
+  color: #8f9589;
+  cursor: default;
+
+  &:hover {
+    background-color: #dea;
+    color: #8f9589;
+  }
+}
