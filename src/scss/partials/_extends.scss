@@ -616,3 +616,13 @@
     color: #8f9589;
   }
 }
+
+// empty alert
+%empty-alert {
+  font-size: 14px;
+  padding: 9px 15px;
+  border-radius: 4px;
+  color: $text-color;
+  background-color: #d1ecf1;
+  border-color: #bee5eb;
+}

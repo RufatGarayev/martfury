@@ -22,7 +22,7 @@ export const CategoriesData: ICategoriesDataTypes[] = [
     { id: 1, title: "Clothing & Apparel", icon: <GiMailShirt /> },
     {
         id: 2,
-        title: "Consumer Electronic",
+        title: "Consumer Electronics",
         icon: <BsCameraVideo />,
         submenuTitle: "Electronic",
         submenuTitle2: "Accessories & Parts",

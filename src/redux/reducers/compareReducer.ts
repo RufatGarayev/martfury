@@ -13,19 +13,19 @@ const compareReducer = (state: any = initialState, action: CompareAction) => {
                 ...state, compare: [...state.compare, action.payload]
             };
 
-        // removing product from compare
+        // remove from compare
         case ActionType.REMOVE_FROM_COMPARE:
             return {
                 ...state,
                 compare: state.compare.filter((product: IProducts) => product.id !== action.payload)
-            };
+            }
 
         // making product's isIncompare true in the compare
         case ActionType.MAKE_IS_IN_COMPARE_TRUE_IN_COMPARE:
             return {
                 ...state,
                 compare: state.compare.map((product: IProducts) => product.id === action.payload ?
-                    { ...product, isIncompare: product.isInCompare = true } : product)
+                    { ...product, isInCompare: product.isInCompare = true } : product)
             };
 
         // making product's isInCart false that's in compare

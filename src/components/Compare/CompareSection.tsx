@@ -1,53 +1,18 @@
 import React from 'react';
 import ProductItem from './ProductItem';
-import OwlCarousel from 'react-owl-carousel';
+import { Link } from "react-router-dom";
+import { HiArrowNarrowLeft } from 'react-icons/hi';
+import SwiperCore, { Navigation, A11y } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { useSelector } from 'react-redux';
 import { IProducts } from '../../data/products';
 import { RootState } from '../../redux/reducers/index';
 
-interface IOptions {
-    margin: number;
-    loop: boolean;
-    dots: boolean;
-    responsive: {
-        0: {
-            items: number;
-        },
-        500: {
-            items: number;
-        },
-        768: {
-            items: number;
-        },
-        1300: {
-            items: number;
-        }
-    }
-}
+SwiperCore.use([Navigation, A11y]);
 
 const CompareSection: React.FC = () => {
     const compareState = useSelector((state: RootState) => state.compare);
     const compare = compareState.compare;
-
-    const Options: IOptions = {
-        margin: 0,
-        loop: false,
-        dots: false,
-        responsive: {
-            0: {
-                items: 1,
-            },
-            500: {
-                items: 2,
-            },
-            768: {
-                items: 3,
-            },
-            1300: {
-                items: 4,
-            }
-        },
-    };
 
     return (
         <section id="compare">
@@ -60,28 +25,70 @@ const CompareSection: React.FC = () => {
                         </div>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col-12">
-                        {/* ======= compare-slider ======= */}
-                        <div className="compare-slider-wrapper">
-                            <OwlCarousel
-                                className='owl-theme'
-                                {...Options}
-                            >
-                                {
-                                    compare.map((product: IProducts) => (
-                                        <div key={product.id} className='item'>
-                                            <ProductItem product={product} />
+                {
+                    compare.length > 0 ? (
+                        <>
+                            <div className="row">
+                                <div className="col-12">
+                                    {/* ======= compare-slider ======= */}
+                                    <Swiper
+                                        slidesPerView={1}
+                                        navigation
+                                        breakpoints={{
+                                            "320": {
+                                                "slidesPerView": 1,
+                                                "spaceBetween": 0
+                                            },
+                                            "576": {
+                                                "slidesPerView": 2,
+                                                "spaceBetween": 0
+                                            },
+                                            "768": {
+                                                "slidesPerView": 3,
+                                                "spaceBetween": 0
+                                            },
+                                            "992": {
+                                                "slidesPerView": 3,
+                                                "spaceBetween": 0
+                                            },
+                                            "1200": {
+                                                "slidesPerView": 4,
+                                                "spaceBetween": 0
+                                            }
+                                        }}
+                                    >
+                                        <div className="compare-slider">
+                                            {
+                                                compare.map((product: IProducts) => (
+                                                    <SwiperSlide key={product.id}>
+                                                        <ProductItem product={product} />
+                                                    </SwiperSlide>
+                                                ))
+                                            }
                                         </div>
-                                    ))
-                                }
-                            </OwlCarousel>
-                        </div>
-                    </div>
-                </div>
+                                    </Swiper>
+                                </div>
+                            </div>
+                        </>
+                    ) : (
+                        // ======= alert ======= //
+                        <>
+                            <div className="empty-alert-wrapper">
+                                <p className="m-0">Compare is currently empty.</p>
+                            </div>
+                            <div className="back-to-shop-link">
+                                <Link to="/shop" className="d-flex align-items-center">
+                                    <span><HiArrowNarrowLeft /></span>
+                                    <p className="m-0">Back to Shop</p>
+                                </Link>
+                            </div>
+                        </>
+                    )
+                }
             </div>
         </section>
     )
 }
+
 
 export default CompareSection;

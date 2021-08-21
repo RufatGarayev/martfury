@@ -1,4 +1,8 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { 
+    SortByBrand, GetTitle, IsLoading
+ } from '../../../../redux/actions/productActions';
 
 interface IBrands {
     id: number;
@@ -7,11 +11,12 @@ interface IBrands {
 }
 
 const Brands: React.FC = () => {
+    const dispatch = useDispatch();
+
     const BrandsData: IBrands[] = [
         { id: 1, title: "Apple", value: "apple" },
         { id: 2, title: "Marshall", value: "marshall" },
         { id: 3, title: "Herschel", value: "herschel" },
-        { id: 4, title: "Microsoft", value: "microsoft" },
         { id: 5, title: "Sony", value: "sony" },
         { id: 6, title: "Flat Furniture", value: "flat-furniture" },
         { id: 7, title: "Gucci", value: "gucci" },
@@ -31,7 +36,16 @@ const Brands: React.FC = () => {
                     {
                         BrandsData.map(brand => (
                             <li key={brand.id}>
-                                <input type="checkbox" name={brand.title} id={brand.value} />
+                                <input
+                                    type="radio"
+                                    name="brand"
+                                    id={brand.value}
+                                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                                        dispatch(GetTitle(brand.title));
+                                        dispatch(SortByBrand(brand.title));
+                                        dispatch(IsLoading(true));
+                                    }}
+                                />
                                 <label htmlFor={brand.value}>{brand.title}</label>
                             </li>
                         ))

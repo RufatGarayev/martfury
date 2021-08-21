@@ -8,6 +8,27 @@ export const SortByPriceAndLatest = (selectValue: string) => {
     }
 };
 
+// sorting products by category
+export const SortByCategory = (title: string) => {
+    return {
+        type: ActionType.SORT_BY_CATEGORY, payload: title
+    }
+};
+
+// sorting products by brand
+export const SortByBrand = (title: string) => {
+    return {
+        type: ActionType.SORT_BY_BRAND, payload: title
+    }
+};
+
+// change isLoading value
+export const IsLoading = (value: boolean) => {
+    return {
+        type: ActionType.IS_LOADING, payload: value
+    }
+};
+
 // search product
 export const SearchProduct = (searchValue: string) => {
     return {
@@ -47,3 +68,9 @@ export const MakeIsInCompareFalse = (id: number) => {
         type: ActionType.MAKE_IS_IN_COMPARE_FALSE, payload: id
     }
 };
+
+export const GetTitle = (title: string) => {
+    return {
+        type: ActionType.GET_TITLE, payload: title
+    }
+}

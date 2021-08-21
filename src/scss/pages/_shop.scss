@@ -7,7 +7,7 @@
   }
 
   .brands {
-    padding: 25px 0 58px;
+    padding: 25px 0 80px;
 
     ul {
       justify-content: space-between;
@@ -138,21 +138,30 @@
     }
 
     .brands {
-      @extend %checkbox;
       margin-bottom: 20px;
 
       li {
         padding: 6px 0;
+        @include flex-display(flex, row, center, flex-start);
 
         label {
           font-size: 14px;
           color: $text-color;
+          margin-left: 5px;
+          cursor: pointer;
         }
       }
     }
   }
 
   .products-side {
+    .title {
+      h4 {
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+    }
+
     .products-header {
       background-color: $secondary-bgColor;
       justify-content: space-between;

@@ -1,36 +1,36 @@
 #compare {
   padding: 100px 0 110px;
 
-  .owl-carousel {
+  .swiper-container {
     padding-top: 50px;
 
-    .owl-nav {
-      display: block;
-      position: absolute;
-      top: -20px;
-      right: 0;
-
-      span {
-        font-size: 27px;
-        line-height: 20px;
-        color: #4c4b4b;
-      }
-    }
-
-    .owl-prev,
-    .owl-next {
-      margin-left: 15px;
+    .swiper-button-prev,
+    .swiper-button-next {
       width: 35px;
       height: 35px;
       border-radius: 50%;
-      background-color: $secondary-bgColor;
+      background-color: #e1dfdf;
       top: 23px;
       transition: 0.3s ease;
+
+      &::after {
+        font-size: 14px;
+        color: #000000;
+      }
 
       &:hover {
         background-color: $primary-color;
         transition: 0.3s ease;
+
+        &::after {
+          color: #ffff;
+        }
       }
+    }
+
+    .swiper-button-prev {
+      left: auto !important;
+      right: 66px !important;
     }
 
     .title {
@@ -167,6 +167,33 @@
 
         .disabledBtn {
           @extend %disabled-btn;
+        }
+      }
+    }
+  }
+
+  .empty-alert-wrapper {
+    @extend %empty-alert;
+    margin-top: 50px;
+  }
+
+  .back-to-shop-link {
+    padding-top: 40px;
+
+    a {
+      @extend %primary-btn;
+      text-decoration: none;
+      height: 46px;
+      width: 194px;
+      justify-content: center;
+      color: #000;
+
+      span {
+        margin-right: 7px;
+        font-size: 18px;
+
+        svg {
+          margin-bottom: 3px;
         }
       }
     }

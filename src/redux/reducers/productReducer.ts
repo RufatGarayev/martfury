@@ -4,11 +4,15 @@ import { ProductAction, ActionType } from '../actions/actionTypes';
 interface IState {
     products: IProducts[];
     searchedProducts: IProducts[];
+    isLoading: boolean;
+    title: string;
 }
 
 const initialState = {
     products: products,
-    searchedProducts: []
+    searchedProducts: [],
+    isLoading: false,
+    title: ""
 }
 
 const productReducer = (state: IState = initialState, action: ProductAction) => {
@@ -30,6 +34,40 @@ const productReducer = (state: IState = initialState, action: ProductAction) => 
             return {
                 ...state,
                 products: sortedProducts
+            }
+
+        // sorting products by category 
+        case ActionType.SORT_BY_CATEGORY:
+            const sortByCategory = initialState.products.filter((product) => 
+            product.category.indexOf(action.payload) !== -1)
+
+            return {
+                ...initialState,
+                products: sortByCategory
+            }
+
+        // sorting products by brand 
+        case ActionType.SORT_BY_BRAND:
+            const sortByBrand = initialState.products.filter((product) => 
+            product.brand.indexOf(action.payload) !== -1)
+
+            return {
+                ...initialState,
+                products: sortByBrand
+            }
+
+        // change isLoading value
+        case ActionType.IS_LOADING:
+            return {
+                ...state, 
+                isLoading: state.isLoading = action.payload
+            } 
+
+        // get title
+        case ActionType.GET_TITLE:
+            return {
+                ...initialState,
+                title: initialState.title = action.payload
             }
 
         // making isInCart False

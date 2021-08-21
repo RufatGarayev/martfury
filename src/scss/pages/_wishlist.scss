@@ -55,4 +55,30 @@
       }
     }
   }
+
+  .empty-alert-wrapper {
+    @extend %empty-alert;
+  }
+
+  .back-to-shop-link {
+    padding-top: 40px;
+
+    a {
+      @extend %primary-btn;
+      text-decoration: none;
+      height: 46px;
+      width: 194px;
+      justify-content: center;
+      color: #000;
+
+      span {
+        margin-right: 7px;
+        font-size: 18px;
+
+        svg {
+          margin-bottom: 3px;
+        }
+      }
+    }
+  }
 }

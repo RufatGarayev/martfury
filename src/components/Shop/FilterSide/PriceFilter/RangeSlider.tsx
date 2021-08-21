@@ -1,6 +1,8 @@
 import React, { useCallback, useEffect, useState, useRef } from 'react';
 import { useDispatch } from 'react-redux';
-import { FilterByLowPrice, FilterByHighPrice } from '../../../../redux/actions/productActions';;
+import { 
+    FilterByLowPrice, FilterByHighPrice 
+} from '../../../../redux/actions/productActions';
 
 interface RangeSliderProps {
     min: number;

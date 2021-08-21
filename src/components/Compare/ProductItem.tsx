@@ -33,7 +33,7 @@ const ProductItem: React.FC<IProps> = ({ product }) => {
                         onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                             dispatch(RemoveFromCompare(product.id));
                             dispatch(MakeIsInCompareFalse(product.id));
-                            toast.error('"' + product.title + '" removed from the wishlist.');
+                            toast.error('"' + product.title + '" removed from the Wishlist.');
                         }}
                     >
                         Remove
@@ -41,7 +41,7 @@ const ProductItem: React.FC<IProps> = ({ product }) => {
                 </div>
                 {/* ======= Image ======= */}
                 <div className="book-img d-flex justify-content-center align-items-center">
-                    <Link to="/">
+                    <Link to={`/product-details/${product?.id}`}>
                         <img className="img-fluid" src={product.img} alt={product.title} />
                     </Link>
                 </div>
@@ -50,7 +50,9 @@ const ProductItem: React.FC<IProps> = ({ product }) => {
                 {/* ======= Title ======= */}
                 <div className="title">
                     <h6>
-                        <Link to="/">{product.title}</Link>
+                        <Link to={`/product-details/${product?.id}`}>
+                            {product.title}
+                        </Link>
                     </h6>
                 </div>
                 {/* ======= Price ======= */}
@@ -88,7 +90,7 @@ const ProductItem: React.FC<IProps> = ({ product }) => {
                                 onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                                     dispatch(AddToCart(product));
                                     dispatch(MakeIsInCartTrue(product.id));
-                                    toast.success('"' + product.title + '" added to the cart.');
+                                    toast.success('"' + product.title + '" added to the Cart.');
                                 }}
                             >
                                 Add To Cart

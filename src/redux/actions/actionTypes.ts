@@ -11,12 +11,16 @@ export enum ActionType {
 
     // product action types
     SORT_BY_LATEST_AND_PRICE = "SORT_PRODUCTS_BY_LATEST_AND_PRICE",
+    SORT_BY_CATEGORY = "SORT_BY_CATEGORY",
+    SORT_BY_BRAND = "SORT_BY_BRAND",
     SEARCH_PRODUCT = "SEARCH_PRODUCT",
     FILTER_BY_LOW_PRICE = "FILTER_BY_LOW_PRICE",
     FILTER_BY_HIGH_PRICE = "FILTER_BY_HIGH_PRICE",
     MAKE_ISINCART_FALSE = "MAKE_ISINCART_FALSE",
     MAKE_IS_IN_WISHLIST_FALSE = "MAKE_IS_IN_WISHLIST_FALSE",
     MAKE_IS_IN_COMPARE_FALSE = "MAKE_IS_IN_COMPARE_FALSE",
+    GET_TITLE = "GET_TITLE",
+    IS_LOADING = "IS_LOADING",
 
     // wishlist action types
     ADD_TO_WISHLIST = "ADD_TO_WISHLIST",
@@ -65,6 +69,16 @@ interface SortByLatestAndPrice {
     payload: string;
 }
 
+interface SortByCategoryAction {
+    type: ActionType.SORT_BY_CATEGORY,
+    payload: string;
+}
+
+interface SortByBrandAction {
+    type: ActionType.SORT_BY_BRAND,
+    payload: string;
+}
+
 interface SearchAction {
     type: ActionType.SEARCH_PRODUCT;
     payload: string;
@@ -93,6 +107,16 @@ interface MakeIsInWishlistFalseAction {
 interface MakeIsInCompareFalseAction {
     type: ActionType.MAKE_IS_IN_COMPARE_FALSE;
     payload: number;
+}
+
+interface GetTitleAction {
+    type: ActionType.GET_TITLE;
+    payload: string;
+}
+
+interface IsLoadingAction {
+    type: ActionType.IS_LOADING;
+    payload: boolean;
 }
 
 // interfaces for wishlist actions
@@ -141,8 +165,9 @@ interface MakeCompareProductIsInCartFalseAction {
 export type CartAction = AddToCartAction | DeleteFromCartAction | IncreaseAction |
     DecreaseAction | MakeIsInCartTrueAction;
 
-export type ProductAction = SortByLatestAndPrice | SearchAction | FilterByLowPriceAction |
-    FilterByHighPriceAction | MakeIsInCartFalseAction | MakeIsInWishlistFalseAction | MakeIsInCompareFalseAction;
+export type ProductAction = SortByLatestAndPrice | SortByCategoryAction | SearchAction | FilterByLowPriceAction |
+    FilterByHighPriceAction | MakeIsInCartFalseAction | MakeIsInWishlistFalseAction | MakeIsInCompareFalseAction | 
+    GetTitleAction | IsLoadingAction | SortByBrandAction;
 
 export type WishlistAction = AddToWishlistAction | RemoveFromWishlistAction |
     MakeWishlistProductTrueInWishlistAction | MakeWishlistProductIsInCartFalseAction;
