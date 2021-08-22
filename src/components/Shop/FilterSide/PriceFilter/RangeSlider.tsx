@@ -1,8 +1,4 @@
 import React, { useCallback, useEffect, useState, useRef } from 'react';
-import { useDispatch } from 'react-redux';
-import { 
-    FilterByLowPrice, FilterByHighPrice 
-} from '../../../../redux/actions/productActions';
 
 interface RangeSliderProps {
     min: number;
@@ -16,7 +12,6 @@ const RangeSlider: React.FC<RangeSliderProps> = ({ min, max, onChange }) => {
     const minValRef = useRef(min);
     const maxValRef = useRef(max);
     const range = useRef<HTMLDivElement>(null);
-    const dispatch = useDispatch();
 
     // convert to percentage
     const getPercent = useCallback(
@@ -66,7 +61,6 @@ const RangeSlider: React.FC<RangeSliderProps> = ({ min, max, onChange }) => {
                     const value = Math.min(Number(e.target.value), maxVal - 1);
                     setMinVal(value);
                     minValRef.current = value;
-                    dispatch(FilterByLowPrice(minVal));
                 }}
             />
             <input
@@ -79,7 +73,6 @@ const RangeSlider: React.FC<RangeSliderProps> = ({ min, max, onChange }) => {
                     const value = Math.max(Number(e.target.value), minVal + 1);
                     setMaxVal(value);
                     maxValRef.current = value;
-                    dispatch(FilterByHighPrice(maxVal));
                 }}
             />
             <div className="slider">

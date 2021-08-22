@@ -3,7 +3,7 @@ import { IProducts } from '../../data/products';
 
 const initialState = {
     cart: []
-}
+};
 
 const cartReducer = (state: any = initialState, action: CartAction) => {
     switch (action.type) {
@@ -24,7 +24,7 @@ const cartReducer = (state: any = initialState, action: CartAction) => {
 
             return {
                 ...state
-            }
+            };
 
         // making isInCart True
         case ActionType.MAKE_ISINCART_TRUE:
@@ -32,14 +32,21 @@ const cartReducer = (state: any = initialState, action: CartAction) => {
                 ...state,
                 cart: state.cart.map((product: IProducts) => product.id === action.payload ?
                     { ...product, isInCart: product.isInCart = true } : product)
-            }
+            };
 
         // delete from cart
         case ActionType.DELETE_FROM_CART:
             return {
                 ...state,
                 cart: state.cart.filter((product: IProducts) => product.id !== action.payload)
-            }
+            };
+
+        // clear cart
+        case ActionType.CLEAR_CART:
+            return {
+                ...state,
+                cart: []
+            };
 
         // increasing product count
         case ActionType.INCREASE_PRODUCT_COUNT:
@@ -47,7 +54,7 @@ const cartReducer = (state: any = initialState, action: CartAction) => {
                 ...state,
                 cart: state.cart.map((product: IProducts) => product.id === action.payload ?
                     { ...product, count: product.count + 1 } : product)
-            }
+            };
 
         // decreasing product count
         case ActionType.DECREASE_PRODUCT_COUNT:
@@ -55,11 +62,11 @@ const cartReducer = (state: any = initialState, action: CartAction) => {
                 ...state,
                 cart: state.cart.map((product: IProducts) => product.id === action.payload ?
                     { ...product, count: product.count - 1 } : product)
-            }
+            };
 
         default:
             return state;
-    }
+    };
 };
 
 export default cartReducer;

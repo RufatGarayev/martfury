@@ -234,6 +234,7 @@
 // primary button
 %primary-btn {
   background-color: $primary-color;
+  border: 0;
   height: 50px;
   padding: 0 30px;
   border-radius: 4px;
@@ -510,6 +511,20 @@
           &:hover svg {
             color: $primary-color;
           }
+        }
+      }
+
+      .disabledBtn {
+        svg {
+          color: $primary-color !important;
+        }
+
+        cursor: default;
+      }
+
+      .compare-btn {
+        .disabledBtn {
+          border: 1px solid $primary-color;
         }
       }
 

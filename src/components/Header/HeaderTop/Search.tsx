@@ -66,7 +66,12 @@ const Search: React.FC = () => {
                                             <img src={product.img} alt={product.title} />
                                         </div>
                                         <div className="info">
-                                            <Link to={`/product-details/${product?.id}`}>
+                                            <Link
+                                                to={`/product-details/${product?.id}`}
+                                                onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+                                                    setShowSearchResult(false);
+                                                }}
+                                            >
                                                 <h6>{product.title}</h6>
                                             </Link>
                                             <span className="rating">{product.rating}</span>

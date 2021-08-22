@@ -105,24 +105,6 @@ const productReducer = (state: IState = initialState, action: ProductAction) => 
                 searchedProducts: filteredProducts
             }
 
-        // filter by low price
-        case ActionType.FILTER_BY_LOW_PRICE:
-            return {
-                ...initialState,
-                products: initialState.products.filter(product => (
-                    product.price >= action.payload && product
-                ))
-            }
-
-        // filter by high price
-        case ActionType.FILTER_BY_HIGH_PRICE:
-            return {
-                ...initialState,
-                products: initialState.products.filter(product => (
-                    product.price <= action.payload && product
-                ))
-            }
-
         default:
             return state;
     }

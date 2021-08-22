@@ -14,7 +14,7 @@ const Header: React.FC = () => {
             <div className="header-top-wrapper">
                 <div className="header-top">
                     <div className="brand">
-                        <Link to="/">
+                        <Link to="/" onClick={() => window.location.href = "/"}>
                             <img className="img-fluid" src={BrandLogo} alt="brand" />
                         </Link>
                     </div>
