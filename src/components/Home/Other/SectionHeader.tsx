@@ -1,13 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { IButtonsAndLink } from '../Categories/ButtonsAndLinkData/ButtonsAndLinkData';
+import { ISectionHeaderProps } from '../../../types/types';
 
-interface IProps {
-    title: string;
-    buttons: IButtonsAndLink[];
-}
-
-const SectionHeader: React.FC<IProps> = ({ title, buttons }) => {
+const SectionHeader: React.FC<ISectionHeaderProps> = ({ title, buttons }) => {
     return (
         <div className="section-header">
             <div className="left-side">

@@ -1,16 +1,12 @@
 import React from 'react';
-import { IProducts } from '../../data/products';
+import { IProducts, ICartProps } from '../../types/types';
 import { Link } from "react-router-dom";
 
-interface IProps {
-    cart: any;
-}
-
-const CartTotals: React.FC<IProps> = (props) => {
+const CartTotals: React.FC<ICartProps> = (props) => {
     const { cart } = props;
 
-    const totalPrice = cart.reduce((total: number, product: IProducts) => 
-    (total += product.price * product.count), 0);
+    const totalPrice = cart.reduce((total: number, product: IProducts) =>
+        (total += product.price * product.count), 0);
 
     return (
         <div className="cart-totals">

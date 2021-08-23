@@ -4,21 +4,9 @@ import { HiOutlineDesktopComputer } from 'react-icons/hi';
 import { BiTennisBall, BiBook } from 'react-icons/bi';
 import { MdPhoneAndroid } from 'react-icons/md';
 import { FaCarSide } from 'react-icons/fa';
+import { ICategoriesListDataTypes } from '../../types/types';
 
-interface ICategoriesDataTypes {
-    id: number;
-    title: string;
-    icon: JSX.Element;
-    submenuTitle?: string;
-    submenuTitle2?: string;
-    submenu?: {
-        id: number;
-        title: string;
-        category: string;
-    }[];
-}
-
-export const CategoriesData: ICategoriesDataTypes[] = [
+export const CategoriesData: ICategoriesListDataTypes[] = [
     { id: 1, title: "Clothing & Apparel", icon: <GiMailShirt /> },
     {
         id: 2,

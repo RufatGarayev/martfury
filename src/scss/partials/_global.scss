@@ -47,6 +47,10 @@ img {
 }
 
 // react-toastify
-.Toastify__toast-body {
-  font-size: 14px;
+.Toastify__toast-container {
+  z-index: 9999999;
+
+  .Toastify__toast-body {
+    font-size: 14px;
+  }
 }

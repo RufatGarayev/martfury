@@ -7,11 +7,9 @@ import { CategoriesData } from '../../Other/CategoriesData';
 const Department: React.FC = () => {
     return (
         <div className="department d-flex">
-            {/* ======= Icon ======= */}
             <div className="icon">
                 <span><GiHamburgerMenu /></span>
             </div>
-            {/* ======= Text ======= */}
             <div className="text">
                 <h6>Shop by Department</h6>
             </div>
@@ -27,7 +25,6 @@ const Department: React.FC = () => {
                                     </p>
                                     <span className="right-arrow"><VscChevronRight /></span>
                                 </Link>
-                                {/* ===== Submenu ===== */}
                                 <div className="submenu d-flex">
                                     {/* === Submenu-left === */}
                                     <div className="submenu-left">

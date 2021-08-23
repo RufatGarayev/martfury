@@ -1,20 +1,4 @@
-export interface IProducts {
-    id: number;
-    img: string;
-    title: string;
-    price: number;
-    label: string;
-    rating: string;
-    brand: string;
-    category: string;
-    hasDiscount: boolean;
-    isNew: boolean;
-    count: number;
-    isInCart: boolean;
-    isInWishlist: boolean;
-    isInCompare: boolean;
-    previousPrice?: number;
-}
+import { IProducts } from '../types/types';
 
 export const products: IProducts[] = [
     {
@@ -380,39 +364,6 @@ export const products: IProducts[] = [
         previousPrice: 60.00,
         price: 42.00,
         label: "-43%",
-        rating: "★★★★★",
-        brand: "",
-        category: "Home, Garden & Kitchen",
-        hasDiscount: true,
-        isNew: false,
-        count: 1,
-        isInCart: false,
-        isInWishlist: false,
-        isInCompare: false
-    },
-    {
-        id: 24,
-        img: "/products/wood-simple-tea-table.jpg",
-        title: "Wood Simple Tea Table",
-        price: 393.38,
-        label: "",
-        rating: "★★★★★",
-        brand: "",
-        category: "Home, Garden & Kitchen",
-        hasDiscount: false,
-        isNew: false,
-        count: 1,
-        isInCart: false,
-        isInWishlist: false,
-        isInCompare: false
-    },
-    {
-        id: 25,
-        img: "/products/simple-plastic-chair.jpg",
-        title: "Simple Plastic Chair In Gray Color",
-        previousPrice: 50.00,
-        price: 25.00,
-        label: "50%",
         rating: "★★★★★",
         brand: "",
         category: "Home, Garden & Kitchen",

@@ -1,14 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { 
-    SortByBrand, GetTitle, IsLoading
- } from '../../../../redux/actions/productActions';
-
-interface IBrands {
-    id: number;
-    title: string;
-    value: string;
-}
+import { SortByBrand, GetTitle, IsLoading } from '../../../../redux/actions/productActions';
+import { IBrands } from '../../../../types/types';
 
 const Brands: React.FC = () => {
     const dispatch = useDispatch();
@@ -54,6 +47,6 @@ const Brands: React.FC = () => {
             </div>
         </div>
     )
-}
+};
 
 export default Brands;

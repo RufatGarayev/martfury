@@ -1,10 +1,17 @@
 import React from 'react';
 import SubscribeForm from '../../Other/SubscribeForm';
-import AppImg from '../../../assets/img/martfury-app/app-img.png';
-import { SmallImages } from './SmallImages';
 import { Link } from 'react-router-dom';
+import AppImg from '../../../assets/img/martfury-app/app-img.png';
+import GooglePlay from '../../../assets/img/martfury-app/google-play.png';
+import AppStore from '../../../assets/img/martfury-app/app-store.png';
+import { ISmallImages } from '../../../types/types';
 
 const DownloadApp: React.FC = () => {
+    const SmallImages: ISmallImages[] = [
+        { id: 1, img: GooglePlay },
+        { id: 2, img: AppStore }
+    ];
+
     return (
         <section id="download-app">
             <div className="container-fluid">

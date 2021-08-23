@@ -1,20 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { IProducts } from '../../../data/products';
+import { IProductProps } from '../../../types/types';
 
-interface IProps {
-    product: IProducts;
-}
-
-const ProductItem: React.FC<IProps> = ({ product }) => {
+const ProductItem: React.FC<IProductProps> = ({ product }) => {
     return (
         <div className="product-item">
-            {/* ======= Image ======= */}
             <div className="product-item-img">
                 <img src={product.img} alt={product.title} />
             </div>
             <div className="product-item-right-content">
-                {/* ======= Title ======= */}
                 <div className="product-item-title">
                     <h6>
                         <Link to={`/product-details/${product?.id}`}>
@@ -22,11 +16,9 @@ const ProductItem: React.FC<IProps> = ({ product }) => {
                         </Link>
                     </h6>
                 </div>
-                {/* ======= Rating ======= */}
                 <div className="product-item-rating">
                     <span>{product.rating}</span>
                 </div>
-                {/* ======= Price ======= */}
                 <div className="product-item-price">
                     <p>
                         <span>${product.price.toFixed(2)}</span>
@@ -36,6 +28,6 @@ const ProductItem: React.FC<IProps> = ({ product }) => {
             </div>
         </div>
     )
-}
+};
 
 export default ProductItem;

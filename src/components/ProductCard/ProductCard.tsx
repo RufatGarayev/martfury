@@ -8,18 +8,15 @@ import { Link } from 'react-router-dom';
 import { Modal } from 'react-bootstrap';
 import ProductInfo from '../ProductDetails/PrimaryInfo/ProductInfo';
 import ImgSlider from '../ProductDetails/PrimaryInfo/ImgSlider';
-import { IProducts } from '../../data/products';
+import { IProducts, IProductProps } from '../../types/types';
 import { AddToCart, MakeIsInCartTrue } from '../../redux/actions/cartActions';
 import { AddToWishlist, MakeIsInWishlistTrueInWishlist } from '../../redux/actions/wishlistActions';
 import { AddToCompare, MakeIsInCompareTrueInCompare } from '../../redux/actions/compareActions';
 import { toast } from 'react-toastify';
 import { RootState } from '../../redux/reducers/index';
 
-interface IProps {
-    product: IProducts;
-}
 
-const ProductCard: React.FC<IProps> = ({ product }) => {
+const ProductCard: React.FC<IProductProps> = ({ product }) => {
     const cartState = useSelector((state: RootState) => state.cart);
     const wishlistState = useSelector((state: RootState) => state.wishlist);
     const compareState = useSelector((state: RootState) => state.compare);

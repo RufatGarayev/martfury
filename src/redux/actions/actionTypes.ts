@@ -1,4 +1,4 @@
-import { IProducts } from '../../data/products';
+import { IProducts } from '../../types/types';
 
 export enum ActionType {
     // cart action types

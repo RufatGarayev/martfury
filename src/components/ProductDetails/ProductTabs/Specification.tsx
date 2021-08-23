@@ -37,6 +37,6 @@ const Specification: React.FC = () => {
             </table>
         </div>
     )
-}
+};
 
 export default Specification;

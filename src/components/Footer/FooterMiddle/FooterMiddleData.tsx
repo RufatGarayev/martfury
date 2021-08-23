@@ -1,12 +1,4 @@
-interface ILinks {
-    id: number;
-    title: string;
-    links: {
-        id: number;
-        title: string;
-        href: string;
-    }[];
-}
+import { ILinks } from "../../../types/types";
 
 export const LinksData: ILinks[] = [
     {

@@ -1,8 +1,17 @@
 import React from 'react';
-import { AdsData1 } from './AdsData';
+import ChairsImg from '../../../assets/img/home-ads/chairs.jpeg';
+import ChargerImg from '../../../assets/img/home-ads/charger.jpeg';
+import SpeakerImg from '../../../assets/img/home-ads/speaker.jpeg';
 import { Link } from 'react-router-dom';
+import { IAdsData1 } from '../../../types/types';
 
 const HomeAds1: React.FC = () => {
+    const AdsData1: IAdsData1[] = [
+        { id: 1, img: SpeakerImg },
+        { id: 2, img: ChairsImg },
+        { id: 3, img: ChargerImg }
+    ];
+
     return (
         <section id="ads-1">
             <div className="container-fluid">

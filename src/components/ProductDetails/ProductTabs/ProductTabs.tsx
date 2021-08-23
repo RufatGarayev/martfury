@@ -1,21 +1,13 @@
 import React, { useState } from 'react';
-// importing components
 import Description from './Description';
 import Specification from './Specification';
 import Vendor from './Vendor';
 import Reviews from './Reviews';
-
-// Tablist data types
-interface ITabList {
-    id: number;
-    title: string;
-    reviewCount?: number;
-}
+import { ITabList } from '../../../types/types';
 
 const ProductTabs: React.FC = () => {
     const [clickedBtn, setClickedBtn] = useState<string>("Description");
 
-    // Tablist data
     const TabList: ITabList[] = [
         { id: 1, title: "Description" },
         { id: 2, title: "Specification" },
@@ -33,9 +25,14 @@ const ProductTabs: React.FC = () => {
                             <li key={tabListItem.id} className={tabListItem.title === clickedBtn ? "active-btn" : ""}>
                                 <button
                                     type="button"
-                                    onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => setClickedBtn(tabListItem.title)}
+                                    onClick={(e: React.MouseEvent<HTMLButtonElement>): void => {
+                                        setClickedBtn(tabListItem.title);
+                                    }}
                                 >
-                                    {tabListItem.reviewCount ? tabListItem.title + " (" + tabListItem.reviewCount + ")" : tabListItem.title}
+                                    {
+                                        tabListItem.reviewCount ?
+                                            tabListItem.title + " (" + tabListItem.reviewCount + ")" : tabListItem.title
+                                    }
                                 </button>
                             </li>
                         ))

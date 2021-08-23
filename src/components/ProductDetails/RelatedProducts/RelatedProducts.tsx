@@ -1,18 +1,12 @@
 import React from 'react';
 import ProductCard from '../../ProductCard/ProductCard';
 import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
 import { Options } from '../../Other/OwlCarouselOptions';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../redux/reducers/index';
-import { IProducts } from '../../../data/products';
+import { IProductProps } from '../../../types/types';
 
-interface IProps {
-    product: IProducts;
-}
-
-const RelatedProducts: React.FC<IProps> = ({ product }) => {
+const RelatedProducts: React.FC<IProductProps> = ({ product }) => {
     const productsState = useSelector((state: RootState) => state.products);
     const products = productsState.products;
 

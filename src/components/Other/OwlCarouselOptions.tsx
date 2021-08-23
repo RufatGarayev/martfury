@@ -1,26 +1,8 @@
-interface IOptions {
-    margin: number;
-    loop: boolean;
-    dots: boolean;
-    responsive: {
-        0: {
-            items: number;
-        },
-        500: {
-            items: number;
-        },
-        768: {
-            items: number;
-        },
-        1300: {
-            items: number;
-        }
-    }
-}
+import { IOwlCarouselOptions } from '../../types/types';
 
-export const Options: IOptions = {
+export const Options: IOwlCarouselOptions = {
     margin: 20,
-    loop: true,
+    loop: false,
     dots: true,
     responsive: {
         0: {

@@ -70,6 +70,7 @@ const Search: React.FC = () => {
                                                 to={`/product-details/${product?.id}`}
                                                 onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
                                                     setShowSearchResult(false);
+                                                    setShowCloseBtn(false);
                                                 }}
                                             >
                                                 <h6>{product.title}</h6>
@@ -90,6 +91,6 @@ const Search: React.FC = () => {
             </div>
         </div>
     )
-}
+};
 
 export default Search;

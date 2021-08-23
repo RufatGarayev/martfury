@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { IProducts } from '../../data/products';
+import { IProductProps, IProducts } from '../../types/types';
 import { useSelector, useDispatch } from 'react-redux';
 import { AddToCart, MakeIsInCartTrue } from '../../redux/actions/cartActions';
 import { RootState } from '../../redux/reducers';
@@ -8,11 +8,7 @@ import { RemoveFromCompare } from '../../redux/actions/compareActions';
 import { MakeIsInCompareFalse } from '../../redux/actions/productActions';
 import { toast } from 'react-toastify';
 
-interface IProps {
-    product: IProducts;
-}
-
-const ProductItem: React.FC<IProps> = ({ product }) => {
+const ProductItem: React.FC<IProductProps> = ({ product }) => {
     const cartState = useSelector((state: RootState) => state.cart);
     const cart = cartState.cart;
     const dispatch = useDispatch();

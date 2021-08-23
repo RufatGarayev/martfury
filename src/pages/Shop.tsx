@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { IsLoading } from '../redux/actions/productActions';
-import Breadcrumb from '../components/Other/Breadcrumb';
+import { Link } from "react-router-dom";
 import BrandsSection from '../components/Shop/Brands/Brands';
 import Categories from '../components/Shop/FilterSide/Categories/Categories';
 import Brands from '../components/Shop/FilterSide/Brands/Brands';
@@ -26,9 +26,20 @@ const Shop: React.FC = () => {
     return (
         <div className="shop-content">
             <div className="main">
-                <Breadcrumb currentPage={"Shop"} />
-
-                {/* ======= shop-content ======= */}
+                {/* ===== breadcrumb ===== */}
+                <section id="breadcrumb">
+                    <div className="container">
+                        <ul className="breadcrumb-content d-flex m-0 p-0">
+                            <li>
+                                <Link to="/">Home</Link>
+                            </li>
+                            <li>
+                                <span>Shop</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                {/* ===== content ===== */}
                 <div className="shop-content-wrapper">
                     <div className="container">
                         <div className="row">
@@ -59,6 +70,6 @@ const Shop: React.FC = () => {
             </div>
         </div>
     )
-}
+};
 
 export default Shop;

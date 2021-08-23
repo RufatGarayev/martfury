@@ -1,3 +1,5 @@
+import { IContactItems } from "../../../types/types";
+
 // contact items text
 const contactDirectlyText = (
     <>
@@ -46,13 +48,6 @@ const vendorSupportText = (
         (801) 947-3100
     </>
 );
-
-// contact items data types
-interface IContactItems {
-    id: number;
-    title: string;
-    content: JSX.Element;
-}
 
 // contact items data
 export const ContactItemsData: IContactItems[] = [

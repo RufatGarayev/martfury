@@ -1,18 +1,25 @@
 import React, { useState } from 'react';
-import { SliderData } from './BannerData';
 import { VscChevronRight, VscChevronLeft } from 'react-icons/vsc';
 import { Link } from 'react-router-dom';
+import SlideImg1 from '../../../assets/img/home-banner/slider/slide1.jpeg';
+import SlideImg2 from '../../../assets/img/home-banner/slider/slide2.jpeg';
+import SlideImg3 from '../../../assets/img/home-banner/slider/slide3.jpeg';
+import { ISliderDataTypes } from '../../../types/types';
 
 const Slider: React.FC = () => {
+    const SliderData: ISliderDataTypes[] = [
+        { id: 1, img: SlideImg1 },
+        { id: 2, img: SlideImg2 },
+        { id: 3, img: SlideImg3 }
+    ];
+
     const [tabIndex, setTabIndex] = useState<number>(1);
 
-    // handleRightBtnClick
     const handleRightBtnClick = (): void => {
         setTabIndex(tabIndex + 1);
         if (tabIndex >= 3) setTabIndex(1);
     }
 
-    // handleLeftBtnClick
     const handleLeftBtnClick = (): void => {
         setTabIndex(tabIndex - 1);
         if (tabIndex <= 1) setTabIndex(3);

@@ -5,7 +5,7 @@ import { HiArrowNarrowLeft } from 'react-icons/hi';
 import SwiperCore, { Navigation, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useSelector } from 'react-redux';
-import { IProducts } from '../../data/products';
+import { IProducts } from '../../types/types';
 import { RootState } from '../../redux/reducers/index';
 
 SwiperCore.use([Navigation, A11y]);

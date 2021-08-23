@@ -47,22 +47,18 @@ const Countdown: React.FC = () => {
                 <p>End in:</p>
             </div>
             <div className="items d-flex justify-content-center align-items-center">
-                {/* ======= Day ======= */}
                 <div className="box day">
                     <span>{countdownDays}</span>
                 </div>
                 <span className="colon-symbol">:</span>
-                {/* ======= Hour ======= */}
                 <div className="box hour">
                     <span>{countdownHours}</span>
                 </div>
                 <span className="colon-symbol">:</span>
-                {/* ======= Minute ======= */}
                 <div className="box minute">
                     <span>{countdownMinutes}</span>
                 </div>
                 <span className="colon-symbol">:</span>
-                {/* ======= Second ======= */}
                 <div className="box second">
                     <span>{countdownSecondes}</span>
                 </div>
@@ -70,6 +66,6 @@ const Countdown: React.FC = () => {
         </div>
 
     )
-}
+};
 
 export default Countdown;

@@ -7,15 +7,10 @@ import Lioit from '../../../assets/img/shop-brands/lioit.jpg';
 import Suncity from '../../../assets/img/shop-brands/suncity.jpg';
 import Analogue from '../../../assets/img/shop-brands/analogue.jpg';
 import Cafe40 from '../../../assets/img/shop-brands/cafe-40.jpg';
-
-interface IProducts {
-    id: number;
-    img: string;
-    link: string;
-};
+import { IBrandsSection } from '../../../types/types';
 
 const Brands: React.FC = () => {
-    const ProductsData: IProducts[] = [
+    const BrandsData: IBrandsSection[] = [
         { id: 1, img: HolaHire, link: "#/" },
         { id: 2, img: PatelPsych, link: "#/" },
         { id: 3, img: PanaxPharma, link: "#/" },
@@ -30,7 +25,7 @@ const Brands: React.FC = () => {
         <div className="brands">
             <ul className="d-flex">
                 {
-                    ProductsData.map(brand => (
+                    BrandsData.map(brand => (
                         <li key={brand.id}>
                             <a href={brand.link}>
                                 <img src={brand.img} alt="brand" />

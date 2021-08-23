@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Breadcrumb from '../components/Other/Breadcrumb';
+import { Link } from "react-router-dom";
 import ShippingInfo from '../components/Checkout/ShippingInfo/ShippingInfo';
 import Payment from '../components/Checkout/Payment/Payment';
 import PaymentSuccess from '../components/Checkout/PaymentSuccess/PaymentSuccess';
@@ -9,7 +9,7 @@ import { CompareProductIsInCartFalse } from '../redux/actions/compareActions';
 import { WishlistProductIsInCartFalse } from '../redux/actions/wishlistActions';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../redux/reducers/index';
-import { IProducts } from '../data/products';
+import { IProducts } from '../types/types';
 
 const Checkout: React.FC = () => {
     const [showCheckoutPages, setShowCheckoutPages] = useState<boolean | string>(true);
@@ -38,8 +38,20 @@ const Checkout: React.FC = () => {
     return (
         <div className="checkout-content">
             <div className="main">
-                <Breadcrumb currentPage={"Checkout"} />
-
+                {/* ===== breadcrumb ===== */}
+                <section id="breadcrumb">
+                    <div className="container">
+                        <ul className="breadcrumb-content d-flex m-0 p-0">
+                            <li>
+                                <Link to="/">Home</Link>
+                            </li>
+                            <li>
+                                <span>Checkout</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                {/* ===== content ===== */}
                 <section id="checkout">
                     <div className="container">
                         {
@@ -75,6 +87,6 @@ const Checkout: React.FC = () => {
             </div>
         </div>
     )
-}
+};
 
 export default Checkout;

@@ -3,19 +3,15 @@ import { SocialMediaData } from '../../Other/SocialMediaData';
 import { FiBarChart2 } from 'react-icons/fi';
 import { BsHeart } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
-import { IProducts } from '../../../data/products';
 import { useDispatch, useSelector } from 'react-redux';
 import { AddToCart, MakeIsInCartTrue } from '../../../redux/actions/cartActions';
 import { AddToWishlist, MakeIsInWishlistTrueInWishlist } from '../../../redux/actions/wishlistActions';
 import { AddToCompare, MakeIsInCompareTrueInCompare } from '../../../redux/actions/compareActions';
 import { toast } from 'react-toastify';
-import { RootState } from '../../../redux/reducers/index';
+import { RootState } from '../../../redux/reducers/index'
+import { IProducts, IProductProps } from '../../../types/types';
 
-interface IProps {
-    product: IProducts;
-}
-
-const ProductInfo: React.FC<IProps> = ({ product }) => {
+const ProductInfo: React.FC<IProductProps> = ({ product }) => {
     const [size] = useState<number>(1);
     const cartState = useSelector((state: RootState) => state.cart);
     const wishlistState = useSelector((state: RootState) => state.wishlist);
@@ -224,6 +220,6 @@ const ProductInfo: React.FC<IProps> = ({ product }) => {
             </div>
         </div>
     )
-}
+};
 
 export default ProductInfo;

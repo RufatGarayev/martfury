@@ -3,17 +3,9 @@ import SectionHeader from '../Other/SectionHeader';
 import ProductItem from './ProductItem';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../redux/reducers/index';
-
-interface IButtonsAndLink {
-    id: number;
-    href: string;
-    title: string;
-}
+import { IButtonsAndLink } from '../../../types/types';
 
 const NewArrivals: React.FC = () => {
-    const productsState = useSelector((state: RootState) => state.products);
-    const products = productsState.products;
-
     const ButtonsAndLinkData: IButtonsAndLink[] = [
         { id: 1, href: "#/", title: "Technologies" },
         { id: 2, href: "#/", title: "Electronic" },
@@ -22,6 +14,9 @@ const NewArrivals: React.FC = () => {
         { id: 5, href: "#/", title: "Health & Beauty" },
         { id: 6, href: "/shop", title: "View All" }
     ];
+
+    const productsState = useSelector((state: RootState) => state.products);
+    const products = productsState.products;
 
     return (
         <section id="new-arrivals">
@@ -50,6 +45,6 @@ const NewArrivals: React.FC = () => {
             </div>
         </section>
     )
-}
+};
 
 export default NewArrivals;

@@ -1,18 +1,23 @@
 import React from 'react';
 import Slider from './Slider';
-import { BannerRightData } from './BannerData';
+import Img1 from '../../../assets/img/home-banner/other/img1.jpeg';
+import Img2 from '../../../assets/img/home-banner/other/img2.jpeg';
 import { Link } from 'react-router-dom';
+import { IBannerRightDataTypes } from '../../../types/types';
 
 const Banner: React.FC = () => {
+    const BannerRightData: IBannerRightDataTypes[] = [
+        { id: 1, img: Img1 },
+        { id: 2, img: Img2 }
+    ];
+
     return (
         <section id="home-banner">
             <div className="container-fluid">
                 <div className="home-banner-content">
-                    {/* ======= Banner-left ======= */}
                     <div className="banner-slider-wrapper banner-left">
                         <Slider />
                     </div>
-                    {/* ======= Banner-right ======= */}
                     <div className="banner-right-imgs">
                         {
                             BannerRightData.map(item => (

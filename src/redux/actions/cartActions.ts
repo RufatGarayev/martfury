@@ -1,5 +1,5 @@
 import { ActionType } from "./actionTypes";
-import { IProducts } from '../../data/products';
+import { IProducts } from '../../types/types';
 
 
 export const AddToCart = (product: IProducts) => {

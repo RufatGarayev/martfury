@@ -74,6 +74,6 @@ const Reviews: React.FC = () => {
             </div>
         </div>
     )
-}
+};
 
 export default Reviews;

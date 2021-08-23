@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { HiArrowNarrowLeft } from 'react-icons/hi';
 import { RootState } from '../../redux/reducers';
 import { useSelector, useDispatch } from 'react-redux';
-import { IProducts } from '../../data/products';
+import { IProducts } from '../../types/types';
 import { AddToCart, MakeIsInCartTrue } from '../../redux/actions/cartActions';
 import { RemoveFromWishlist } from '../../redux/actions/wishlistActions';
 import { MakeIsInWishlistFalse } from '../../redux/actions/productActions';

@@ -1,21 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { IProducts } from '../../data/products';
+import { IProducts, ICartProps } from '../../types/types';
 import { useDispatch } from 'react-redux';
 import {
-    DeleteFromCart, IncreaseProductCount,
-    DecreaseProductCount
+    DeleteFromCart, IncreaseProductCount, DecreaseProductCount
 } from '../../redux/actions/cartActions';
 import { MakeIsInCartFalse } from '../../redux/actions/productActions';
 import { WishlistProductIsInCartFalse } from '../../redux/actions/wishlistActions';
 import { CompareProductIsInCartFalse } from '../../redux/actions/compareActions';
 import { toast } from 'react-toastify';
 
-interface IProps {
-    cart: any;
-}
-
-const CartTable: React.FC<IProps> = (props) => {
+const CartTable: React.FC<ICartProps> = (props) => {
     const [size] = useState<number>(1);
     const { cart } = props;
     const dispatch = useDispatch();
@@ -69,7 +64,7 @@ const CartTable: React.FC<IProps> = (props) => {
                                                 disabled={product.count === 1}
                                                 onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                                                     dispatch(DecreaseProductCount(product.id));
-                                                    toast.error('"' + product.title + '" removed from the cart.');
+                                                    toast.error('"' + product.title + '" removed from the Cart.');
                                                 }}
                                             >
                                                 −
@@ -80,7 +75,7 @@ const CartTable: React.FC<IProps> = (props) => {
                                                 disabled={product.count === 10}
                                                 onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                                                     dispatch(IncreaseProductCount(product.id));
-                                                    toast.success('"' + product.title + '" added to the cart.');
+                                                    toast.success('"' + product.title + '" added to the Cart.');
                                                 }}
                                             >
                                                 +
@@ -104,7 +99,7 @@ const CartTable: React.FC<IProps> = (props) => {
                                                 dispatch(MakeIsInCartFalse(product.id));
                                                 dispatch(WishlistProductIsInCartFalse(product.id));
                                                 dispatch(CompareProductIsInCartFalse(product.id));
-                                                toast.error('"' + product.title + '" removed from the cart.');
+                                                toast.error('"' + product.title + '" removed from the Cart.');
                                             }}
                                         >
                                             ✕

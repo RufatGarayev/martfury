@@ -20,13 +20,10 @@ const FooterTop: React.FC = () => {
                             {
                                 LinksData.map(item => (
                                     <div key={item.id} className="col-lg-4">
-                                        {/* ===== Link item ===== */}
                                         <div className="links-item">
-                                            {/* === Title === */}
                                             <div className="title">
                                                 <h6>{item.title}</h6>
                                             </div>
-                                            {/* === Links === */}
                                             <ul className="links m-0">
                                                 {
                                                     item.links.map(linkItem => (
@@ -48,6 +45,6 @@ const FooterTop: React.FC = () => {
             </div>
         </div>
     )
-}
+};
 
 export default FooterTop;

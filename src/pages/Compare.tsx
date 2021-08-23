@@ -1,12 +1,25 @@
 import React from 'react';
-import Breadcrumb from '../components/Other/Breadcrumb';
+import { Link } from "react-router-dom";
 import CompareSection from '../components/Compare/CompareSection';
 
 const Compare: React.FC = () => {
     return (
         <div className="compare-content">
             <div className="main">
-                <Breadcrumb currentPage={"Compare"} />
+                {/* ===== breadcrumb ===== */}
+                <section id="breadcrumb">
+                    <div className="container">
+                        <ul className="breadcrumb-content d-flex m-0 p-0">
+                            <li>
+                                <Link to="/">Home</Link>
+                            </li>
+                            <li>
+                                <span>Compare</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                {/* ===== content ===== */}
                 <CompareSection />
             </div>
         </div>

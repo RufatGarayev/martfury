@@ -3,8 +3,6 @@ import ProductCard from '../../../ProductCard/ProductCard';
 import SectionHeader from '../../Other/SectionHeader';
 import { ButtonsAndLinkData } from '../ButtonsAndLinkData/ButtonsAndLinkData';
 import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
 import { Options } from '../../../Other/OwlCarouselOptions';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../../redux/reducers/index';

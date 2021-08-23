@@ -12,6 +12,6 @@ const Vendor: React.FC = () => {
             <Link to="#/">More Products from Gopro</Link>
         </div>
     )
-}
+};
 
 export default Vendor;

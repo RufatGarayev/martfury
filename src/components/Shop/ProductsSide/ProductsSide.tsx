@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ProductCard from '../../ProductCard/ProductCard';
 import Pagination from './Pagination';
-import { IProducts } from '../../../data/products';
+import { IProducts } from '../../../types/types';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../../redux/reducers/index';
 import { SortByPriceAndLatest, IsLoading } from '../../../redux/actions/productActions';

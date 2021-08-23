@@ -1,16 +1,29 @@
 import React from 'react';
-import Breadcrumb from '../components/Other/Breadcrumb';
+import { Link } from "react-router-dom";
 import RegisterSection from '../components/Account/RegisterSection';
 
 const Register: React.FC = () => {
     return (
         <div className="login-content">
             <div className="main">
-                <Breadcrumb currentPage={"Register"} />
+                {/* ===== breadcrumb ===== */}
+                <section id="breadcrumb">
+                    <div className="container">
+                        <ul className="breadcrumb-content d-flex m-0 p-0">
+                            <li>
+                                <Link to="/">Home</Link>
+                            </li>
+                            <li>
+                                <span>Register</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                {/* ===== content ===== */}
                 <RegisterSection />
             </div>
         </div>
     )
-}
+};
 
 export default Register;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { IProducts } from '../../../data/products';
+import { IProducts } from '../../../types/types';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../../redux/reducers/index';
 import { DeleteFromCart } from '../../../redux/actions/cartActions';

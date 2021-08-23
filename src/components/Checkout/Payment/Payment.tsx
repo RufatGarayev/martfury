@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { HiArrowNarrowLeft } from 'react-icons/hi';
-import { IProducts } from '../../../data/products';
+import { IProducts } from '../../../types/types';
 
 interface IProps {
     cart: any;

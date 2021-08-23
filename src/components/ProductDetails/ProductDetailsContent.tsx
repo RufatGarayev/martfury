@@ -2,13 +2,9 @@ import React from 'react';
 import ImgSlider from './PrimaryInfo/ImgSlider';
 import ProductInfo from './PrimaryInfo/ProductInfo';
 import ProductTabs from './ProductTabs/ProductTabs';
-import { IProducts } from '../../data/products';
+import { IProductProps } from '../../types/types';
 
-interface IProps {
-    product: IProducts;
-}
-
-const ProductDetailsContent: React.FC<IProps> = ({ product }) => {
+const ProductDetailsContent: React.FC<IProductProps> = ({ product }) => {
     return (
         <section id="product-details">
             <div className="container">

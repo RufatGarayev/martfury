@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { VscChevronRight, VscChevronLeft } from 'react-icons/vsc';
+import { IPaginationProps } from '../../../types/types';
 
-interface IProps {
-    pages: number;
-    setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
-}
-
-const Pagination: React.FC<IProps> = ({ pages, setCurrentPage }) => {
+const Pagination: React.FC<IPaginationProps> = ({ pages, setCurrentPage }) => {
     const [currentButton, setCurrentButton] = useState<number>(1);
     const numOfPages = [];
 
@@ -55,6 +51,6 @@ const Pagination: React.FC<IProps> = ({ pages, setCurrentPage }) => {
             </ul>
         </nav>
     )
-}
+};
 
 export default Pagination;

@@ -1,12 +1,6 @@
-import { IProducts, products } from '../../data/products';
+import { IProductReducerState } from '../../types/types';
+import { products } from '../../data/products';
 import { ProductAction, ActionType } from '../actions/actionTypes';
-
-interface IState {
-    products: IProducts[];
-    searchedProducts: IProducts[];
-    isLoading: boolean;
-    title: string;
-}
 
 const initialState = {
     products: products,
@@ -15,7 +9,7 @@ const initialState = {
     title: ""
 }
 
-const productReducer = (state: IState = initialState, action: ProductAction) => {
+const productReducer = (state: IProductReducerState = initialState, action: ProductAction) => {
     switch (action.type) {
         // sorting products by latest and price
         case ActionType.SORT_BY_LATEST_AND_PRICE:

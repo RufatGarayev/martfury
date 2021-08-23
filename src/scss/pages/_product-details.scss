@@ -1,195 +1,201 @@
-#product-details {
-  padding: 40px 0;
-
-  .img-slider {
-    @extend %img-slider;
+.product-details-content {
+  .loading-wrapper {
+    padding: 50px 0 120px 12px;
   }
 
-  .product-info {
-    padding-right: 50px;
-    @extend %product-info;
-  }
+  #product-details {
+    padding: 40px 0;
 
-  .product-tabs {
-    padding: 80px 0 60px;
-
-    ul {
-      padding: 0;
-      margin: 0;
+    .img-slider {
+      @extend %img-slider;
     }
 
-    p {
-      font-size: 14px;
-      color: $text-color;
+    .product-info {
+      padding-right: 50px;
+      @extend %product-info;
     }
 
-    .tab-list {
-      border-bottom: $primary-border;
+    .product-tabs {
+      padding: 80px 0 60px;
 
       ul {
-        @include flex-display(flex, row, center, space-between);
-        width: 525px;
-        height: 50px;
-
-        li {
-          @include flex-display(flex, row, center, center);
-          font-size: 20px;
-          font-weight: 600;
-          height: 100%;
-          color: $text-color;
-          border-bottom: 1px solid transparent;
-        }
-
-        .active-btn {
-          color: #000;
-          border-bottom: 1px solid #000;
-        }
+        padding: 0;
+        margin: 0;
       }
-    }
 
-    .tab-content-wrapper {
-      padding-top: 20px;
+      p {
+        font-size: 14px;
+        color: $text-color;
+      }
 
-      .tabContent {
-        &-description {
-          .img-wrapper {
-            width: 800px;
-          }
-        }
+      .tab-list {
+        border-bottom: $primary-border;
 
-        &-specification {
-          table,
-          tr,
-          td {
-            border: $primary-border;
-          }
+        ul {
+          @include flex-display(flex, row, center, space-between);
+          width: 525px;
+          height: 50px;
 
-          tr {
-            td {
-              padding: 20px 30px;
-              font-size: 14px;
-
-              &:first-of-type {
-                background-color: $secondary-bgColor;
-                width: 150px;
-                font-weight: 500;
-              }
-
-              &:last-of-type {
-                color: $text-color;
-              }
-            }
-          }
-        }
-
-        &-vendor {
-          a {
-            text-decoration: none;
-            color: $text-color;
-            font-size: 14px;
-            transition: all 0.3s ease;
-
-            &:hover {
-              color: $primary-color;
-            }
-          }
-        }
-
-        &-reviews {
-          h6 {
+          li {
+            @include flex-display(flex, row, center, center);
+            font-size: 20px;
             font-weight: 600;
-            margin-bottom: 15px;
+            height: 100%;
+            color: $text-color;
+            border-bottom: 1px solid transparent;
           }
 
-          .rating {
-            @include flex-display(flex, row, center, space-between);
-            padding-bottom: 25px;
-            width: 320px;
+          .active-btn {
+            color: #000;
+            border-bottom: 1px solid #000;
+          }
+        }
+      }
 
-            p {
-              margin: 0;
-            }
+      .tab-content-wrapper {
+        padding-top: 20px;
 
-            .stars {
-              width: 120px;
-              @include flex-display(flex, row-reverse, center, space-between);
-
-              input[type="radio"] {
-                display: none;
-              }
-
-              label {
-                font-size: 20px;
-                cursor: pointer;
-                color: #dfdbdb;
-                transition: all 0.3s ease;
-              }
-
-              input[type="radio"]:not(:checked) ~ label:hover,
-              input[type="radio"]:not(:checked) ~ label:hover ~ label {
-                color: $primary-color;
-              }
-
-              input[type="radio"]:checked ~ label {
-                color: $primary-color;
-              }
-
-              input[type="radio"]#rate-5:checked ~ label {
-                color: $primary-color;
-              }
-
-              .first-star {
-                color: $primary-color;
-              }
+        .tabContent {
+          &-description {
+            .img-wrapper {
+              width: 800px;
             }
           }
 
-          .textarea-wrapper {
-            padding-bottom: 17px;
+          &-specification {
+            table,
+            tr,
+            td {
+              border: $primary-border;
+            }
 
-            textarea {
-              border: 1px solid #ddd;
-              transition: all 0.3s ease;
-              outline: none;
-              padding: 13px 20px;
+            tr {
+              td {
+                padding: 20px 30px;
+                font-size: 14px;
+
+                &:first-of-type {
+                  background-color: $secondary-bgColor;
+                  width: 150px;
+                  font-weight: 500;
+                }
+
+                &:last-of-type {
+                  color: $text-color;
+                }
+              }
+            }
+          }
+
+          &-vendor {
+            a {
+              text-decoration: none;
+              color: $text-color;
               font-size: 14px;
+              transition: all 0.3s ease;
 
-              &:focus {
-                border: 1px solid $primary-color;
+              &:hover {
+                color: $primary-color;
               }
             }
           }
 
-          .input-wrapper {
-            input[type="text"] {
-              @extend %input;
+          &-reviews {
+            h6 {
+              font-weight: 600;
+              margin-bottom: 15px;
             }
-          }
 
-          .submit-review-btn {
-            padding-top: 25px;
+            .rating {
+              @include flex-display(flex, row, center, space-between);
+              padding-bottom: 25px;
+              width: 320px;
 
-            input[type="submit"] {
-              @extend %primary-btn;
-              padding: 0 40px;
-              border-radius: 0;
+              p {
+                margin: 0;
+              }
+
+              .stars {
+                width: 120px;
+                @include flex-display(flex, row-reverse, center, space-between);
+
+                input[type="radio"] {
+                  display: none;
+                }
+
+                label {
+                  font-size: 20px;
+                  cursor: pointer;
+                  color: #dfdbdb;
+                  transition: all 0.3s ease;
+                }
+
+                input[type="radio"]:not(:checked) ~ label:hover,
+                input[type="radio"]:not(:checked) ~ label:hover ~ label {
+                  color: $primary-color;
+                }
+
+                input[type="radio"]:checked ~ label {
+                  color: $primary-color;
+                }
+
+                input[type="radio"]#rate-5:checked ~ label {
+                  color: $primary-color;
+                }
+
+                .first-star {
+                  color: $primary-color;
+                }
+              }
+            }
+
+            .textarea-wrapper {
+              padding-bottom: 17px;
+
+              textarea {
+                border: 1px solid #ddd;
+                transition: all 0.3s ease;
+                outline: none;
+                padding: 13px 20px;
+                font-size: 14px;
+
+                &:focus {
+                  border: 1px solid $primary-color;
+                }
+              }
+            }
+
+            .input-wrapper {
+              input[type="text"] {
+                @extend %input;
+              }
+            }
+
+            .submit-review-btn {
+              padding-top: 25px;
+
+              input[type="submit"] {
+                @extend %primary-btn;
+                padding: 0 40px;
+                border-radius: 0;
+              }
             }
           }
         }
       }
     }
   }
-}
 
-#related-products {
-  padding-bottom: 60px;
+  #related-products {
+    padding-bottom: 60px;
 
-  .title {
-    padding: 7px 0;
-    border-bottom: $primary-border;
-  }
+    .title {
+      padding: 7px 0;
+      border-bottom: $primary-border;
+    }
 
-  .related-products-slider {
-    padding-top: 30px;
+    .related-products-slider {
+      padding-top: 30px;
+    }
   }
 }

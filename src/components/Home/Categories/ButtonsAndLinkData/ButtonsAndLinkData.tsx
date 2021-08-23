@@ -1,8 +1,4 @@
-export interface IButtonsAndLink {
-    id: number;
-    href: string;
-    title: string;
-}
+import { IButtonsAndLink } from "../../../../types/types";
 
 export const ButtonsAndLinkData: IButtonsAndLink[] = [
     { id: 1, href: "#/", title: "New Arrivals" },

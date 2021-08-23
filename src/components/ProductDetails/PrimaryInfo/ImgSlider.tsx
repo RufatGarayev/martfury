@@ -1,27 +1,16 @@
 import React from 'react';
 import "react-image-gallery/styles/scss/image-gallery.scss";
 import ImageGallery from 'react-image-gallery';
-import { IProducts } from '../../../data/products';
-
-// data types
-interface IOptions {
-    showPlayButton: boolean;
-    showFullscreenButton: boolean;
-    autoPlay: boolean;
-};
+import { IProductProps, IReactImgGalleryOptions } from '../../../types/types';
 
 interface Iimages {
     original: any;
     thumbnail: any;
 }
 
-interface IProps {
-    product: IProducts;
-}
-
-const ImgSlider: React.FC<IProps> = ({ product }) => {
+const ImgSlider: React.FC<IProductProps> = ({ product }) => {
     // react-image-gallery options
-    const options: IOptions = {
+    const options: IReactImgGalleryOptions = {
         showPlayButton: false,
         showFullscreenButton: false,
         autoPlay: true

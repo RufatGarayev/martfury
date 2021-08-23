@@ -1,5 +1,5 @@
 import { ActionType, WishlistAction } from '../actions/actionTypes';
-import { IProducts } from '../../data/products';
+import { IProducts } from '../../types/types';
 
 const initialState = {
     wishlist: []

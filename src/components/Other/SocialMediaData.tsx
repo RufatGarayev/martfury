@@ -1,12 +1,6 @@
 import { TiSocialFacebook, TiSocialTwitter } from 'react-icons/ti';
 import { AiOutlineGooglePlus, AiOutlineInstagram } from 'react-icons/ai';
-
-interface ISocialMedia {
-    id: number;
-    href: string;
-    icon: JSX.Element;
-    class: string;
-}
+import { ISocialMedia } from '../../types/types';
 
 export const SocialMediaData: ISocialMedia[] = [
     { id: 1, href: "#/", icon: <TiSocialFacebook />, class: "facebook" },
