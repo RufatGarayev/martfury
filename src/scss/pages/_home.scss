@@ -1,7 +1,5 @@
 // ======= HOME ======= //
 .home-content {
-  padding: 0 20px;
-
   // ===== Banner ===== //
   #home-banner {
     background-color: $main-bgColor;
@@ -209,15 +207,15 @@
       }
 
       .right-side {
+        a{
+          @extend %home-section-header-link-and-btns;
+        }
+
         .section-buttons-and-link {
           @include flex-display(flex, row, center, space-between);
           width: 390px;
           margin: 0;
           padding: 0;
-
-          a {
-            @extend %home-section-header-link-and-btns;
-          }
         }
       }
     }
@@ -225,7 +223,7 @@
     .consumer-electronics,
     .clothings,
     .garden-and-kitchen {
-      padding-bottom: 80px;
+      padding-bottom: 40px;
     }
   }
 

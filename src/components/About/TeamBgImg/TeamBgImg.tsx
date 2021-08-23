@@ -1,16 +1,9 @@
 import React from 'react';
 import TeamImg from '../../../assets/img/about/team-bg/team.jpg';
-
-interface IStyle {
-    backgroundImage: string;
-    backgroundSize: string;
-    backgroundPosition: string;
-    backgroundRepeat: string;
-    height: string;
-}
+import { ITeamBgImgStyle } from '../../../types/types';
 
 const TeamBgImg: React.FC = () => {
-    const sectionStyle: IStyle = {
+    const sectionStyle: ITeamBgImgStyle = {
         backgroundImage: `url(${TeamImg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",

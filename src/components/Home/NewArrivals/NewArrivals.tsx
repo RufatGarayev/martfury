@@ -1,11 +1,14 @@
 import React from 'react';
-import SectionHeader from '../Other/SectionHeader';
+import { Link } from 'react-router-dom';
 import ProductItem from './ProductItem';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../redux/reducers/index';
 import { IButtonsAndLink } from '../../../types/types';
 
 const NewArrivals: React.FC = () => {
+    const productsState = useSelector((state: RootState) => state.products);
+    const products = productsState.products;
+
     const ButtonsAndLinkData: IButtonsAndLink[] = [
         { id: 1, href: "#/", title: "Technologies" },
         { id: 2, href: "#/", title: "Electronic" },
@@ -15,18 +18,32 @@ const NewArrivals: React.FC = () => {
         { id: 6, href: "/shop", title: "View All" }
     ];
 
-    const productsState = useSelector((state: RootState) => state.products);
-    const products = productsState.products;
 
     return (
         <section id="new-arrivals">
-            <div className="container-fluid">
+            <div className="container">
                 {/* ======= Section header ======= */}
                 <div className="section-header-wrapper">
-                    <SectionHeader
-                        title="Hot New Arrivals"
-                        buttons={ButtonsAndLinkData}
-                    />
+                    <div className="section-header">
+                        <div className="left-side">
+                            {/* ======= Section title ======= */}
+                            <div className="section-title">
+                                <h4>Hot New Arrivals</h4>
+                            </div>
+                        </div>
+                        <div className="right-side">
+                            {/* ======= Section buttons and link ======= */}
+                            <ul className="d-flex section-buttons-and-link">
+                                {
+                                    ButtonsAndLinkData.map(item => (
+                                        <li key={item.id}>
+                                            <Link to={item.href}>{item.title}</Link>
+                                        </li>
+                                    ))
+                                }
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 {/* ======= Product item ======= */}
                 <div className="product-item-wrapper">

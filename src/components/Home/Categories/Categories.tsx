@@ -7,7 +7,7 @@ import GardenAndKitchen from './GardenAndKitchen/GardenAndKitchen';
 const Categories: React.FC = () => {
     return (
         <section id="categories">
-            <div className="container-fluid">
+            <div className="container">
                 <TopCategoriesList />
                 <ConsumerElectronics />
                 <Clothings />

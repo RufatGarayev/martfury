@@ -12,7 +12,7 @@ const DealOfTheDay: React.FC = () => {
 
     return (
         <section id="deal-of-the-day">
-            <div className="container-fluid">
+            <div className="container">
                 {/* ======= Section header ======= */}
                 <div className="section-header-wrapper">
                     <div className="section-header">

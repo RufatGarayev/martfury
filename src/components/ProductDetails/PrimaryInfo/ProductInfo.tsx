@@ -169,9 +169,24 @@ const ProductInfo: React.FC<IProductProps> = ({ product }) => {
                     </div>
                 </div>
                 <div className="buy-now-link">
-                    <Link to="/checkout" className="d-block text-center w-100">
-                        Buy Now
-                    </Link>
+                    {
+                        cart.length === 0 ? (
+                            <Link
+                                to="/checkout"
+                                className="d-block text-center w-100"
+                                onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+                                    e.preventDefault();
+                                }}
+                            >
+                                Buy Now
+                            </Link>
+                        ) : (
+                            <Link to="/checkout" className="d-block text-center w-100">
+                                Buy Now
+                            </Link>
+                        )
+                    }
+
                 </div>
             </div>
             {/* ===== sku-tags-and-categories ===== */}

@@ -14,7 +14,7 @@ const DownloadApp: React.FC = () => {
 
     return (
         <section id="download-app">
-            <div className="container-fluid">
+            <div className="container">
                 <div className="download-app-wrapper">
                     <div className="row">
                         <div className="col-lg-6">

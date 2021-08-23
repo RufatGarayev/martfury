@@ -340,7 +340,6 @@
 
   .modal-dialog {
     width: 1000px !important;
-    margin: 3.75rem auto;
     max-width: none;
 
     .modal-content {
@@ -353,10 +352,6 @@
           border: none;
           outline: none;
           background-color: transparent;
-        }
-
-        .buy-now-link {
-          display: none;
         }
       }
     }

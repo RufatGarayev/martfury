@@ -9,6 +9,10 @@
       padding: 0 9px 0 12px;
       position: relative;
 
+      &:first-of-type {
+        padding-left: 0;
+      }
+
       &:not(:first-of-type) {
         &::before {
           content: "/";

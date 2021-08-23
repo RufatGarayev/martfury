@@ -24,6 +24,6 @@ const ProductDetailsContent: React.FC<IProductProps> = ({ product }) => {
             </div>
         </section>
     )
-}
+};
 
 export default ProductDetailsContent;

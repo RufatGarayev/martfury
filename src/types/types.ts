@@ -97,7 +97,6 @@ export interface IButtonsAndLink {
 // home > section-header
 export interface ISectionHeaderProps {
     title: string;
-    buttons: IButtonsAndLink[];
 };
 
 // home > top categories
@@ -144,6 +143,15 @@ export interface ITeam {
     twitter: string;
     facebook: string;
     linkedin: string;
+};
+
+// about > team bg img
+export interface ITeamBgImgStyle {
+    backgroundImage: string;
+    backgroundSize: string;
+    backgroundPosition: string;
+    backgroundRepeat: string;
+    height: string;
 };
 
 // about > awards

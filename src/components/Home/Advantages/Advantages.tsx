@@ -16,7 +16,7 @@ const Advantages: React.FC = () => {
 
     return (
         <section id="advantages">
-            <div className="container-fluid">
+            <div className="container">
                 <div className="advantages-items-wrapper">
                     <ul>
                         {

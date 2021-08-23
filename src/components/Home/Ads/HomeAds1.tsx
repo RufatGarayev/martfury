@@ -14,7 +14,7 @@ const HomeAds1: React.FC = () => {
 
     return (
         <section id="ads-1">
-            <div className="container-fluid">
+            <div className="container">
                 <div className="row">
                     {
                         AdsData1.map(item => (

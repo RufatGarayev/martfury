@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { FiBarChart2 } from 'react-icons/fi';
-import { BsHeart } from 'react-icons/bs';
-import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { BsHeart, BsBag } from 'react-icons/bs';
 import { ImEye } from 'react-icons/im';
 import { Link } from 'react-router-dom';
 import { Modal } from 'react-bootstrap';
@@ -80,7 +79,7 @@ const ProductCard: React.FC<IProductProps> = ({ product }) => {
                                             disabled
                                         >
                                             <span className="cart-icon">
-                                                <AiOutlineShoppingCart />
+                                                <BsBag />
                                             </span>
                                         </button>
                                     ) : (
@@ -95,7 +94,7 @@ const ProductCard: React.FC<IProductProps> = ({ product }) => {
                                             }}
                                         >
                                             <span className="cart-icon">
-                                                <AiOutlineShoppingCart />
+                                                <BsBag />
                                             </span>
                                         </button>
                                     )

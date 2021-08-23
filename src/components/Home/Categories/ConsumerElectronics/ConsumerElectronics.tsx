@@ -1,7 +1,6 @@
 import React from 'react';
 import ProductCard from '../../../ProductCard/ProductCard';
 import SectionHeader from '../../Other/SectionHeader';
-import { ButtonsAndLinkData } from '../ButtonsAndLinkData/ButtonsAndLinkData';
 import OwlCarousel from 'react-owl-carousel';
 import { Options } from '../../../Other/OwlCarouselOptions';
 import { useSelector } from 'react-redux';
@@ -16,7 +15,6 @@ const ConsumerElectronics: React.FC = () => {
             <div className="section-header-wrapper">
                 <SectionHeader
                     title="Consumer Electronics"
-                    buttons={ButtonsAndLinkData}
                 />
             </div>
             {/* ======= Owl-carousel ======= */}

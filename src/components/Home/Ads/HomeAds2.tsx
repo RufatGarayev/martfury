@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const HomeAds2: React.FC = () => {
     return (
         <section id="ads-2">
-            <div className="container-fluid">
+            <div className="container">
                 <div className="row">
                     <div className="col-lg-8">
                         {/* ======= Bed img ======= */}

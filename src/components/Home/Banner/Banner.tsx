@@ -13,7 +13,7 @@ const Banner: React.FC = () => {
 
     return (
         <section id="home-banner">
-            <div className="container-fluid">
+            <div className="container">
                 <div className="home-banner-content">
                     <div className="banner-slider-wrapper banner-left">
                         <Slider />

@@ -1,9 +1,8 @@
 import React from 'react';
 import DropdownCart from './DropdownCart';
 import { FiBarChart2 } from 'react-icons/fi';
-import { BsHeart } from 'react-icons/bs';
-import { AiOutlineShoppingCart } from 'react-icons/ai';
-import { HiOutlineUser } from 'react-icons/hi';
+import { BsHeart, BsBag } from 'react-icons/bs';
+import UserIcon from '../../../assets/img/other/user-icon.png';
 import { Link } from "react-router-dom";
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../redux/reducers/index';
@@ -33,7 +32,7 @@ const Actions: React.FC = () => {
             id: 3,
             href: "#/",
             sup: cart.cart.length,
-            icon: <AiOutlineShoppingCart />,
+            icon: <BsBag />,
             class: "third-link",
             dropdownContent: <DropdownCart />
         }
@@ -60,7 +59,7 @@ const Actions: React.FC = () => {
             {/* ======= Right actions ======= */}
             <div className="right-actions d-flex">
                 <div className="user-icon">
-                    <span><HiOutlineUser /></span>
+                    <img src={UserIcon} alt="" />
                 </div>
                 <div className="links">
                     <Link to="/login">Login</Link>
