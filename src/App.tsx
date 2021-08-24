@@ -4,6 +4,7 @@ import Header from './components/Header/Header';
 import Subscribe from './components/Subscribe/Subscribe';
 import Footer from './components/Footer/Footer';
 import BackToTopBtn from './components/Other/BackToTopBtn';
+import NavigationList from './components/Other/NavigationList';
 import { ToastContainer } from 'react-toastify';
 // import pages
 import Home from './pages/Home';
@@ -54,6 +55,7 @@ const App: React.FC = () => {
           </footer>
 
           <BackToTopBtn />
+          <NavigationList />
           <ToastContainer position="bottom-left" autoClose={4000} closeOnClick />
         </div>
       </BrowserRouter>

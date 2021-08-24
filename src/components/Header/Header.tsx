@@ -10,13 +10,15 @@ import { NavLinksData } from "./HeaderBottom/HeaderBottomData";
 const Header: React.FC = () => {
     const [showDepartments, setShowDepartments] = useState<boolean>(false);
 
-    window.addEventListener("scroll", function (this: Window, e: Event): void {
-        if (window.scrollY > 150) {
-            setShowDepartments(true);
-        } else {
-            setShowDepartments(false);
-        }
-    });
+    if (window.innerWidth > 992) {
+        window.addEventListener("scroll", function (this: Window, e: Event): void {
+            if (window.scrollY > 150) {
+                setShowDepartments(true);
+            } else {
+                setShowDepartments(false);
+            }
+        });
+    };
 
     return (
         <div className="header">

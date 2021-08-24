@@ -1,0 +1,41 @@
+#navigation-list {
+  display: none;
+}
+
+// ======= Responsive Design ======= //
+@media screen and (max-width: 991.98px) {
+  #navigation-list {
+    display: flex;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    padding: 12px 0;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+
+    .navigation-list-content {
+      width: calc(50% + 40px);
+
+      p {
+        margin: 0;
+      }
+
+      .compare-btn {
+        svg {
+          border: 2px solid #000;
+          border-radius: 2px;
+        }
+      }
+
+      span {
+        svg {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

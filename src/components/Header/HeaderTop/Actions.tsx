@@ -59,7 +59,9 @@ const Actions: React.FC = () => {
             {/* ======= Right actions ======= */}
             <div className="right-actions d-flex">
                 <div className="user-icon">
-                    <img src={UserIcon} alt="" />
+                    <Link to="/login">
+                        <img src={UserIcon} alt="" />
+                    </Link>
                 </div>
                 <div className="links">
                     <Link to="/login">Login</Link>

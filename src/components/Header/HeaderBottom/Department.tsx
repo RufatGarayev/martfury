@@ -13,6 +13,10 @@ const Department: React.FC = () => {
             <div className="text">
                 <h6>Shop by Department</h6>
             </div>
+            <div className="title">
+                <h6>CATEGORIES</h6>
+                <span>✕</span>
+            </div>
             {/* ======= Departments ======= */}
             <ul className="departments">
                 {
