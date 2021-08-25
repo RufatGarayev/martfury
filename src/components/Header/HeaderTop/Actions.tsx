@@ -2,16 +2,19 @@ import React from 'react';
 import DropdownCart from './DropdownCart';
 import { FiBarChart2 } from 'react-icons/fi';
 import { BsHeart, BsBag } from 'react-icons/bs';
+import { IoIosSearch } from 'react-icons/io';
 import UserIcon from '../../../assets/img/other/user-icon.png';
 import { Link } from "react-router-dom";
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../../redux/reducers/index';
+import { ShowSearchArea } from '../../../redux/actions/primaryActions';
 import { IActionDataTypes } from '../../../types/types';
 
 const Actions: React.FC = () => {
     const cart = useSelector((state: RootState) => state.cart);
     const wishlist = useSelector((state: RootState) => state.wishlist);
     const compare = useSelector((state: RootState) => state.compare);
+    const dispatch = useDispatch();
 
     const ActionsData: IActionDataTypes[] = [
         {
@@ -43,6 +46,17 @@ const Actions: React.FC = () => {
             {/* ======= Left actions ======= */}
             <div className="left-actions">
                 <ul>
+                    <li>
+                        <button
+                            type="button"
+                            className="search-btnn"
+                            onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+                                dispatch(ShowSearchArea(true));
+                            }}
+                        >
+                            <IoIosSearch />
+                        </button>
+                    </li>
                     {
                         ActionsData.map(item => (
                             <li key={item.id}>

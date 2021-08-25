@@ -5,7 +5,8 @@ const initialState = {
     showSidebarCategories: false,
     showSidebarMenu: false,
     isLoading: false,
-    title: ""
+    title: "",
+    showSearchArea: true
 };
 
 const primaryReducer = (state: IPrimaryReducerState = initialState, action: PrimaryAction) => {
@@ -36,6 +37,13 @@ const primaryReducer = (state: IPrimaryReducerState = initialState, action: Prim
             return {
                 ...initialState,
                 title: initialState.title = action.payload
+            }
+
+        // show search area
+        case ActionType.SHOW_SEARCH_AREA:
+            return {
+                ...state,
+                showSearchArea: state.showSearchArea = action.payload
             }
 
         default:

@@ -251,4 +251,5 @@ export interface IPrimaryReducerState {
     showSidebarMenu: boolean;
     isLoading: boolean;
     title: string;
+    showSearchArea: boolean;
 };

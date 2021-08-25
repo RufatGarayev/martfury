@@ -602,7 +602,8 @@
               @include flex-display(flex, row, center, flex-start);
 
               .icon-wrapper svg {
-                margin: 0 15px 5px 0;
+                margin: 0 25px 5px 0;
+                font-size: 46px;
               }
             }
           }

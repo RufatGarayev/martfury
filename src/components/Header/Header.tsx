@@ -7,14 +7,16 @@ import Department from "./HeaderBottom/Department";
 import LangAndMonetaryUnit from "./HeaderBottom/LangAndMonetaryUnit";
 import { NavLinksData } from "./HeaderBottom/HeaderBottomData";
 import { useSelector, useDispatch } from "react-redux";
-import { ShowSidebarMenu, ShowSidebarCategories } from '../../redux/actions/primaryActions';
+import { ShowSidebarMenu, ShowSidebarCategories, ShowSearchArea } from '../../redux/actions/primaryActions';
 import { RootState } from "../../redux/reducers";
+import { useEffect } from "react";
 
 const Header: React.FC = () => {
     const [showDepartments, setShowDepartments] = useState<boolean>(false);
     const primaryState = useSelector((state: RootState) => state.primary);
     const showCategories = primaryState.showSidebarCategories;
     const showMenu = primaryState.showSidebarMenu;
+    const showSearch = primaryState.showSearchArea;
     const dispatch = useDispatch();
 
     const handleCloseMenu = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -30,6 +32,13 @@ const Header: React.FC = () => {
             }
         });
     };
+
+    useEffect(() => {
+        if (window.innerWidth < 992) {
+            dispatch(ShowSearchArea(false));
+        }
+    }, []);
+
 
     return (
         <div className="header">
@@ -51,7 +60,7 @@ const Header: React.FC = () => {
                                     <img className="img-fluid" src={BrandLogo} alt="brand" />
                                 </Link>
                             </div>
-                            <div className="search-wrapper w-100">
+                            <div className={showSearch ? "search-wrapper w-100" : "d-none"}>
                                 <Search />
                             </div>
                             <div className="header-top-actions-wrapper">

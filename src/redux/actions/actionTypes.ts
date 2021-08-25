@@ -6,6 +6,7 @@ export enum ActionType {
     SHOW_SIDEBAR_MENU = "SHOW_SIDEBAR_MENU",
     GET_TITLE = "GET_TITLE",
     IS_LOADING = "IS_LOADING",
+    SHOW_SEARCH_AREA = "SHOW_SEARCH_AREA",
 
     // cart action types
     ADD_TO_CART = "ADD_TO_CART",
@@ -56,6 +57,11 @@ interface GetTitleAction {
 
 interface IsLoadingAction {
     type: ActionType.IS_LOADING;
+    payload: boolean;
+}
+
+interface ShowSearchAreaAction {
+    type: ActionType.SHOW_SEARCH_AREA,
     payload: boolean;
 }
 
@@ -172,7 +178,7 @@ interface MakeCompareProductIsInCartFalseAction {
 
 
 export type PrimaryAction = ShowSidebarCategoriesAction | ShowSidebarMenuAction | GetTitleAction |
-    IsLoadingAction;
+    IsLoadingAction | ShowSearchAreaAction;
 
 export type CartAction = AddToCartAction | DeleteFromCartAction | IncreaseAction |
     DecreaseAction | MakeIsInCartTrueAction | ClearCartAction;

@@ -24,3 +24,9 @@ export const GetTitle = (title: string) => {
         type: ActionType.GET_TITLE, payload: title
     }
 };
+
+export const ShowSearchArea = (trueOrFalse: boolean) => {
+    return {
+        type: ActionType.SHOW_SEARCH_AREA, payload: trueOrFalse
+    }
+};

@@ -44,6 +44,7 @@
           form {
             input[type="text"] {
               background-color: $main-bgColor;
+              border-radius: 4px 0 0 4px;
               width: 100%;
               color: #000;
               height: 42px;
@@ -52,27 +53,17 @@
 
             button[type="submit"] {
               max-width: 130px;
-              padding: 0 18px;
+              padding: 0 24px;
               font-size: 14px;
               color: #fff;
               border: none;
               font-weight: 700;
               border-radius: 0 4px 4px 0;
               background-color: #000;
+            }
 
-              p {
-                margin-bottom: 0;
-              }
-
-              .search-iconn {
-                display: none;
-                color: #fff;
-
-                svg {
-                  font-size: 17px;
-                  margin-bottom: 2px;
-                }
-              }
+            .close-search-area {
+              display: none;
             }
 
             .close-btn,
@@ -178,6 +169,10 @@
 
             ul {
               @extend %header-ul;
+
+              .search-btnn {
+                display: none;
+              }
 
               li {
                 position: relative;
@@ -671,13 +666,63 @@
         }
 
         .search-wrapper {
-          padding: 0 25px 0 76px;
+          background-color: rgba(0, 0, 0, 0.6);
+          position: fixed;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          padding: 0;
+          width: 100%;
+          z-index: 9999;
+          animation: searchAnim .3s;
+
+          .search {
+            margin: 130px 25px;
+
+            input[type="text"] {
+              width: 100% !important;
+              height: 45px !important;
+            }
+
+            button[type="submit"] {
+              max-width: 85px !important;
+              padding: 0 18px !important;
+              font-size: 12px !important;
+              font-weight: 400 !important;
+            }
+
+            .close-search-area {
+              display: block !important;
+              position: absolute;
+              bottom: 70px;
+              right: 7px;
+              color: #fff;
+              font-size: 20px;
+            }
+          }
+        }
+
+        @keyframes searchAnim {
+          from{
+            opacity: 0;
+          }
+          to{
+            opacity: 1;
+          }
         }
 
         .header-top-actions {
+          padding-bottom: 8px;
+
           .left-actions {
-            width: 105px !important;
+            width: 90px !important;
             padding: 6px 20px 0 0px !important;
+
+            .search-btnn {
+              display: block !important;
+              font-size: 30px;
+              margin-bottom: 2px;
+            }
 
             .first-link,
             .second-link {
@@ -692,9 +737,10 @@
             }
 
             .user-icon {
+              margin-top: 12px;
               padding: 0 !important;
-              height: 34px !important;
-              width: 36px !important;
+              height: 30px !important;
+              width: 31px !important;
             }
           }
         }
@@ -824,36 +870,36 @@
           }
         }
 
-        .search-wrapper {
-          padding: 0 !important;
-
-          form {
-            input[type="text"] {
-              width: 200px !important;
-            }
-
-            button[type="submit"] {
-              padding: 0 12px !important;
-
-              p {
-                display: none;
-              }
-            }
-
-            .search-iconn {
-              display: block !important;
-            }
-          }
-        }
-
         .header-top-actions {
-          .left-actions {
-            width: 75px !important;
-          }
-
           .right-actions {
             .user-icon {
               width: 25px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 575.98px) {
+  .header {
+    .header-top-wrapper {
+      .header-top-content {
+        .search-wrapper {
+          .search {
+            margin: 83px 12px !important;
+
+            input[type="text"] {
+              height: 40px !important;
+            }
+
+            button[type="submit"] {
+              padding: 0 11px !important;
+            }
+
+            .close-search-area{
+              bottom: 55px !important;
             }
           }
         }

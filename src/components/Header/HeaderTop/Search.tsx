@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { CgSearch } from 'react-icons/cg';
 import { useSelector, useDispatch } from 'react-redux';
 import { SearchProduct } from '../../../redux/actions/productActions';
+import { ShowSearchArea } from '../../../redux/actions/primaryActions';
 import { RootState } from '../../../redux/reducers/index';
 import { Link } from 'react-router-dom';
 
@@ -45,9 +45,15 @@ const Search: React.FC = () => {
                     placeholder="I'm shopping for..."
                     onChange={handleChange}
                 />
-                <button type="submit">
-                    <p>Search</p>
-                    <span className="search-iconn"><CgSearch /></span>
+                <button type="submit">Search</button>
+                <button
+                    type="button"
+                    className="close-search-area"
+                    onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+                        dispatch(ShowSearchArea(false));
+                    }}
+                >
+                    ✕
                 </button>
                 <button
                     type="button"
@@ -75,6 +81,7 @@ const Search: React.FC = () => {
                                                 onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
                                                     setShowSearchResult(false);
                                                     setShowCloseBtn(false);
+                                                    dispatch(ShowSearchArea(false));
                                                 }}
                                             >
                                                 <h6>{product.title}</h6>
