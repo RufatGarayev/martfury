@@ -7,19 +7,17 @@ const FooterTop: React.FC = () => {
     return (
         <div className="footer-top">
             <div className="row">
-                <div className="col-lg-5">
-                    {/* ======= Contact us ======= */}
+                <div className="col-lg-5 col-md-5">
                     <div className="contact-us-wrapper">
                         <ContactUs />
                     </div>
                 </div>
-                <div className="col-lg-7">
-                    {/* ======= Links ======= */}
+                <div className="col-lg-7 col-md-7">
                     <div className="links-wrapper">
                         <div className="row">
                             {
                                 LinksData.map(item => (
-                                    <div key={item.id} className="col-lg-4">
+                                    <div key={item.id} className="col-lg-4 col-md-4 col-sm-4">
                                         <div className="links-item">
                                             <div className="title">
                                                 <h6>{item.title}</h6>

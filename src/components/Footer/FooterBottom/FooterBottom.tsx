@@ -18,7 +18,7 @@ const FooterBottom: React.FC = () => {
     return (
         <div className="footer-bottom">
             <div className="row">
-                <div className="col-lg-6">
+                <div className="col-lg-4 col-md-12">
                     {/* ======= Copyright ======= */}
                     <div className="copyright">
                         <p>
@@ -32,7 +32,7 @@ const FooterBottom: React.FC = () => {
                         </p>
                     </div>
                 </div>
-                <div className="col-lg-6">
+                <div className="col-lg-8 col-md-12">
                     {/* ======= Payment ======= */}
                     <div className="payment">
                         <div className="payment-text">

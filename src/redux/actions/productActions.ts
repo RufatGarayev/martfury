@@ -19,12 +19,6 @@ export const SortByBrand = (title: string) => {
     }
 };
 
-export const IsLoading = (value: boolean) => {
-    return {
-        type: ActionType.IS_LOADING, payload: value
-    }
-};
-
 export const SearchProduct = (searchValue: string) => {
     return {
         type: ActionType.SEARCH_PRODUCT, payload: searchValue
@@ -48,9 +42,3 @@ export const MakeIsInCompareFalse = (id: number) => {
         type: ActionType.MAKE_IS_IN_COMPARE_FALSE, payload: id
     }
 };
-
-export const GetTitle = (title: string) => {
-    return {
-        type: ActionType.GET_TITLE, payload: title
-    }
-}

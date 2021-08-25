@@ -76,7 +76,7 @@ footer {
 
     .links-item {
       .title {
-        h6{
+        h6 {
           font-weight: 600;
         }
       }
@@ -179,6 +179,59 @@ footer {
             }
           }
         }
+      }
+    }
+  }
+}
+
+// ======= Responsive Design ======= //
+@media screen and (max-width: 1199.98px) {
+  footer {
+    .footer-middle {
+      display: none;
+      .title {
+        white-space: nowrap;
+      }
+
+      .links {
+        li {
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991.98px) {
+  .footer-bottom {
+    margin-bottom: 70px;
+
+    .copyright {
+      text-align: center;
+      padding-bottom: 10px;
+    }
+
+    .payment {
+      justify-content: center !important;
+    }
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .footer-top {
+    .contact-us {
+      padding-bottom: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 575.98px) {
+  .footer-bottom {
+    .payment {
+      flex-wrap: wrap;
+
+      .payment-text{
+        padding: 0 0 10px 0 !important;
       }
     }
   }

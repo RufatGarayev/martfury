@@ -12,7 +12,7 @@ export const Options: IOwlCarouselOptions = {
             items: 2,
         },
         768: {
-            items: 4,
+            items: 3,
         },
         1300: {
             items: 5,

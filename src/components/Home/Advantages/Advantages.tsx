@@ -23,9 +23,13 @@ const Advantages: React.FC = () => {
                             AdvantagesData.map(item => (
                                 <li key={item.id}>
                                     <div className="advantages-item">
-                                        <span>{item.icon}</span>
-                                        <h5>{item.title}</h5>
-                                        <p>{item.paragraph}</p>
+                                        <div className="icon-wrapper">
+                                            <span>{item.icon}</span>
+                                        </div>
+                                        <div className="text-wrapper">
+                                            <h5>{item.title}</h5>
+                                            <p>{item.paragraph}</p>
+                                        </div>
                                     </div>
                                 </li>
                             ))

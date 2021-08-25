@@ -3,8 +3,16 @@ import { Link } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { VscChevronRight } from 'react-icons/vsc';
 import { CategoriesData } from '../../Other/CategoriesData';
+import { ShowSidebarCategories } from '../../../redux/actions/primaryActions';
+import { useDispatch } from 'react-redux';
 
 const Department: React.FC = () => {
+    const dispatch = useDispatch();
+
+    const handleCloseCategories = (e: React.MouseEvent<HTMLButtonElement>) => {
+        dispatch(ShowSidebarCategories(false));
+    };
+
     return (
         <div className="department d-flex">
             <div className="icon">
@@ -15,7 +23,12 @@ const Department: React.FC = () => {
             </div>
             <div className="title">
                 <h6>CATEGORIES</h6>
-                <span>✕</span>
+                <button
+                    type="button"
+                    onClick={handleCloseCategories}
+                >
+                    ✕
+                </button>
             </div>
             {/* ======= Departments ======= */}
             <ul className="departments">

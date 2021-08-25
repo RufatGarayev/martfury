@@ -243,6 +243,12 @@ export interface ICartProps {
 export interface IProductReducerState {
     products: IProducts[];
     searchedProducts: IProducts[];
+};
+
+// primary reducer
+export interface IPrimaryReducerState {
+    showSidebarCategories: boolean;
+    showSidebarMenu: boolean;
     isLoading: boolean;
     title: string;
 };

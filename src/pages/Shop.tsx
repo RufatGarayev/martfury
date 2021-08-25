@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { IsLoading } from '../redux/actions/productActions';
+import { IsLoading } from '../redux/actions/primaryActions';
 import { Link } from "react-router-dom";
 import BrandsSection from '../components/Shop/Brands/Brands';
 import Categories from '../components/Shop/FilterSide/Categories/Categories';
@@ -10,8 +10,8 @@ import ProductsSide from '../components/Shop/ProductsSide/ProductsSide';
 import { RootState } from '../redux/reducers/index';
 
 const Shop: React.FC = () => {
-    const productState = useSelector((state: RootState) => state.products);
-    const loading = productState.isLoading;
+    const primaryState = useSelector((state: RootState) => state.primary);
+    const loading = primaryState.isLoading;
     const dispatch = useDispatch();
 
     useEffect(() => {

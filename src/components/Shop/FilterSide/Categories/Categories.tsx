@@ -1,7 +1,8 @@
 import React from 'react';
 import { CategoriesData } from '../../../Other/CategoriesData';
 import { useDispatch } from 'react-redux';
-import { SortByCategory, GetTitle, IsLoading } from '../../../../redux/actions/productActions';
+import { SortByCategory } from '../../../../redux/actions/productActions';
+import { GetTitle, IsLoading } from '../../../../redux/actions/primaryActions';
 
 const Categories: React.FC = () => {
     const dispatch = useDispatch();

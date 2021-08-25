@@ -24,6 +24,17 @@
         margin: 0;
       }
 
+      a {
+        color: #000;
+        text-decoration: none;
+      }
+
+      .sidebar-categories-btn {
+        svg {
+          font-size: 24px;
+        }
+      }
+
       .compare-btn {
         svg {
           border: 2px solid #000;
@@ -35,6 +46,18 @@
         svg {
           font-size: 20px;
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 575.99px) {
+  #navigation-list {
+    .navigation-list-content {
+      width: calc(50% + 110px);
+
+      p {
+        font-size: 14px;
       }
     }
   }

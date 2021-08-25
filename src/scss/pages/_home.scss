@@ -1,4 +1,3 @@
-// ======= HOME ======= //
 .home-content {
   // ===== Banner ===== //
   #home-banner {
@@ -207,7 +206,7 @@
       }
 
       .right-side {
-        a{
+        a {
           @extend %home-section-header-link-and-btns;
         }
 
@@ -338,7 +337,326 @@
       }
 
       .product-item-right-content {
-        padding-left: 10px
+        padding-left: 10px;
+      }
+    }
+  }
+}
+
+// ======= Responsive Design ======= //
+@media screen and (max-width: 1399.98px) {
+  .home-content {
+    #home-banner {
+      .banner-left {
+        max-width: calc(100% - 282px) !important;
+
+        .slide-item {
+          height: 337px !important;
+        }
+      }
+
+      .banner-right-imgs {
+        max-width: 350px !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1199.98px) {
+  .home-content {
+    #home-banner {
+      padding: 30px 0 20px;
+
+      .banner-left {
+        .slide-item {
+          height: 308px !important;
+        }
+      }
+    }
+
+    #categories {
+      .top-categories-list {
+        .category-item {
+          margin-bottom: 25px;
+        }
+      }
+    }
+
+    #download-app {
+      .download-app-wrapper {
+        .app-img {
+          padding-left: 0px;
+        }
+
+        .download-app-content {
+          padding: 30px 20px 0px 5px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991.98px) {
+  .home-content {
+    // === banner === //
+    #home-banner {
+      .home-banner-content {
+        flex-direction: column;
+
+        .banner-left {
+          max-width: 100% !important;
+          padding-right: 0px;
+        }
+
+        .banner-right-imgs {
+          display: flex;
+          max-width: 100% !important;
+
+          .banner-img-wrapper {
+            padding-top: 20px;
+
+            &:first-of-type {
+              padding-right: 10px;
+            }
+
+            &:last-of-type {
+              padding-left: 10px;
+            }
+          }
+        }
+      }
+    }
+
+    // === advantages === //
+    #advantages {
+      .advantages-items-wrapper {
+        ul {
+          flex-wrap: wrap;
+          justify-content: flex-start;
+
+          li {
+            padding: 10px 25px 20px;
+          }
+        }
+      }
+    }
+
+    // === ads-1 === //
+    #ads-1 {
+      .ads-img {
+        padding-top: 26px;
+      }
+    }
+
+    // === categories === //
+    #categories {
+      .section-header,
+      .section-title {
+        h4 {
+          font-size: 20px !important;
+        }
+      }
+    }
+
+    // === ads-2 === //
+    #ads-2 {
+      .bed-img,
+      .iphone-img {
+        margin-top: 25px;
+      }
+
+      .iphone-img {
+        margin-top: 30px;
+      }
+    }
+
+    // === download app === //
+    #download-app {
+      .download-app-wrapper {
+        .app-img {
+          padding-left: 30px;
+        }
+
+        .download-app-content {
+          padding: 30px 220px 35px 40px;
+        }
+      }
+    }
+
+    // === new arrivals === //
+    #new-arrivals {
+      padding: 80px 0 40px;
+
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 18px 20px;
+        margin-bottom: 40px;
+
+        h4 {
+          font-size: 20px !important;
+        }
+
+        .right-side {
+          .section-buttons-and-link {
+            justify-content: flex-start;
+            width: auto;
+            padding-top: 5px;
+            flex-wrap: wrap;
+
+            li {
+              padding-right: 22px;
+            }
+          }
+        }
+      }
+
+      .product-item {
+        justify-content: flex-start;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767.99px) {
+  .home-content {
+    #home-banner {
+      .banner-left {
+        .slide-item {
+          height: 180px !important;
+        }
+      }
+    }
+
+    #advantages {
+      .advantages-items-wrapper {
+        ul {
+          li {
+            padding: 10px 36px 20px;
+          }
+        }
+      }
+    }
+
+    #deal-of-the-day {
+      .section-header {
+        padding: 12px 0px;
+
+        .left-side {
+          flex-direction: column;
+
+          .title {
+            h4 {
+              margin: 2px 68px 7px 0;
+              font-size: 22px;
+            }
+          }
+
+          .countdown {
+            width: 252px;
+            font-size: 16px;
+          }
+        }
+
+        .right-side {
+          padding: 43px 0 0;
+        }
+      }
+    }
+
+    #download-app {
+      .download-app-wrapper {
+        .app-img {
+          padding-left: 5px;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        .download-app-content {
+          padding: 30px 35px 35px 40px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 575.99px) {
+  .home-content {
+    #advantages {
+      .advantages-items-wrapper {
+        padding: 20px;
+
+        ul {
+          flex-direction: column;
+
+          li {
+            padding: 0 0 40px;
+
+            &:first-of-type {
+              padding-top: 20px;
+            }
+
+            .advantages-item {
+              @include flex-display(flex, row, center, flex-start);
+
+              .icon-wrapper svg {
+                margin: 0 15px 5px 0;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    #categories {
+      .section-header{
+        margin-bottom: 25px;
+      }
+
+      .top-categories-list{
+        padding: 80px 0 60px;
+      }
+
+      .consumer-electronics,
+      .clothings,
+      .garden-and-kitchen {
+        padding-bottom: 60px;
+      }
+    }
+
+    #deal-of-the-day {
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+
+        .left-side {
+          .countdown {
+            width: 232px;
+            padding: 4px 0 4px 15px;
+          }
+        }
+
+        .right-side {
+          padding: 10px 0 0;
+        }
+      }
+    }
+
+    #download-app {
+      .download-app-content {
+        padding: 30px 20px 35px 20px !important;
+
+        .text {
+          h3 {
+            font-size: 20px !important;
+          }
+
+          p {
+            font-size: 14px;
+          }
+        }
       }
     }
   }

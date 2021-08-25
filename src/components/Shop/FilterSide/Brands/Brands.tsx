@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { SortByBrand, GetTitle, IsLoading } from '../../../../redux/actions/productActions';
+import { SortByBrand } from '../../../../redux/actions/productActions';
+import {GetTitle, IsLoading} from '../../../../redux/actions/primaryActions';
 import { IBrands } from '../../../../types/types';
 
 const Brands: React.FC = () => {

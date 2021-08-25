@@ -4,10 +4,8 @@ import { ProductAction, ActionType } from '../actions/actionTypes';
 
 const initialState = {
     products: products,
-    searchedProducts: [],
-    isLoading: false,
-    title: ""
-}
+    searchedProducts: []
+};
 
 const productReducer = (state: IProductReducerState = initialState, action: ProductAction) => {
     switch (action.type) {
@@ -48,20 +46,6 @@ const productReducer = (state: IProductReducerState = initialState, action: Prod
             return {
                 ...initialState,
                 products: sortByBrand
-            }
-
-        // change isLoading value
-        case ActionType.IS_LOADING:
-            return {
-                ...state, 
-                isLoading: state.isLoading = action.payload
-            } 
-
-        // get title
-        case ActionType.GET_TITLE:
-            return {
-                ...initialState,
-                title: initialState.title = action.payload
             }
 
         // making isInCart False

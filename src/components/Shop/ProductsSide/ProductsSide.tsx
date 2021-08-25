@@ -4,13 +4,15 @@ import Pagination from './Pagination';
 import { IProducts } from '../../../types/types';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../../redux/reducers/index';
-import { SortByPriceAndLatest, IsLoading } from '../../../redux/actions/productActions';
+import { SortByPriceAndLatest } from '../../../redux/actions/productActions';
+import { IsLoading } from '../../../redux/actions/primaryActions';
 
 const ProductsSide: React.FC = () => {
     const productsState = useSelector((state: RootState) => state.products);
+    const primaryState = useSelector((state: RootState) => state.primary);
     const products = productsState.products;
-    const title = productsState.title;
-    const loading = productsState.isLoading;
+    const title = primaryState.title;
+    const loading = primaryState.isLoading;
     const dispatch = useDispatch();
 
     const [currentPage, setCurrentPage] = useState<number>(1);

@@ -6,9 +6,20 @@ import Actions from "./HeaderTop/Actions";
 import Department from "./HeaderBottom/Department";
 import LangAndMonetaryUnit from "./HeaderBottom/LangAndMonetaryUnit";
 import { NavLinksData } from "./HeaderBottom/HeaderBottomData";
+import { useSelector, useDispatch } from "react-redux";
+import { ShowSidebarMenu, ShowSidebarCategories } from '../../redux/actions/primaryActions';
+import { RootState } from "../../redux/reducers";
 
 const Header: React.FC = () => {
     const [showDepartments, setShowDepartments] = useState<boolean>(false);
+    const primaryState = useSelector((state: RootState) => state.primary);
+    const showCategories = primaryState.showSidebarCategories;
+    const showMenu = primaryState.showSidebarMenu;
+    const dispatch = useDispatch();
+
+    const handleCloseMenu = (e: React.MouseEvent<HTMLButtonElement>) => {
+        dispatch(ShowSidebarMenu(false));
+    };
 
     if (window.innerWidth > 992) {
         window.addEventListener("scroll", function (this: Window, e: Event): void {
@@ -54,10 +65,19 @@ const Header: React.FC = () => {
             <div className="header-bottom-wrapper">
                 <div className="container">
                     <div className="header-bottom">
-                        <div className="department-wrapper">
+                        <div className={showCategories ? "department-wrapper show-sidebar" : "department-wrapper"}>
                             <Department />
                         </div>
-                        <div className="nav-links-wrapper">
+                        <div className={showMenu ? "nav-links-wrapper show-sidebar" : "nav-links-wrapper"}>
+                            <div className="title">
+                                <h6>MENU</h6>
+                                <button
+                                    type="button"
+                                    onClick={handleCloseMenu}
+                                >
+                                    ✕
+                                </button>
+                            </div>
                             <ul className="d-flex">
                                 {NavLinksData.map((link) =>
                                     link.id === 1 ? (
@@ -86,6 +106,14 @@ const Header: React.FC = () => {
                     </div>
                 </div>
             </div>
+            {/* ======= dark bg-color ======= */}
+            <div
+                className={showMenu || showCategories ? "dark-bg-color" : "d-none"}
+                onClick={() => {
+                    dispatch(ShowSidebarMenu(false));
+                    dispatch(ShowSidebarCategories(false));
+                }}
+            ></div>
         </div>
     );
 };
