@@ -30,3 +30,9 @@ export const ShowSearchArea = (trueOrFalse: boolean) => {
         type: ActionType.SHOW_SEARCH_AREA, payload: trueOrFalse
     }
 };
+
+export const ShowOrHideDropdownCart = () => {
+    return {
+        type: ActionType.SHOW_OR_HIDE_DROPDOWNCART
+    }
+};

@@ -9,7 +9,6 @@ const Reviews: React.FC = () => {
         <div className="tabContent-reviews">
             <h6>SUBMIT YOUR REVIEW</h6>
             <p>Your email address will not be published. Required fields are marked *</p>
-            {/* ===== rating ===== */}
             <div className="rating">
                 <p>Your rating of this product</p>
                 <div className="stars">
@@ -25,12 +24,10 @@ const Reviews: React.FC = () => {
                     <label htmlFor="rate-1" className="first-star"><AiFillStar /></label>
                 </div>
             </div>
-            {/* ===== review-area ===== */}
             <div className="review-area">
                 <form>
                     <div className="row">
                         <div className="col-12">
-                            {/* === textarea === */}
                             <div className="textarea-wrapper">
                                 <textarea
                                     name="review"
@@ -42,8 +39,7 @@ const Reviews: React.FC = () => {
                             </div>
                         </div>
                         <div className="col-lg-6">
-                            {/* === name === */}
-                            <div className="input-wrapper">
+                            <div className="input-wrapper input-wrapper-name">
                                 <input
                                     type="text"
                                     name="name"
@@ -53,7 +49,6 @@ const Reviews: React.FC = () => {
                             </div>
                         </div>
                         <div className="col-lg-6">
-                            {/* === email === */}
                             <div className="input-wrapper">
                                 <input
                                     type="text"
@@ -64,7 +59,6 @@ const Reviews: React.FC = () => {
                             </div>
                         </div>
                         <div className="col-12">
-                            {/* === submit btn === */}
                             <div className="submit-review-btn">
                                 <input type="submit" value="Submit Review" />
                             </div>

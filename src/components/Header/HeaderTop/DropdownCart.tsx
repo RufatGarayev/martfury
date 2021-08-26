@@ -11,14 +11,16 @@ import { toast } from 'react-toastify';
 
 const DropdownCart: React.FC = () => {
     const cartState = useSelector((state: RootState) => state.cart);
+    const primaryState = useSelector((state: RootState) => state.primary);
     const cart = cartState.cart;
+    const showOrHideDropdCart = primaryState.showOrHideDropdownCart;
     const dispatch = useDispatch();
 
     const totalPrice = cart.reduce((total: number, product: IProducts) =>
         (total += product.price * product.count), 0);
 
     return (
-        <div className="dropdownCart-wrapper">
+        <div className={showOrHideDropdCart ? "dropdownCart-wrapper show-dropdownCart" : "dropdownCart-wrapper"}>
             <div className="dropdownCart">
                 {
                     cart.length > 0 ? (
@@ -110,7 +112,7 @@ const DropdownCart: React.FC = () => {
                         <div className="empty-cart">
                             <div className="alert-text text-center">
                                 <p className="paragraph mb-1">
-                                    No products in the Cart
+                                    No products in the cart.
                                 </p>
                             </div>
                         </div>
@@ -119,6 +121,6 @@ const DropdownCart: React.FC = () => {
             </div>
         </div>
     )
-}
+};
 
 export default DropdownCart;

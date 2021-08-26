@@ -109,63 +109,65 @@ const ProductInfo: React.FC<IProductProps> = ({ product }) => {
                             Add to Cart
                         </button>
                     </div>
-                    <div className="wishlist-btn top-btn">
-                        {
-                            product.isInWishlist ? (
-                                // ======= Added to Wishlist Button ======= //
-                                <button
-                                    type="button"
-                                    title="Added To Wishlist"
-                                    className="disabledBtn"
-                                    disabled
-                                >
-                                    <BsHeart />
-                                </button>
-                            ) : (
-                                // ======= Add to Wishlist Button ======= //
-                                <button
-                                    type="button"
-                                    title="Add To Wishlist"
-                                    onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
-                                        dispatch(AddToWishlist(product));
-                                        dispatch(MakeIsInWishlistTrueInWishlist(product.id));
-                                        toast.success('"' + product.title + '" added to the Wishlist.');
-                                    }}
-                                >
-                                    <BsHeart />
-                                </button>
-                            )
-                        }
+                    <div className="small-btns d-flex">
+                        <div className="wishlist-btn top-btn">
+                            {
+                                product.isInWishlist ? (
+                                    // ======= Added to Wishlist Button ======= //
+                                    <button
+                                        type="button"
+                                        title="Added To Wishlist"
+                                        className="disabledBtn"
+                                        disabled
+                                    >
+                                        <BsHeart />
+                                    </button>
+                                ) : (
+                                    // ======= Add to Wishlist Button ======= //
+                                    <button
+                                        type="button"
+                                        title="Add To Wishlist"
+                                        onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+                                            dispatch(AddToWishlist(product));
+                                            dispatch(MakeIsInWishlistTrueInWishlist(product.id));
+                                            toast.success('"' + product.title + '" added to the Wishlist.');
+                                        }}
+                                    >
+                                        <BsHeart />
+                                    </button>
+                                )
+                            }
 
-                    </div>
-                    <div className="compare-btn top-btn">
-                        {
-                            product.isInCompare ? (
-                                // ===== Added to Compare button ===== //
-                                <button
-                                    type="button"
-                                    title="Added To Compare"
-                                    className="disabledBtn"
-                                    disabled
-                                >
-                                    <FiBarChart2 />
-                                </button>
-                            ) : (
-                                // ===== Add to Compare button ===== //
-                                <button
-                                    type="button"
-                                    title="Add To Compare"
-                                    onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
-                                        dispatch(AddToCompare(product));
-                                        dispatch(MakeIsInCompareTrueInCompare(product.id));
-                                        toast.success('"' + product.title + '" added to the Compare.');
-                                    }}
-                                >
-                                    <FiBarChart2 />
-                                </button>
-                            )
-                        }
+                        </div>
+                        <div className="compare-btn top-btn">
+                            {
+                                product.isInCompare ? (
+                                    // ===== Added to Compare button ===== //
+                                    <button
+                                        type="button"
+                                        title="Added To Compare"
+                                        className="disabledBtn"
+                                        disabled
+                                    >
+                                        <FiBarChart2 />
+                                    </button>
+                                ) : (
+                                    // ===== Add to Compare button ===== //
+                                    <button
+                                        type="button"
+                                        title="Add To Compare"
+                                        onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+                                            dispatch(AddToCompare(product));
+                                            dispatch(MakeIsInCompareTrueInCompare(product.id));
+                                            toast.success('"' + product.title + '" added to the Compare.');
+                                        }}
+                                    >
+                                        <FiBarChart2 />
+                                    </button>
+                                )
+                            }
 
+                        </div>
                     </div>
                 </div>
                 <div className="buy-now-link">

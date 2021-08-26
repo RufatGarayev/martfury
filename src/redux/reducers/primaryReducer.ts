@@ -2,11 +2,12 @@ import { PrimaryAction, ActionType } from '../actions/actionTypes';
 import { IPrimaryReducerState } from '../../types/types';
 
 const initialState = {
+    title: "",
     showSidebarCategories: false,
     showSidebarMenu: false,
     isLoading: false,
-    title: "",
-    showSearchArea: true
+    showSearchArea: true,
+    showOrHideDropdownCart: false
 };
 
 const primaryReducer = (state: IPrimaryReducerState = initialState, action: PrimaryAction) => {
@@ -44,6 +45,13 @@ const primaryReducer = (state: IPrimaryReducerState = initialState, action: Prim
             return {
                 ...state,
                 showSearchArea: state.showSearchArea = action.payload
+            }
+
+        // show or hide dropdown cart
+        case ActionType.SHOW_OR_HIDE_DROPDOWNCART:
+            return {
+                ...state,
+                showOrHideDropdownCart: !state.showOrHideDropdownCart
             }
 
         default:

@@ -25,6 +25,7 @@ export interface IActionDataTypes {
     icon: JSX.Element;
     class: string;
     dropdownContent?: JSX.Element;
+    func?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
 };
 
 // categories list
@@ -247,9 +248,10 @@ export interface IProductReducerState {
 
 // primary reducer
 export interface IPrimaryReducerState {
+    title: string;
     showSidebarCategories: boolean;
     showSidebarMenu: boolean;
     isLoading: boolean;
-    title: string;
     showSearchArea: boolean;
+    showOrHideDropdownCart: boolean;
 };

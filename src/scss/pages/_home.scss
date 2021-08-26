@@ -523,7 +523,7 @@
     #home-banner {
       .banner-left {
         .slide-item {
-          height: 180px !important;
+          height: 100% !important;
         }
       }
     }
@@ -532,7 +532,7 @@
       .advantages-items-wrapper {
         ul {
           li {
-            padding: 10px 36px 20px;
+            padding: 10px 26px 20px;
           }
         }
       }
@@ -612,11 +612,11 @@
     }
 
     #categories {
-      .section-header{
+      .section-header {
         margin-bottom: 25px;
       }
 
-      .top-categories-list{
+      .top-categories-list {
         padding: 80px 0 60px;
       }
 

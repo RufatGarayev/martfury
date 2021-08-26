@@ -9,10 +9,10 @@ const ProductDetailsContent: React.FC<IProductProps> = ({ product }) => {
         <section id="product-details">
             <div className="container">
                 <div className="row">
-                    <div className="col-lg-6">
+                    <div className="col-lg-6 col-md-6">
                         <ImgSlider product={product} />
                     </div>
-                    <div className="col-lg-6">
+                    <div className="col-lg-6 col-md-6">
                         <ProductInfo product={product} />
                     </div>
                 </div>

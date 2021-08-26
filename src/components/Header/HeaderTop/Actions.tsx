@@ -7,7 +7,7 @@ import UserIcon from '../../../assets/img/other/user-icon.png';
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../../redux/reducers/index';
-import { ShowSearchArea } from '../../../redux/actions/primaryActions';
+import { ShowSearchArea, ShowOrHideDropdownCart } from '../../../redux/actions/primaryActions';
 import { IActionDataTypes } from '../../../types/types';
 
 const Actions: React.FC = () => {
@@ -15,6 +15,10 @@ const Actions: React.FC = () => {
     const wishlist = useSelector((state: RootState) => state.wishlist);
     const compare = useSelector((state: RootState) => state.compare);
     const dispatch = useDispatch();
+
+    const showOrHideDropCart = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        dispatch(ShowOrHideDropdownCart());
+    };
 
     const ActionsData: IActionDataTypes[] = [
         {
@@ -37,13 +41,13 @@ const Actions: React.FC = () => {
             sup: cart.cart.length,
             icon: <BsBag />,
             class: "third-link",
-            dropdownContent: <DropdownCart />
+            dropdownContent: <DropdownCart />,
+            func: showOrHideDropCart
         }
     ];
 
     return (
         <div className="header-top-actions d-flex">
-            {/* ======= Left actions ======= */}
             <div className="left-actions">
                 <ul>
                     <li>
@@ -60,7 +64,11 @@ const Actions: React.FC = () => {
                     {
                         ActionsData.map(item => (
                             <li key={item.id}>
-                                <Link to={item.href} className={item.class}>
+                                <Link
+                                    to={item.href}
+                                    className={item.class}
+                                    onClick={item.func}
+                                >
                                     {item.icon}
                                     <sup>{item.sup}</sup>
                                 </Link>
@@ -70,7 +78,6 @@ const Actions: React.FC = () => {
                     }
                 </ul>
             </div>
-            {/* ======= Right actions ======= */}
             <div className="right-actions d-flex">
                 <div className="user-icon">
                     <Link to="/login">
@@ -84,6 +91,6 @@ const Actions: React.FC = () => {
             </div>
         </div>
     )
-}
+};
 
 export default Actions;

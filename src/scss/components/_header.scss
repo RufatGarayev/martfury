@@ -177,14 +177,6 @@
               li {
                 position: relative;
 
-                &:hover {
-                  .dropdownCart-wrapper {
-                    transform: translateY(-15px);
-                    opacity: 1;
-                    visibility: visible !important;
-                  }
-                }
-
                 a {
                   position: relative;
 
@@ -212,7 +204,7 @@
                   transition: all 0.3s ease;
                   opacity: 0;
                   visibility: hidden;
-                  padding-top: 40px;
+                  padding-top: 30px;
                   z-index: 9999;
                   right: -30px;
 
@@ -316,6 +308,12 @@
                       }
                     }
                   }
+                }
+
+                .show-dropdownCart {
+                  transform: translateY(-2px);
+                  opacity: 1;
+                  visibility: visible !important;
                 }
               }
 
@@ -674,7 +672,7 @@
           padding: 0;
           width: 100%;
           z-index: 9999;
-          animation: searchAnim .3s;
+          animation: searchAnim 0.3s;
 
           .search {
             margin: 130px 25px;
@@ -703,10 +701,10 @@
         }
 
         @keyframes searchAnim {
-          from{
+          from {
             opacity: 0;
           }
-          to{
+          to {
             opacity: 1;
           }
         }
@@ -728,10 +726,19 @@
             .second-link {
               display: none;
             }
+
+            .dropdownCart-wrapper{
+              padding-top: 20px !important;
+            }
+
+            .show-dropdownCart {
+              transform: translateY(-2px) !important;
+            }
           }
 
           .right-actions {
             padding-top: 2px;
+
             .links {
               display: none !important;
             }
@@ -898,8 +905,27 @@
               padding: 0 11px !important;
             }
 
-            .close-search-area{
+            .close-search-area {
               bottom: 55px !important;
+            }
+          }
+        }
+
+        .dropdownCart-wrapper {
+          position: fixed !important;
+          right: -12px !important;
+          width: 100%;
+
+          .dropdownCart {
+            width: calc(100% - 25px) !important;
+
+            .links {
+              flex-wrap: wrap;
+
+              .view-cart-btn,
+              .checkout-btn {
+                padding-bottom: 10px;
+              }
             }
           }
         }
