@@ -102,24 +102,30 @@ footer {
       padding: 0;
     }
 
-    .footer-middle-links li {
+    .footer-middle-links {
       align-items: center;
       line-height: 35px;
 
-      .title {
-        h6 {
-          font-size: 14px;
-          font-weight: 600;
-          margin: 0 20px 0 0;
-        }
+      h6 {
+        font-size: 14px;
+        font-weight: 600;
+        margin: 0 20px 0 0;
       }
 
       .links ul {
-        @include flex-display(flex, row, flex-start, space-between);
+        @include flex-display(flex, row, center, flex-start);
 
         li {
           @extend %footer-link;
           margin-right: 10px;
+
+          &:first-child {
+            margin-right: 0;
+
+            &::after {
+              display: none;
+            }
+          }
         }
 
         li:not(:last-child):after {
@@ -188,14 +194,20 @@ footer {
 @media screen and (max-width: 1199.98px) {
   footer {
     .footer-middle {
-      display: none;
-      .title {
-        white-space: nowrap;
-      }
+      padding: 60px 0 50px;
 
-      .links {
+      .link-item {
+        width: auto;
+        flex-wrap: wrap;
+        padding-bottom: 15px;
+
         li {
           white-space: nowrap;
+          line-height: 22px;
+
+          a {
+            line-height: 24px !important;
+          }
         }
       }
     }
@@ -230,7 +242,7 @@ footer {
     .payment {
       flex-wrap: wrap;
 
-      .payment-text{
+      .payment-text {
         padding: 0 0 10px 0 !important;
       }
     }
