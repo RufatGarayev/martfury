@@ -18,6 +18,7 @@
   .account-wrapper {
     background-color: #fff;
     padding: 30px;
+    margin: 0 50px;
 
     h6 {
       font-weight: 400;
@@ -38,6 +39,8 @@
       padding-bottom: 25px;
 
       label {
+        font-size: 14px;
+
         &::before {
           margin-right: 10px !important;
         }
@@ -54,6 +57,81 @@
 
     .social-media {
       @extend %social-media;
+
+      small {
+        display: inline-block;
+        margin-bottom: 12px;
+      }
+
+      li {
+        a {
+          width: 110px;
+        }
+      }
+    }
+  }
+}
+
+// ===== Responsive Design ===== //
+@media screen and (max-width: 1399.98px) {
+  #login,
+  #register {
+    .social-media {
+      li {
+        a {
+          width: 88px !important;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1199.98px) {
+  #login,
+  #register {
+    .account-wrapper {
+      margin: 0 !important;
+
+      .social-media {
+        li {
+          a {
+            width: 90px !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  #login,
+  #register {
+    .social-media {
+      li {
+        a {
+          width: 100px !important;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 470px) {
+  #login,
+  #register {
+    .login-area,
+    .register-area {
+      padding: 30px 20px;
+
+      .social-media {
+        ul {
+          li {
+            a {
+              width: 55px !important;
+            }
+          }
+        }
+      }
     }
   }
 }

@@ -224,38 +224,65 @@
     }
   }
 
-  .checkout-info-area,
-  .checkout-payment-area {
-    .bottom-links {
-      justify-content: space-between;
-      padding-top: 10px;
+  .bottom-links {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 10px;
 
-      a,
-      button {
-        color: $text-color;
-        text-decoration: none;
-        transition: all 0.3s ease;
+    a,
+    button {
+      color: $text-color;
+      text-decoration: none;
+      transition: all 0.3s ease;
 
-        &:hover {
-          color: $primary-color;
-        }
+      &:hover {
+        color: $primary-color;
+      }
 
-        span {
-          margin-right: 7px;
+      span {
+        margin-right: 7px;
 
-          svg {
-            margin-bottom: 3px;
-          }
-        }
-
-        p {
-          margin: 0;
-          font-size: 14px;
+        svg {
+          margin-bottom: 3px;
         }
       }
 
-      input[type="submit"] {
-        @extend %primary-btn;
+      p {
+        margin: 0;
+        font-size: 14px;
+      }
+    }
+
+    input[type="submit"] {
+      @extend %primary-btn;
+    }
+  }
+}
+
+// ===== Responsive Design ===== //
+@media screen and (max-width: 991.98px) {
+  #checkout {
+    .checkout-payment-area {
+      padding: 0 !important;
+    }
+
+    .bottom-links {
+      button {
+        margin-top: 30px !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 575.98px) {
+  #checkout {
+    h5{
+      font-size: 18px;
+    }
+
+    .bottom-links {
+      a {
+        margin: 0 20px 20px 0;
       }
     }
   }

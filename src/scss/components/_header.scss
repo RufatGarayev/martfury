@@ -1,4 +1,3 @@
-// ======= Header ======= //
 .header {
   background-color: $primary-color;
   z-index: 999;
@@ -727,7 +726,7 @@
               display: none;
             }
 
-            .dropdownCart-wrapper{
+            .dropdownCart-wrapper {
               padding-top: 20px !important;
             }
 
@@ -929,6 +928,16 @@
             }
           }
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header {
+    .dropdownCart-wrapper {
+      .dropdownCart {
+        padding: 20px 18px !important;
       }
     }
   }

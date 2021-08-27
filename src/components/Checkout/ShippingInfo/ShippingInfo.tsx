@@ -9,19 +9,19 @@ interface IProps {
 const CheckoutInfo: React.FC<IProps> = (props) => {
     return (
         <div className="checkout-info">
-            <div className="row">
-                <div className="col-12">
-                    {/* ======= title ======= */}
-                    <div className="title text-center">
-                        <h1>Checkout Information</h1>
+            <form onSubmit={(e: React.FormEvent<HTMLFormElement>) => props.handleShippingSubmit()}>
+                <div className="row">
+                    <div className="col-12">
+                        {/* ======= title ======= */}
+                        <div className="title text-center">
+                            <h1>Checkout Information</h1>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div className="row">
-                <div className="col-lg-8 offset-lg-2">
-                    {/* ======= checkout-info area ======= */}
-                    <div className="checkout-info-area">
-                        <form onSubmit={(e: React.FormEvent<HTMLFormElement>) => props.handleShippingSubmit()}>
+                <div className="row">
+                    <div className="col-lg-8 offset-lg-2">
+                        {/* ======= checkout-info area ======= */}
+                        <div className="checkout-info-area">
                             {/* ===== contact-info ===== */}
                             <div className="contact-info">
                                 <h5>Contact information</h5>
@@ -69,20 +69,24 @@ const CheckoutInfo: React.FC<IProps> = (props) => {
                                     </div>
                                 </div>
                             </div>
-                            {/* ===== bottom-links ===== */}
-                            <div className="bottom-links d-flex">
-                                <Link to="/cart" className="d-flex align-items-center">
-                                    <span><HiArrowNarrowLeft /></span>
-                                    <p>Return to shopping cart</p>
-                                </Link>
-                                <input type="submit" value="Continue to Shipping" />
-                            </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <div className="row">
+                    <div className="col-lg-8 offset-lg-2">
+                        {/* ===== bottom-links ===== */}
+                        <div className="bottom-links d-flex">
+                            <Link to="/cart" className="d-flex align-items-center">
+                                <span><HiArrowNarrowLeft /></span>
+                                <p>Return to shopping cart</p>
+                            </Link>
+                            <input type="submit" value="Continue to Shipping" />
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
     )
-}
+};
 
 export default CheckoutInfo;

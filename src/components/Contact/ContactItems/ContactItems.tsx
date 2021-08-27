@@ -7,7 +7,6 @@ const ContactItems: React.FC = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-12">
-                        {/* ======= title ======= */}
                         <div className="title text-center">
                             <h2>Contact Us For Any Questions</h2>
                         </div>
@@ -16,8 +15,7 @@ const ContactItems: React.FC = () => {
                 <div className="row">
                     {
                         ContactItemsData.map((item) => (
-                            <div key={item.id} className="col-lg-4 col-md-4">
-                                 {/* ======= contact-item ======= */}
+                            <div key={item.id} className="col-lg-4 col-md-4 col-sm-6">
                                 <div className="contact-item">
                                     <div className="icon d-flex justify-content-center">
                                         <h5>{item.title}</h5>
@@ -33,6 +31,6 @@ const ContactItems: React.FC = () => {
             </div>
         </section>
     )
-}
+};
 
 export default ContactItems;

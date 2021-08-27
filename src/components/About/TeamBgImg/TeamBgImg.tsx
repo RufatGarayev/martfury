@@ -6,7 +6,7 @@ const TeamBgImg: React.FC = () => {
     const sectionStyle: ITeamBgImgStyle = {
         backgroundImage: `url(${TeamImg})`,
         backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",
         height: "507px"
     };

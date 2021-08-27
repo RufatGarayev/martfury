@@ -7,7 +7,6 @@ const PaymentSuccess: React.FC = () => {
         <div className="payment-success">
             <div className="row">
                 <div className="col-12">
-                    {/* ======= title ======= */}
                     <div className="title text-center">
                         <h1>Payment Success</h1>
                     </div>
@@ -15,7 +14,6 @@ const PaymentSuccess: React.FC = () => {
             </div>
             <div className="row">
                 <div className="col-lg-8 offset-lg-2">
-                    {/* === text === */}
                     <div className="text">
                         <h5>Thank you! Your order is processing.</h5>
                         <p>Your order number is <strong>123</strong></p>
@@ -24,7 +22,6 @@ const PaymentSuccess: React.FC = () => {
                             If you have any questions about your purchase, email us at <a href="/#">contact@martfury.com</a>
                         </p>
                     </div>
-                    {/* === back to shop btn === */}
                     <div className="back-to-shop-btn">
                         <Link to="/shop" className="d-flex align-items-center">
                             <span><HiArrowNarrowLeft /></span>
@@ -35,6 +32,6 @@ const PaymentSuccess: React.FC = () => {
             </div>
         </div>
     )
-}
+};
 
 export default PaymentSuccess;

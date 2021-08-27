@@ -7,7 +7,7 @@ const LoginSection: React.FC = () => {
         <section id="login">
             <div className="container">
                 <div className="row">
-                    <div className="col-lg-4 offset-lg-4">
+                    <div className="col-xl-6 col-lg-6 col-md-8 offset-xl-3 offset-lg-3 offset-md-2">
                         <div className="links d-flex justify-content-center">
                             <Link to="/login" className="text-dark">Login</Link>
                             <Link to="/register" className="text-muted">Register</Link>
@@ -29,7 +29,7 @@ const LoginSection: React.FC = () => {
                                     <input type="submit" className="w-100" value="Login" />
                                 </div>
                                 <div className="social-media">
-                                    <p>Connect with:</p>
+                                    <small>Connect with:</small>
                                     <ul className="d-flex">
                                         {
                                             SocialMediaData.map(item => (
@@ -47,6 +47,6 @@ const LoginSection: React.FC = () => {
             </div>
         </section>
     )
-}
+};
 
 export default LoginSection;

@@ -7,7 +7,7 @@ const RegisterSection: React.FC = () => {
         <section id="register">
             <div className="container">
                 <div className="row">
-                    <div className="col-lg-4 offset-lg-4">
+                    <div className="col-xl-6 col-lg-6 col-md-8 offset-xl-3 offset-lg-3 offset-md-2">
                         <div className="links d-flex justify-content-center">
                             <Link to="/login" className="text-muted">Login</Link>
                             <Link to="/register" className="text-dark">Register</Link>
@@ -31,7 +31,7 @@ const RegisterSection: React.FC = () => {
                                     <input type="submit" className="w-100" value="Register" />
                                 </div>
                                 <div className="social-media">
-                                    <p>Connect with:</p>
+                                    <small>Connect with:</small>
                                     <ul className="d-flex">
                                         {
                                             SocialMediaData.map(item => (
@@ -49,6 +49,6 @@ const RegisterSection: React.FC = () => {
             </div>
         </section>
     )
-}
+};
 
 export default RegisterSection;

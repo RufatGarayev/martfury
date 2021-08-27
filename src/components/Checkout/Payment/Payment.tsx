@@ -79,61 +79,48 @@ const Payment: React.FC<IProps> = (props) => {
                                                 <label htmlFor="paypal">Paypal</label>
                                             </div>
                                         </div>
-                                        <div className="row">
-                                            <div className="col-12">
-                                                {/* === visa and master card === */}
-                                                <div className={showVisaContent ? "for-visa-masterCard" : "d-none"}>
-                                                    <div className="row">
-                                                        <div className="col-12">
-                                                            <div className="input-wrapper">
-                                                                <input type="text" placeholder="Card Number" />
-                                                            </div>
+                                        <div className="col-12">
+                                            {/* === visa and master card === */}
+                                            <div className={showVisaContent ? "for-visa-masterCard" : "d-none"}>
+                                                <div className="row">
+                                                    <div className="col-12">
+                                                        <div className="input-wrapper">
+                                                            <input type="text" placeholder="Card Number" />
                                                         </div>
-                                                        <div className="col-12">
-                                                            <div className="input-wrapper">
-                                                                <input type="text" placeholder="Card Holders" />
-                                                            </div>
+                                                    </div>
+                                                    <div className="col-12">
+                                                        <div className="input-wrapper">
+                                                            <input type="text" placeholder="Card Holders" />
                                                         </div>
-                                                        <div className="col-lg-6">
-                                                            <div className="input-wrapper">
-                                                                <input type="text" placeholder="Expiration Date (MM/YY)" />
-                                                            </div>
+                                                    </div>
+                                                    <div className="col-lg-6">
+                                                        <div className="input-wrapper">
+                                                            <input type="text" placeholder="Expiration Date (MM/YY)" />
                                                         </div>
-                                                        <div className="col-lg-6">
-                                                            <div className="input-wrapper">
-                                                                <input type="text" placeholder="CVV" />
-                                                            </div>
+                                                    </div>
+                                                    <div className="col-lg-6">
+                                                        <div className="input-wrapper">
+                                                            <input type="text" placeholder="CVV" />
                                                         </div>
-                                                        <div className="col-12">
-                                                            <div className="submit-btn-wrapper">
-                                                                <input type="submit" value="Submit" className="w-100" />
-                                                            </div>
+                                                    </div>
+                                                    <div className="col-12">
+                                                        <div className="submit-btn-wrapper">
+                                                            <input type="submit" value="Submit" className="w-100" />
                                                         </div>
                                                     </div>
                                                 </div>
-                                                {/* === paypal === */}
-                                                <div className={showPaypalContent ? "for-paypal" : "d-none"}>
-                                                    <input
-                                                        type="button"
-                                                        value="Process with Paypal"
-                                                        onClick={(e) => e.preventDefault()}
-                                                    />
-                                                </div>
+                                            </div>
+                                            {/* === paypal === */}
+                                            <div className={showPaypalContent ? "for-paypal" : "d-none"}>
+                                                <input
+                                                    type="button"
+                                                    value="Process with Paypal"
+                                                    onClick={(e) => e.preventDefault()}
+                                                />
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            {/* ===== bottom-links ===== */}
-                            <div className="bottom-links d-flex">
-                                <button
-                                    type="button"
-                                    className="d-flex align-items-center"
-                                    onClick={() => props.back()}
-                                >
-                                    <span><HiArrowNarrowLeft /></span>
-                                    <p>Return to shipping</p>
-                                </button>
                             </div>
                         </form>
                     </div>
@@ -189,8 +176,23 @@ const Payment: React.FC<IProps> = (props) => {
                     </div>
                 </div>
             </div>
+            <div className="row">
+                <div className="col-12">
+                    {/* ===== bottom-links ===== */}
+                    <div className="bottom-links d-flex">
+                        <button
+                            type="button"
+                            className="d-flex align-items-center"
+                            onClick={() => props.back()}
+                        >
+                            <span><HiArrowNarrowLeft /></span>
+                            <p>Return to shipping</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     )
-}
+};
 
 export default Payment;

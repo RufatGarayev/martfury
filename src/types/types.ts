@@ -63,6 +63,30 @@ export interface IOwlCarouselOptions {
     }
 };
 
+// about > awards
+export interface IOwlCarouselOptionsAwards {
+    margin: number;
+    loop: boolean;
+    dots: boolean;
+    responsive: {
+        0: {
+            items: number;
+        },
+        300: {
+            items: number;
+        },
+        500: {
+            items: number;
+        },
+        768: {
+            items: number;
+        },
+        1200: {
+            items: number;
+        }
+    }
+};
+
 // home > ads
 export interface IAdsData1 {
     id: number;
@@ -159,6 +183,7 @@ export interface ITeamBgImgStyle {
 export interface IAwards {
     id: number;
     img: string;
+    class: string;
 };
 
 // product

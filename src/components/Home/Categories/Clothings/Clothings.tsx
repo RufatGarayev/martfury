@@ -12,13 +12,11 @@ const Clothings: React.FC = () => {
 
     return (
         <div className="clothings">
-            {/* ======= Section header ======= */}
             <div className="section-header-wrapper">
                 <SectionHeader
                     title="Clothings"
                 />
             </div>
-            {/* ======= Owl-carousel ======= */}
             <div className="owl-carousel-wrapper">
                 <OwlCarousel className='owl-theme' {...Options}>
                     {
@@ -34,6 +32,6 @@ const Clothings: React.FC = () => {
             </div>
         </div>
     )
-}
+};
 
 export default Clothings;
