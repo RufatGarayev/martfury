@@ -30,7 +30,7 @@ const ProductItem: React.FC<IProductProps> = ({ product }) => {
                         Remove
                     </button>
                 </div>
-                <div className="book-img d-flex justify-content-center align-items-center">
+                <div className="product-img d-flex justify-content-center align-items-center">
                     <Link to={`/product-details/${product.id}`}>
                         <img className="img-fluid" src={product.img} alt={product.title} />
                     </Link>

@@ -62,7 +62,7 @@
       .top-part {
         min-height: 200px;
 
-        .book-img {
+        .product-img {
           height: 170px;
 
           a {
@@ -195,6 +195,17 @@
         svg {
           margin-bottom: 3px;
         }
+      }
+    }
+  }
+}
+
+// ===== Responsive Design ===== //
+@media screen and (max-width: 575.98px) {
+  #compare {
+    .compare-product-item {
+      .product-img {
+        height: 230px !important;
       }
     }
   }

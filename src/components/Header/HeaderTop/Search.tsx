@@ -35,6 +35,12 @@ const Search: React.FC = () => {
         setShowCloseBtn(false);
     };
 
+    const closeSearchUnder992 = () => {
+        if (window.innerWidth < 992) {
+            dispatch(ShowSearchArea(false));
+        }
+    };
+
     return (
         <div className="search">
             {/* ======= search-form ======= */}
@@ -82,6 +88,7 @@ const Search: React.FC = () => {
                                                     setShowSearchResult(false);
                                                     setShowCloseBtn(false);
                                                     setSearchValue("");
+                                                    closeSearchUnder992();
                                                 }}
                                             >
                                                 <h6>{product.title}</h6>
