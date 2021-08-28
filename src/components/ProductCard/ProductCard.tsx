@@ -37,16 +37,16 @@ const ProductCard: React.FC<IProductProps> = ({ product }) => {
                 <div className="card-top">
                     {/* ======= Label ======= */}
                     {
-                        product?.label && (
+                        product.label && (
                             <div className="product-label">
-                                <span>{product?.label}</span>
+                                <span>{product.label}</span>
                             </div>
                         )
                     }
                     {/* ======= Image ======= */}
                     <div className="product-img">
-                        <Link to={`/product-details/${product?.id}`}>
-                            <img src={product?.img} alt="laptop" />
+                        <Link to={`/product-details/${product.id}`}>
+                            <img src={product.img} alt="laptop" />
                         </Link>
                     </div>
                     {/* ======= Actions ======= */}
@@ -166,10 +166,10 @@ const ProductCard: React.FC<IProductProps> = ({ product }) => {
                 {/* ======= Price ======= */}
                 <div className="product-price">
                     <p>
-                        <span>${product?.price.toFixed(2)}</span>
+                        <span>${product.price.toFixed(2)}</span>
                         {
                             product?.previousPrice && (
-                                <del>${product?.previousPrice?.toFixed(2)}</del>
+                                <del>${product?.previousPrice.toFixed(2)}</del>
                             )
                         }
                     </p>
@@ -177,14 +177,14 @@ const ProductCard: React.FC<IProductProps> = ({ product }) => {
                 {/* ======= Title ======= */}
                 <div className="product-title">
                     <h6>
-                        <Link to={`/product-details/${product?.id}`}>
-                            {product?.title}
+                        <Link to={`/product-details/${product.id}`}>
+                            {product.title}
                         </Link>
                     </h6>
                 </div>
                 {/* ======= Rating ======= */}
                 <div className="product-rating">
-                    <span>{product?.rating}</span>
+                    <span>{product.rating}</span>
                 </div>
             </div>
 

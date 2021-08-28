@@ -18,10 +18,10 @@ const Header: React.FC = () => {
     const showSearch = primaryState.showSearchArea;
     const dispatch = useDispatch();
 
-    const handleCloseMenu = 
-    (e: React.MouseEvent<HTMLButtonElement> | React.MouseEvent<HTMLAnchorElement>) => {
-        dispatch(ShowSidebarMenu(false));
-    };
+    const handleCloseMenu =
+        (e: React.MouseEvent<HTMLButtonElement> | React.MouseEvent<HTMLAnchorElement>) => {
+            dispatch(ShowSidebarMenu(false));
+        };
 
     if (window.innerWidth > 992) {
         window.addEventListener("scroll", function (this: Window, e: Event): void {

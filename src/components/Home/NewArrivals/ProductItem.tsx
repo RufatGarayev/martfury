@@ -11,7 +11,7 @@ const ProductItem: React.FC<IProductProps> = ({ product }) => {
             <div className="product-item-right-content">
                 <div className="product-item-title">
                     <h6>
-                        <Link to={`/product-details/${product?.id}`}>
+                        <Link to={`/product-details/${product.id}`}>
                             {product.title}
                         </Link>
                     </h6>

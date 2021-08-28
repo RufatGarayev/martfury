@@ -57,13 +57,16 @@ export interface IOwlCarouselOptions {
         768: {
             items: number;
         },
-        1300: {
+        1000: {
+            items: number;
+        },
+        1400: {
             items: number;
         }
     }
 };
 
-// about > awards
+// owl-carousel options for about > awards
 export interface IOwlCarouselOptionsAwards {
     margin: number;
     loop: boolean;

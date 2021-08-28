@@ -76,7 +76,7 @@ const WishlistSection: React.FC = () => {
                                                             <td className="img-td">
                                                                 {/* ===== img ===== */}
                                                                 <div className="product-img">
-                                                                    <Link to={`/product-details/${product?.id}`}>
+                                                                    <Link to={`/product-details/${product.id}`}>
                                                                         <img src={product.img} className="img-fluid" alt={product.title} />
                                                                     </Link>
                                                                 </div>
@@ -84,7 +84,7 @@ const WishlistSection: React.FC = () => {
                                                             <td>
                                                                 {/* ===== name ===== */}
                                                                 <div className="product-name">
-                                                                    <Link to={`/product-details/${product?.id}`}>
+                                                                    <Link to={`/product-details/${product.id}`}>
                                                                         {product.title}
                                                                     </Link>
                                                                 </div>

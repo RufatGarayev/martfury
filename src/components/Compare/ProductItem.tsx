@@ -31,7 +31,7 @@ const ProductItem: React.FC<IProductProps> = ({ product }) => {
                     </button>
                 </div>
                 <div className="book-img d-flex justify-content-center align-items-center">
-                    <Link to={`/product-details/${product?.id}`}>
+                    <Link to={`/product-details/${product.id}`}>
                         <img className="img-fluid" src={product.img} alt={product.title} />
                     </Link>
                 </div>
@@ -39,7 +39,7 @@ const ProductItem: React.FC<IProductProps> = ({ product }) => {
             <div className="middle-part">
                 <div className="title">
                     <h6>
-                        <Link to={`/product-details/${product?.id}`}>
+                        <Link to={`/product-details/${product.id}`}>
                             {product.title}
                         </Link>
                     </h6>
