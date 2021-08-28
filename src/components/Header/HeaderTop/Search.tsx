@@ -77,11 +77,11 @@ const Search: React.FC = () => {
                                         </div>
                                         <div className="info">
                                             <Link
-                                                to={`/product-details/${product?.id}`}
+                                                to={`/product-details/${product.id}`}
                                                 onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
                                                     setShowSearchResult(false);
                                                     setShowCloseBtn(false);
-                                                    dispatch(ShowSearchArea(false));
+                                                    setSearchValue("");
                                                 }}
                                             >
                                                 <h6>{product.title}</h6>
