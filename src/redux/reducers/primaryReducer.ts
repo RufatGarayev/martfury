@@ -55,7 +55,7 @@ const primaryReducer = (state: IPrimaryReducerState = initialState, action: Prim
                 showOrHideDropdownCart: !state.showOrHideDropdownCart
             }
 
-        // show search area
+        // show sidebar filter
         case ActionType.SHOW_SIDEBAR_FILTER:
             return {
                 ...state,
