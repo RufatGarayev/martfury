@@ -16,13 +16,16 @@ const Shop: React.FC = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(IsLoading(true));
         window.scrollTo(0, 0);
+    }, []);
+
+    useEffect(() => {
+        dispatch(IsLoading(true));
 
         setTimeout(() => {
             dispatch(IsLoading(false));
         }, 500);
-    }, []);
+    }, [dispatch]);
 
     return (
         <div className="shop-content">

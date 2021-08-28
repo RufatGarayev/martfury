@@ -37,8 +37,7 @@ const Header: React.FC = () => {
         if (window.innerWidth < 992) {
             dispatch(ShowSearchArea(false));
         }
-    }, []);
-
+    }, [dispatch]);
 
     return (
         <div className="header">
