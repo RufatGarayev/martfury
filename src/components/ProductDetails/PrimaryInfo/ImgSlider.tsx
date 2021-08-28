@@ -1,34 +1,29 @@
 import React from 'react';
+import LaptopImg2 from '../../../assets/img/other/laptop2.jpg';
+import LaptopImg3 from '../../../assets/img/other/laptop3.jpg';
 import "react-image-gallery/styles/scss/image-gallery.scss";
 import ImageGallery from 'react-image-gallery';
-import { IProductProps, IReactImgGalleryOptions } from '../../../types/types';
-
-interface Iimages {
-    original: any;
-    thumbnail: any;
-}
+import { IProductProps, IReactImgGalleryOptions, IReactImgGalleryimages } from '../../../types/types';
 
 const ImgSlider: React.FC<IProductProps> = ({ product }) => {
-    // react-image-gallery options
     const options: IReactImgGalleryOptions = {
         showPlayButton: false,
         showFullscreenButton: false,
         autoPlay: true
     };
 
-    // images
-    const images: Iimages[] = [
+    const images: IReactImgGalleryimages[] = [
         {
             original: product?.img,
             thumbnail: product?.img,
         },
         {
-            original: product?.img,
-            thumbnail: product?.img,
+            original: LaptopImg2,
+            thumbnail: LaptopImg2,
         },
         {
-            original: product?.img,
-            thumbnail: product?.img,
+            original: LaptopImg3,
+            thumbnail: LaptopImg3,
         },
     ];
 
@@ -40,6 +35,6 @@ const ImgSlider: React.FC<IProductProps> = ({ product }) => {
             />
         </div>
     )
-}
+};
 
 export default ImgSlider;

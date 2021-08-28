@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from "react-router-dom";
 import Map from '../components/Contact/Map/Map';
 import ContactItems from '../components/Contact/ContactItems/ContactItems';
 import GetInTouch from '../components/Contact/GetInTouch/GetInTouch';
 
 const Contact: React.FC = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div className="contact-content">
             <div className="main">
@@ -28,6 +32,6 @@ const Contact: React.FC = () => {
             </div>
         </div>
     )
-}
+};
 
 export default Contact;

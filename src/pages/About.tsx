@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from "react-router-dom";
 import OurTeam from '../components/About/OurTeam/OurTeam';
 import TeamBgImg from '../components/About/TeamBgImg/TeamBgImg';
 import AwardsAndRecognition from '../components/About/AwardsAndRecognition/AwardsAndRecognition';
 
 const About: React.FC = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div className="about-content">
             <div className="main">

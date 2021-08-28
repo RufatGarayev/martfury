@@ -14,7 +14,6 @@ import { AddToCompare, MakeIsInCompareTrueInCompare } from '../../redux/actions/
 import { toast } from 'react-toastify';
 import { RootState } from '../../redux/reducers/index';
 
-
 const ProductCard: React.FC<IProductProps> = ({ product }) => {
     const cartState = useSelector((state: RootState) => state.cart);
     const wishlistState = useSelector((state: RootState) => state.wishlist);
@@ -28,24 +27,9 @@ const ProductCard: React.FC<IProductProps> = ({ product }) => {
     const handleClose = (e?: React.MouseEvent<HTMLButtonElement>): void => setShowModal(false);
     const dispatch = useDispatch();
 
-    cart.forEach((cartProduct: IProducts) => {
-        if (cartProduct.id === product.id) {
-            product.isInCart = true;
-        }
-    });
-
-    wishlist.forEach((wishlistProduct: IProducts) => {
-        if (wishlistProduct.id === product.id) {
-            product.isInWishlist = true;
-        }
-    });
-
-    compare.forEach((compareProduct: IProducts) => {
-        if (compareProduct.id === product.id) {
-            product.isInCompare = true;
-        }
-    });
-
+    cart.map((cartProduct: IProducts) => cartProduct.id === product.id && (product.isInCart = true));
+    wishlist.map((wishlistProduct: IProducts) => wishlistProduct.id === product.id && (product.isInWishlist = true));
+    compare.map((compareProduct: IProducts) => compareProduct.id === product.id && (product.isInCompare = true));
 
     return (
         <>
@@ -224,6 +208,6 @@ const ProductCard: React.FC<IProductProps> = ({ product }) => {
             </Modal>
         </>
     )
-}
+};
 
 export default ProductCard;

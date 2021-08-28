@@ -22,7 +22,7 @@ const Brands: React.FC = () => {
     ];
 
     return (
-        <div className="brands">
+        <div className="brands-section">
             <ul className="d-flex">
                 {
                     BrandsData.map(brand => (
@@ -36,6 +36,6 @@ const Brands: React.FC = () => {
             </ul>
         </div>
     )
-}
+};
 
 export default Brands;

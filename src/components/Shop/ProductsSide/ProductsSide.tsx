@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import ProductCard from '../../ProductCard/ProductCard';
 import Pagination from './Pagination';
+import { RiEqualizerLine } from 'react-icons/ri';
 import { IProducts } from '../../../types/types';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../../redux/reducers/index';
 import { SortByPriceAndLatest } from '../../../redux/actions/productActions';
-import { IsLoading } from '../../../redux/actions/primaryActions';
+import { IsLoading, ShowSidebarFilter } from '../../../redux/actions/primaryActions';
 
 const ProductsSide: React.FC = () => {
     const productsState = useSelector((state: RootState) => state.products);
@@ -24,11 +25,15 @@ const ProductsSide: React.FC = () => {
 
     const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         dispatch(SortByPriceAndLatest(e.target.value));
-    }
+    };
+
+    const handleFilterBtnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+        dispatch(ShowSidebarFilter(true));
+    };
 
     setTimeout(() => {
         dispatch(IsLoading(false));
-    }, 3000);
+    }, 2000);
 
     return (
         <div className="products-side">
@@ -63,13 +68,21 @@ const ProductsSide: React.FC = () => {
                                     <option value="highPrice">Price (High to Low)</option>
                                 </select>
                             </div>
+                            <button
+                                type="button"
+                                className="filter-btn"
+                                onClick={handleFilterBtnClick}
+                            >
+                                <span><RiEqualizerLine /></span>
+                                <p>Filter</p>
+                            </button>
                         </div>
                         {/* ======= products ======= */}
                         <div className="products">
                             <div className="row">
                                 {
                                     currentProducts.map(product => (
-                                        <div key={product.id} className="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                                        <div key={product.id} className="col-xxl-3 col-xl-4 col-lg-4 col-md-4 col-sm-6">
                                             <div className="item">
                                                 <ProductCard product={product} />
                                             </div>
@@ -88,6 +101,6 @@ const ProductsSide: React.FC = () => {
             }
         </div>
     )
-}
+};
 
 export default ProductsSide;

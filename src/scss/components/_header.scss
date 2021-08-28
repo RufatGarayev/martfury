@@ -69,13 +69,12 @@
             .lds-dual-ring {
               position: absolute;
               top: 8px;
-              right: 138px;
+              right: 110px;
             }
 
             .lds-dual-ring {
               display: inline-block;
               top: 12px;
-              right: 138px;
             }
 
             .lds-dual-ring:after {
@@ -630,7 +629,7 @@
 
         .close-btn,
         .lds-dual-ring {
-          right: 92px !important;
+          right: 105px !important;
         }
 
         .close-btn {
@@ -663,7 +662,7 @@
         }
 
         .search-wrapper {
-          background-color: rgba(0, 0, 0, 0.6);
+          background-color: rgba(0, 0, 0, 0.7);
           position: fixed;
           top: 0;
           bottom: 0;
@@ -686,6 +685,14 @@
               padding: 0 18px !important;
               font-size: 12px !important;
               font-weight: 400 !important;
+            }
+
+            .close-btn {
+              top: 10px !important;
+            }
+
+            .lds-dual-ring {
+              top: 15px !important;
             }
 
             .close-search-area {
@@ -867,8 +874,7 @@
       .header-top-content {
         .brand {
           max-width: none !important;
-          margin-right: 38px;
-          // width: 120px !important;
+          margin-right: 15px;
 
           a {
             display: inline-block;
@@ -876,10 +882,37 @@
           }
         }
 
+        .search-wrapper {
+          .search {
+            .lds-dual-ring,
+            .close-btn {
+              right: 95px !important;
+            }
+          }
+        }
+
         .header-top-actions {
+          .left-actions {
+            .search-btnn {
+              font-size: 28px;
+            }
+
+            .third-link {
+              svg {
+                font-size: 25px !important;
+              }
+
+              sup {
+                top: 10px !important;
+                right: -9px !important;
+              }
+            }
+          }
+
           .right-actions {
             .user-icon {
-              width: 25px !important;
+              width: 23px !important;
+              height: 28px !important;
             }
           }
         }
@@ -902,6 +935,19 @@
 
             button[type="submit"] {
               padding: 0 11px !important;
+            }
+
+            .lds-dual-ring,
+            .close-btn {
+              right: 80px !important;
+            }
+
+            .lds-dual-ring {
+              top: 12px !important;
+            }
+
+            .close-btn {
+              top: 8px !important;
             }
 
             .close-search-area {

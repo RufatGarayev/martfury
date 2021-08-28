@@ -113,6 +113,6 @@ const CartTable: React.FC<ICartProps> = (props) => {
             </table>
         </div>
     )
-}
+};
 
 export default CartTable;

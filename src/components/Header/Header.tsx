@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import BrandLogo from "../../assets/img/brand/brand.png";
 import Search from "./HeaderTop/Search";
@@ -9,7 +9,6 @@ import { NavLinksData } from "./HeaderBottom/HeaderBottomData";
 import { useSelector, useDispatch } from "react-redux";
 import { ShowSidebarMenu, ShowSidebarCategories, ShowSearchArea } from '../../redux/actions/primaryActions';
 import { RootState } from "../../redux/reducers";
-import { useEffect } from "react";
 
 const Header: React.FC = () => {
     const [showDepartments, setShowDepartments] = useState<boolean>(false);
@@ -19,7 +18,8 @@ const Header: React.FC = () => {
     const showSearch = primaryState.showSearchArea;
     const dispatch = useDispatch();
 
-    const handleCloseMenu = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const handleCloseMenu = 
+    (e: React.MouseEvent<HTMLButtonElement> | React.MouseEvent<HTMLAnchorElement>) => {
         dispatch(ShowSidebarMenu(false));
     };
 
@@ -94,14 +94,21 @@ const Header: React.FC = () => {
                                             <Link
                                                 to={link.href}
                                                 className={link.class}
-                                                onClick={() => window.location.href = "/"}
+                                                onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+                                                    window.location.href = "/";
+                                                    dispatch(ShowSidebarMenu(false));
+                                                }}
                                             >
                                                 {link.title}
                                             </Link>
                                         </li>
                                     ) : (
                                         <li key={link.id}>
-                                            <Link to={link.href} className={link.class}>
+                                            <Link
+                                                to={link.href}
+                                                className={link.class}
+                                                onClick={handleCloseMenu}
+                                            >
                                                 {link.title}
                                             </Link>
                                         </li>
@@ -118,7 +125,7 @@ const Header: React.FC = () => {
             {/* ======= dark bg-color ======= */}
             <div
                 className={showMenu || showCategories ? "dark-bg-color" : "d-none"}
-                onClick={() => {
+                onClick={(e: React.MouseEvent<HTMLDivElement>) => {
                     dispatch(ShowSidebarMenu(false));
                     dispatch(ShowSidebarCategories(false));
                 }}

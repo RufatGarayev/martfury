@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from "react-router-dom";
 import CompareSection from '../components/Compare/CompareSection';
 
 const Compare: React.FC = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div className="compare-content">
             <div className="main">
@@ -24,6 +28,6 @@ const Compare: React.FC = () => {
             </div>
         </div>
     )
-}
+};
 
 export default Compare;

@@ -13,16 +13,11 @@ const ProductItem: React.FC<IProductProps> = ({ product }) => {
     const cart = cartState.cart;
     const dispatch = useDispatch();
 
-    cart.forEach((cartProduct: IProducts) => {
-        if (cartProduct.id === product.id) {
-            product.isInCart = cartProduct.isInCart;
-        }
-    });
+    cart.map((cartProduct: IProducts) => cartProduct.id === product.id && (product.isInCart = true));
 
     return (
         <div className="compare-product-item">
             <div className="top-part box">
-                {/* ======= Remove button ======= */}
                 <div className="remove-btn">
                     <button
                         type="button"
@@ -35,7 +30,6 @@ const ProductItem: React.FC<IProductProps> = ({ product }) => {
                         Remove
                     </button>
                 </div>
-                {/* ======= Image ======= */}
                 <div className="book-img d-flex justify-content-center align-items-center">
                     <Link to={`/product-details/${product?.id}`}>
                         <img className="img-fluid" src={product.img} alt={product.title} />
@@ -43,7 +37,6 @@ const ProductItem: React.FC<IProductProps> = ({ product }) => {
                 </div>
             </div>
             <div className="middle-part">
-                {/* ======= Title ======= */}
                 <div className="title">
                     <h6>
                         <Link to={`/product-details/${product?.id}`}>
@@ -51,17 +44,14 @@ const ProductItem: React.FC<IProductProps> = ({ product }) => {
                         </Link>
                     </h6>
                 </div>
-                {/* ======= Price ======= */}
                 <div className="price">
                     <p><span>$</span>{product.price.toFixed(2)}</p>
                 </div>
-                {/* ======= Description ======= */}
                 <div className="description box">
                     <p className="paragraph">
                         Lorem ipsum dolor sit amet conse ctetur adipisicing elit, Ut enim ad minim veniam.
                     </p>
                 </div>
-                {/* ======= Rating ======= */}
                 <div className="rating box">
                     <span>{product.rating}</span>
                 </div>
@@ -70,7 +60,7 @@ const ProductItem: React.FC<IProductProps> = ({ product }) => {
                 <div className="add-to-cart-btn d-flex justify-content-center w-100">
                     {
                         product.isInCart ? (
-                            // ======= Added To Cart button ======= //
+                            // ===== Added To Cart button ===== //
                             <button
                                 type="button"
                                 className="disabledBtn w-100"
@@ -79,7 +69,7 @@ const ProductItem: React.FC<IProductProps> = ({ product }) => {
                                 Added To Cart
                             </button>
                         ) : (
-                            // ======= Add To Cart button ======= //
+                            // ===== Add To Cart button ===== //
                             <button
                                 type="button"
                                 className="w-100"
@@ -97,6 +87,6 @@ const ProductItem: React.FC<IProductProps> = ({ product }) => {
             </div>
         </div>
     )
-}
+};
 
 export default ProductItem;

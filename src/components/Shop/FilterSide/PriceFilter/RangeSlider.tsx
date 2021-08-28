@@ -77,6 +77,6 @@ const RangeSlider: React.FC<RangeSliderProps> = ({ min, max, onChange }) => {
             <p className="mt-3">Price: ${minVal} - ${maxVal}</p>
         </div>
     )
-}
+};
 
 export default RangeSlider;

@@ -36,3 +36,9 @@ export const ShowOrHideDropdownCart = () => {
         type: ActionType.SHOW_OR_HIDE_DROPDOWNCART
     }
 };
+
+export const ShowSidebarFilter = (trueOrFalse: boolean) => {
+    return {
+        type: ActionType.SHOW_SIDEBAR_FILTER, payload: trueOrFalse
+    }
+};

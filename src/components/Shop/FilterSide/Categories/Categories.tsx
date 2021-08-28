@@ -2,13 +2,22 @@ import React from 'react';
 import { CategoriesData } from '../../../Other/CategoriesData';
 import { useDispatch } from 'react-redux';
 import { SortByCategory } from '../../../../redux/actions/productActions';
-import { GetTitle, IsLoading } from '../../../../redux/actions/primaryActions';
+import { GetTitle, IsLoading, ShowSidebarFilter } from '../../../../redux/actions/primaryActions';
 
 const Categories: React.FC = () => {
     const dispatch = useDispatch();
 
     return (
         <div className="categories">
+            <button
+                type="button"
+                className="close-filter"
+                onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+                    dispatch(ShowSidebarFilter(false));
+                }}
+            >
+                ✕
+            </button>
             <div className="categories-title">
                 <h5>CATEGORIES</h5>
             </div>
@@ -32,6 +41,6 @@ const Categories: React.FC = () => {
             </div>
         </div>
     )
-}
+};
 
 export default Categories;

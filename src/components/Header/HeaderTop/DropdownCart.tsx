@@ -7,6 +7,7 @@ import { DeleteFromCart } from '../../../redux/actions/cartActions';
 import { MakeIsInCartFalse } from '../../../redux/actions/productActions';
 import { WishlistProductIsInCartFalse } from '../../../redux/actions/wishlistActions';
 import { CompareProductIsInCartFalse } from '../../../redux/actions/compareActions';
+import { ShowOrHideDropdownCart } from '../../../redux/actions/primaryActions';
 import { toast } from 'react-toastify';
 
 const DropdownCart: React.FC = () => {
@@ -18,6 +19,10 @@ const DropdownCart: React.FC = () => {
 
     const totalPrice = cart.reduce((total: number, product: IProducts) =>
         (total += product.price * product.count), 0);
+
+    const closeDropdownCart = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        dispatch(ShowOrHideDropdownCart());
+    };
 
     return (
         <div className={showOrHideDropdCart ? "dropdownCart-wrapper show-dropdownCart" : "dropdownCart-wrapper"}>
@@ -51,7 +56,10 @@ const DropdownCart: React.FC = () => {
                                                 <td>
                                                     {/* ======= Image ======= */}
                                                     <div className="product-img">
-                                                        <Link to={`/product-details/${product.id}`}>
+                                                        <Link
+                                                            to={`/product-details/${product.id}`}
+                                                            onClick={closeDropdownCart}
+                                                        >
                                                             <div className="img-wrapper">
                                                                 <img className="img-fluid" src={product.img} alt={product.title} />
                                                             </div>
@@ -63,7 +71,10 @@ const DropdownCart: React.FC = () => {
                                                         {/* ======= Title ======= */}
                                                         <li>
                                                             <h6 className="product-title">
-                                                                <Link to={`/product-details/${product.id}`}>
+                                                                <Link
+                                                                    to={`/product-details/${product.id}`}
+                                                                    onClick={closeDropdownCart}
+                                                                >
                                                                     {product.title}
                                                                 </Link>
                                                             </h6>
@@ -94,12 +105,18 @@ const DropdownCart: React.FC = () => {
                                 </div>
                                 <div className="links d-flex align-items-center justify-content-between">
                                     <div className="view-cart-btn text-center">
-                                        <Link to="/cart">View Cart</Link>
+                                        <Link
+                                            to="/cart"
+                                            onClick={closeDropdownCart}
+                                        >
+                                            View Cart
+                                        </Link>
                                     </div>
                                     <div className="checkout-btn d-flex">
                                         <Link
                                             to="/checkout"
                                             className="btn-style-2 w-100 text-center"
+                                            onClick={closeDropdownCart}
                                         >
                                             Checkout
                                         </Link>
@@ -108,7 +125,7 @@ const DropdownCart: React.FC = () => {
                             </div>
                         </>
                     ) : (
-                        // ======= Empty cart ======= //
+                        // ======= alert ======= //
                         <div className="empty-cart">
                             <div className="alert-text text-center">
                                 <p className="paragraph mb-1">

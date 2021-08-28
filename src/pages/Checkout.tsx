@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import ShippingInfo from '../components/Checkout/ShippingInfo/ShippingInfo';
 import Payment from '../components/Checkout/Payment/Payment';
@@ -34,6 +34,10 @@ const Checkout: React.FC = () => {
             cart.forEach((cartProduct: IProducts) => dispatch(WishlistProductIsInCartFalse(cartProduct.id)));
         }, 2000);
     };
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <div className="checkout-content">

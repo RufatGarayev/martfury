@@ -9,9 +9,10 @@ import { useDispatch } from 'react-redux';
 const Department: React.FC = () => {
     const dispatch = useDispatch();
 
-    const handleCloseCategories = (e: React.MouseEvent<HTMLButtonElement>) => {
-        dispatch(ShowSidebarCategories(false));
-    };
+    const handleCloseCategories =
+        (e: React.MouseEvent<HTMLButtonElement> | React.MouseEvent<HTMLAnchorElement>) => {
+            dispatch(ShowSidebarCategories(false));
+        };
 
     return (
         <div className="department d-flex">
@@ -30,13 +31,13 @@ const Department: React.FC = () => {
                     ✕
                 </button>
             </div>
-            {/* ======= Departments ======= */}
+            {/* ===== Departments ===== */}
             <ul className="departments">
                 {
                     CategoriesData.map(item => (
                         item.submenu ? (
                             <li key={item.id}>
-                                <Link to="/#" className="d-flex justify-content-between">
+                                <Link to="/shop" onClick={handleCloseCategories} className="d-flex justify-content-between">
                                     <p className="m-0 p-0">
                                         <span>{item.icon}</span> {item.title}
                                     </p>
@@ -50,7 +51,9 @@ const Department: React.FC = () => {
                                             {
                                                 item.submenu.map(submenuItem => (
                                                     <li key={submenuItem.id}>
-                                                        <Link to="/#">{submenuItem.title}</Link>
+                                                        <Link onClick={handleCloseCategories} to="/shop">
+                                                            {submenuItem.title}
+                                                        </Link>
                                                     </li>
                                                 ))
                                             }
@@ -64,7 +67,9 @@ const Department: React.FC = () => {
                                                 item.submenu.map(submenuItem2 => (
                                                     submenuItem2.category === "accessoriesAndParts" && (
                                                         <li key={submenuItem2.id}>
-                                                            <Link to="/#">{submenuItem2.title}</Link>
+                                                            <Link onClick={handleCloseCategories} to="/shop">
+                                                                {submenuItem2.title}
+                                                            </Link>
                                                         </li>
                                                     )
                                                 ))
@@ -75,7 +80,7 @@ const Department: React.FC = () => {
                             </li>
                         ) : (
                             <li key={item.id}>
-                                <Link to="/#">
+                                <Link to="/shop" onClick={handleCloseCategories}>
                                     <span>{item.icon}</span> {item.title}
                                 </Link>
                             </li>
@@ -85,6 +90,6 @@ const Department: React.FC = () => {
             </ul>
         </div>
     )
-}
+};
 
 export default Department;

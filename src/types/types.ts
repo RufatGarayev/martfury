@@ -152,6 +152,11 @@ export interface IReactImgGalleryOptions {
     autoPlay: boolean;
 };
 
+export interface IReactImgGalleryimages {
+    original: any;
+    thumbnail: any;
+}
+
 // product-details > tab list
 export interface ITabList {
     id: number;
@@ -279,4 +284,5 @@ export interface IPrimaryReducerState {
     isLoading: boolean;
     showSearchArea: boolean;
     showOrHideDropdownCart: boolean;
+    showSidebarFilter: boolean;
 };

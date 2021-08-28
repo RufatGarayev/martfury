@@ -18,6 +18,6 @@ const PriceSlider: React.FC = () => {
             </div>
         </div>
     )
-}
+};
 
 export default PriceSlider;

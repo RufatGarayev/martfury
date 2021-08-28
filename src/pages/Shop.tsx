@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { IsLoading } from '../redux/actions/primaryActions';
+import { IsLoading, ShowSidebarFilter } from '../redux/actions/primaryActions';
 import { Link } from "react-router-dom";
 import BrandsSection from '../components/Shop/Brands/Brands';
 import Categories from '../components/Shop/FilterSide/Categories/Categories';
@@ -12,6 +12,7 @@ import { RootState } from '../redux/reducers/index';
 const Shop: React.FC = () => {
     const primaryState = useSelector((state: RootState) => state.primary);
     const loading = primaryState.isLoading;
+    const showSideFilter = primaryState.showSidebarFilter;
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -49,7 +50,7 @@ const Shop: React.FC = () => {
                         </div>
                         <div className="row">
                             <div className="col-lg-3">
-                                <div className="filter-side">
+                                <div className={showSideFilter ? "filter-side show-filter" : "filter-side"}>
                                     <Categories />
                                     <Brands />
                                     <PriceSlider />
@@ -67,6 +68,13 @@ const Shop: React.FC = () => {
                         </div>
                     </div>
                 </div>
+                {/* ===== dark bg-color ===== */}
+                <div
+                    className={showSideFilter ? "dark-bg-color" : "d-none"}
+                    onClick={(e: React.MouseEvent<HTMLDivElement>) => {
+                        dispatch(ShowSidebarFilter(false));
+                    }}
+                ></div>
             </div>
         </div>
     )

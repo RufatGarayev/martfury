@@ -155,6 +155,6 @@ const WishlistSection: React.FC = () => {
             </div>
         </section>
     )
-}
+};
 
 export default WishlistSection;

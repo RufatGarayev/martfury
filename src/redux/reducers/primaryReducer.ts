@@ -7,7 +7,8 @@ const initialState = {
     showSidebarMenu: false,
     isLoading: false,
     showSearchArea: true,
-    showOrHideDropdownCart: false
+    showOrHideDropdownCart: false,
+    showSidebarFilter: false
 };
 
 const primaryReducer = (state: IPrimaryReducerState = initialState, action: PrimaryAction) => {
@@ -53,6 +54,13 @@ const primaryReducer = (state: IPrimaryReducerState = initialState, action: Prim
                 ...state,
                 showOrHideDropdownCart: !state.showOrHideDropdownCart
             }
+
+        // show search area
+        case ActionType.SHOW_SIDEBAR_FILTER:
+            return {
+                ...state,
+                showSidebarFilter: state.showSidebarFilter = action.payload
+            }    
 
         default:
             return state;
