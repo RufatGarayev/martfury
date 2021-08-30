@@ -691,7 +691,7 @@ export const products: IProducts[] = [
         label: "",
         rating: "★★★★★",
         brand: "",
-        category: "Yewelry & Watches",
+        category: "Jewelry & Watches",
         hasDiscount: false,
         isNew: false,
         count: 1,

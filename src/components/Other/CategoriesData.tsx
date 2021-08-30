@@ -30,7 +30,7 @@ export const CategoriesData: ICategoriesListDataTypes[] = [
     },
     { id: 3, title: "Home, Garden & Kitchen", icon: <GiBedLamp /> },
     { id: 4, title: "Health & Beauty", icon: <GiHealthPotion /> },
-    { id: 5, title: "Yewelry & Watches", icon: <GiCutDiamond /> },
+    { id: 5, title: "Jewelry & Watches", icon: <GiCutDiamond /> },
     {
         id: 6,
         title: "Computer & Technology",

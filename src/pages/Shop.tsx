@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import BrandsSection from '../components/Shop/Brands/Brands';
 import Categories from '../components/Shop/FilterSide/Categories/Categories';
 import Brands from '../components/Shop/FilterSide/Brands/Brands';
-import PriceSlider from '../components/Shop/FilterSide/PriceFilter/PriceFilter';
 import ProductsSide from '../components/Shop/ProductsSide/ProductsSide';
 import { RootState } from '../redux/reducers/index';
 
@@ -56,7 +55,6 @@ const Shop: React.FC = () => {
                                 <div className={showSideFilter ? "filter-side show-filter" : "filter-side"}>
                                     <Categories />
                                     <Brands />
-                                    <PriceSlider />
                                 </div>
                             </div>
                             <div className="col-lg-9">
