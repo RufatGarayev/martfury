@@ -32,6 +32,15 @@
       input[type="text"] {
         @extend %input;
       }
+
+      .error-border {
+        border: 1px solid red !important;
+      }
+
+      p{
+        margin-bottom: 0;
+        font-size: 13px;
+      }
     }
 
     .checkbox-input-wrapper {

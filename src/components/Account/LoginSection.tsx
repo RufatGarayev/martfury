@@ -1,8 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as Yup from 'yup';
 import { SocialMediaData } from '../Other/SocialMediaData';
 
 const LoginSection: React.FC = () => {
+    const validationSchema = Yup.object().shape({
+        userNameOrEmail: Yup.string()
+            .required('Username or Email is required'),
+        password: Yup.string()
+            .required('Password is required')
+            .min(6, 'Password must be at least 6 characters')
+    });
+
+    const formOptions = { resolver: yupResolver(validationSchema) };
+
+    const { register, handleSubmit, formState: { errors } } = useForm(formOptions);
+
     return (
         <section id="login">
             <div className="container">
@@ -14,12 +29,26 @@ const LoginSection: React.FC = () => {
                         </div>
                         <div className="login-area account-wrapper">
                             <h6>Log In Your Account</h6>
-                            <form>
+                            <form onSubmit={handleSubmit((data) => {
+                                console.log(data)
+                            })}>
                                 <div className="inputs-wrapper w-100">
-                                    <input type="text" className="w-100" name="email" placeholder="Username or Email" />
+                                    <input
+                                        type="text"
+                                        className={`w-100 ${errors.userNameOrEmail ? "error-border" : ""}`}
+                                        placeholder="Username or Email"
+                                        {...register("userNameOrEmail")}
+                                    />
+                                    {errors.userNameOrEmail && <p>{errors.userNameOrEmail.message}</p>}
                                 </div>
                                 <div className="inputs-wrapper w-100">
-                                    <input type="password" className="w-100" name="password" placeholder="Password" />
+                                    <input
+                                        type="password"
+                                        className={`w-100 ${errors.password ? "error-border" : ""}`}
+                                        placeholder="Password"
+                                        {...register("password")}
+                                    />
+                                    {errors.password && <p>{errors.password.message}</p>}
                                 </div>
                                 <div className="checkbox-input-wrapper d-flex">
                                     <input type="checkbox" name="remember" id="remember" />

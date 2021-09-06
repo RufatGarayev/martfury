@@ -24,7 +24,7 @@ const ProductItem: React.FC<IProductProps> = ({ product }) => {
                         onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                             dispatch(RemoveFromCompare(product.id));
                             dispatch(MakeIsInCompareFalse(product.id));
-                            toast.error('"' + product.title + '" removed from the Wishlist.');
+                            toast.error('"' + product.title + '" removed from the Compare.');
                         }}
                     >
                         Remove

@@ -9,10 +9,11 @@ interface IProps {
 const CheckoutInfo: React.FC<IProps> = (props) => {
     return (
         <div className="checkout-info">
-            <form onSubmit={(e: React.FormEvent<HTMLFormElement>) => props.handleShippingSubmit()}>
+            <form onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
+                props.handleShippingSubmit();
+            }}>
                 <div className="row">
                     <div className="col-12">
-                        {/* ======= title ======= */}
                         <div className="title text-center">
                             <h1>Checkout Information</h1>
                         </div>
@@ -20,20 +21,17 @@ const CheckoutInfo: React.FC<IProps> = (props) => {
                 </div>
                 <div className="row">
                     <div className="col-lg-8 offset-lg-2">
-                        {/* ======= checkout-info area ======= */}
                         <div className="checkout-info-area">
-                            {/* ===== contact-info ===== */}
                             <div className="contact-info">
                                 <h5>Contact information</h5>
                                 <div className="row">
                                     <div className="col-12">
                                         <div className="input-wrapper">
-                                            <input type="text" placeholder="Email or Phone number" required />
+                                            <input type="text" placeholder="Email or Phone number" />
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            {/* ===== shipping-address ===== */}
                             <div className="shipping-address">
                                 <h5>Shipping address</h5>
                                 <div className="row">
@@ -74,7 +72,6 @@ const CheckoutInfo: React.FC<IProps> = (props) => {
                 </div>
                 <div className="row">
                     <div className="col-lg-8 offset-lg-2">
-                        {/* ===== bottom-links ===== */}
                         <div className="bottom-links d-flex">
                             <Link to="/cart" className="d-flex align-items-center">
                                 <span><HiArrowNarrowLeft /></span>
