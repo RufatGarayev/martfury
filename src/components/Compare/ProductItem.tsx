@@ -7,6 +7,7 @@ import { RootState } from '../../redux/reducers';
 import { RemoveFromCompare } from '../../redux/actions/compareActions';
 import { MakeIsInCompareFalse } from '../../redux/actions/productActions';
 import { toast } from 'react-toastify';
+import Rating from '../Other/Rating';
 
 const ProductItem: React.FC<IProductProps> = ({ product }) => {
     const cartState = useSelector((state: RootState) => state.cart);
@@ -52,8 +53,8 @@ const ProductItem: React.FC<IProductProps> = ({ product }) => {
                         Lorem ipsum dolor sit amet conse ctetur adipisicing elit, Ut enim ad minim veniam.
                     </p>
                 </div>
-                <div className="rating box">
-                    <span>{product.rating}</span>
+                <div className="rating-area box">
+                    <Rating value={product.rating} />
                 </div>
             </div>
             <div className="bottom-part box d-flex align-items-center">

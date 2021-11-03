@@ -54,7 +54,7 @@
       .title,
       .price,
       .description,
-      .rating,
+      .rating-area,
       .bottom-part {
         padding: 0 20px;
       }
@@ -92,21 +92,21 @@
 
       .middle-part {
         .description,
-        .rating,
+        .rating-area,
         .title,
         .price {
           display: flex;
           align-items: center;
         }
 
-        .rating,
+        .rating-area,
         .title,
         .price {
           min-height: 55px;
         }
 
         .price,
-        .rating {
+        .rating-area {
           background-color: $secondary-bgColor;
           border-top: 1px solid #e9e7e7;
           border-bottom: 1px solid #e9e7e7;
@@ -149,10 +149,13 @@
           }
         }
 
-        .rating {
-          span {
-            font-size: 20px;
-            color: #ffb503;
+        .rating-area {
+          .rating {
+            width: 90px;
+
+            span {
+              font-size: 14px;
+            }
           }
         }
       }

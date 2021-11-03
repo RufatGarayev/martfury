@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { Modal } from 'react-bootstrap';
 import ProductInfo from '../ProductDetails/PrimaryInfo/ProductInfo';
 import ImgSlider from '../ProductDetails/PrimaryInfo/ImgSlider';
+import Rating from '../Other/Rating';
 import { IProducts, IProductProps } from '../../types/types';
 import { AddToCart, MakeIsInCartTrue } from '../../redux/actions/cartActions';
 import { AddToWishlist, MakeIsInWishlistTrueInWishlist } from '../../redux/actions/wishlistActions';
@@ -184,7 +185,7 @@ const ProductCard: React.FC<IProductProps> = ({ product }) => {
                 </div>
                 {/* ======= Rating ======= */}
                 <div className="product-rating">
-                    <span>{product.rating}</span>
+                    <Rating value={product.rating} />
                 </div>
             </div>
 

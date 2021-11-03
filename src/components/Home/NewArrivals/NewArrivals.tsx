@@ -18,21 +18,17 @@ const NewArrivals: React.FC = () => {
         { id: 6, href: "/shop", title: "View All" }
     ];
 
-
     return (
         <section id="new-arrivals">
             <div className="container">
-                {/* ======= Section header ======= */}
                 <div className="section-header-wrapper">
                     <div className="section-header">
                         <div className="left-side">
-                            {/* ======= Section title ======= */}
                             <div className="section-title">
                                 <h4>Hot New Arrivals</h4>
                             </div>
                         </div>
                         <div className="right-side">
-                            {/* ======= Section buttons and link ======= */}
                             <ul className="d-flex section-buttons-and-link">
                                 {
                                     ButtonsAndLinkData.map(item => (
@@ -45,7 +41,6 @@ const NewArrivals: React.FC = () => {
                         </div>
                     </div>
                 </div>
-                {/* ======= Product item ======= */}
                 <div className="product-item-wrapper">
                     <div className="row">
                         {

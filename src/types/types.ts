@@ -201,7 +201,7 @@ export interface IProducts {
     title: string;
     price: number;
     label: string;
-    rating: string;
+    rating: number;
     brand: string;
     category: string;
     hasDiscount: boolean;
@@ -266,6 +266,12 @@ export interface ILinks {
         title: string;
         href: string;
     }[];
+};
+
+// rating
+export interface IRatingProps {
+    value: number;
+    color?: string;
 };
 
 // shopping cart

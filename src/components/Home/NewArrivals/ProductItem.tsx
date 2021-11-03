@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { IProductProps } from '../../../types/types';
+import Rating from '../../Other/Rating';
 
 const ProductItem: React.FC<IProductProps> = ({ product }) => {
     return (
@@ -17,7 +18,7 @@ const ProductItem: React.FC<IProductProps> = ({ product }) => {
                     </h6>
                 </div>
                 <div className="product-item-rating">
-                    <span>{product.rating}</span>
+                    <Rating value={product.rating} />
                 </div>
                 <div className="product-item-price">
                     <p>

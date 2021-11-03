@@ -333,7 +333,13 @@
       }
 
       &-rating {
+        padding: 5px 0;
         @extend %product-rating;
+        width: 84px;
+
+        span {
+          font-size: 13px;
+        }
       }
 
       .product-item-right-content {

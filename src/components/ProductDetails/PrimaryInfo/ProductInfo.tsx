@@ -10,6 +10,7 @@ import { AddToCompare, MakeIsInCompareTrueInCompare } from '../../../redux/actio
 import { toast } from 'react-toastify';
 import { RootState } from '../../../redux/reducers/index'
 import { IProducts, IProductProps } from '../../../types/types';
+import Rating from '../../Other/Rating';
 
 const ProductInfo: React.FC<IProductProps> = ({ product }) => {
     const [size] = useState<number>(1);
@@ -30,8 +31,8 @@ const ProductInfo: React.FC<IProductProps> = ({ product }) => {
             {/* ===== title-and-rating ===== */}
             <div className="title-and-rating">
                 <h5>{product?.title}</h5>
-                <p>
-                    <span className="rating">{product?.rating}</span>
+                <p className="d-flex">
+                    <Rating value={product.rating} />
                     <small className="review-count text-muted">(1 review)</small>
                 </p>
             </div>

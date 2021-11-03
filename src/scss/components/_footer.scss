@@ -238,6 +238,16 @@ footer {
 }
 
 @media screen and (max-width: 575.98px) {
+  .footer-top {
+    .contact-us {
+      padding-bottom: 10px;
+    }
+
+    .links-item {
+      padding-top: 40px;
+    }
+  }
+
   .footer-bottom {
     .payment {
       flex-wrap: wrap;

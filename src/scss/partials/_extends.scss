@@ -124,15 +124,19 @@
 
 // product title
 %product-title {
-  h6 a {
-    color: #06c;
-    font-size: 14px;
-    font-weight: 400;
-    text-decoration: none;
-    transition: all 0.3s ease;
+  h6 {
+    margin-bottom: 12px;
 
-    &:hover {
-      color: $primary-color;
+    a {
+      color: #06c;
+      font-size: 14px;
+      font-weight: 400;
+      text-decoration: none;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: $primary-color;
+      }
     }
   }
 }
@@ -161,7 +165,7 @@
 %product-rating {
   span {
     color: $primary-color;
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 
@@ -479,9 +483,12 @@
       margin-bottom: 8px;
 
       .rating {
-        color: $primary-color;
-        margin-right: 7px;
-        font-size: 19px;
+        width: 90px;
+        margin-right: 9px;
+
+        span {
+          font-size: 14px;
+        }
       }
     }
   }
@@ -581,7 +588,7 @@
       .wishlist-btn {
         padding-left: 7px;
 
-        svg{
+        svg {
           margin-top: 2px;
         }
       }
